@@ -24,7 +24,7 @@ class Prompter:
         self.report_db = Database(self.report_db_path)
         self.db_responses_backup_path = os.path.join(os.getcwd(), 'backup.db')
         self.db_responses_backup = Database(self.db_responses_backup_path)
-    
+        
     def create_tables(self, nuke=False):
         if nuke:
             try:
@@ -133,19 +133,19 @@ class Prompter:
         PTA = PromptTemplateAssembler()
         self.backup_prompt_responses()
         self.db, self.source_db, self.db_responses_backup = PTA.assemble_prompts(self.db, self.source_db, self.db_responses_backup)
+    
+    def count_sampled_datasets(self):
+        source_db = self.source_db.to_df('_source')
+        source_db_grouped = source_db.groupby(['task_name'])
+        for task_name, group in source_db_grouped:
+            print(f'for task_name: {task_name}, here are the sampled number: {len(group["task_instance_id"].unique())}')
+        
         
     def replicate_prompts(self):
         PTA = PromptTemplateAssembler()
         self.db = PTA.replicate_prompts(self.db, self.source_db)
 
     def run(self, prompt_number):
-        prompt_tester = ProgressReporter()
-        should_proceed = False
-        should_proceed = prompt_tester.test_prompt_templates()
-        
-        if not should_proceed:
-            print(f'PROPMT TEMPLATE ISSUES DETECTED, ABORTING')
-            return
         
         self.filter_dict = {'response': None, 'task_name': [
             'defect_detection', #
@@ -200,13 +200,12 @@ class Prompter:
                 'sg_in_context_learning',
                 'thread_of_thought',
                 'step_back_prompting',
-                # 'prompt_paraphrasing', # Verificar possivel remoçao
                 'emotional_prompting',
                 'style_prompting',
                 'rephrase_and_respond',
                 'role_prompting',
-                # 'reverse_cot', # Verificar possivel remoçao
                 'analogical_prompting', 
+                'control_0', 
             ]
         }   
          
@@ -402,6 +401,8 @@ def execute_prompt_technique(prompt_ready):
         
         # tecnicas_atomicas
         
+        'winner_0': Winner0, 
+        'control_0': Control0, 
         'exemplar_selection_knn': ExemplarSelectionKNN,
         'few_shot_contrastive_cot': FewShotContrastiveCOT, 
         'tree_of_thought': TreeOfThought, 

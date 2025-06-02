@@ -22,7 +22,7 @@ class ProgressReporter:
         
         self.excluded_tasks = "('code_search', 'code_to_code_retrieval')"
         
-        self.techniques_selected = "('exemplar_selection_knn', 'few_shot_contrastive_cot', 'tree_of_thought', 'self_ask', 'universal_self_consistency', 'self_refine', 'sg_in_context_learning', 'thread_of_thought', 'step_back_prompting', 'analogical_prompting', 'prompt_paraphrasing', 'emotional_prompting', 'style_prompting', 'rephrase_and_respond', 'role_prompting', 'reverse_cot')" 
+        self.techniques_selected = "('winner_0', 'control_0', 'exemplar_selection_knn', 'few_shot_contrastive_cot', 'tree_of_thought', 'self_ask', 'universal_self_consistency', 'self_refine', 'sg_in_context_learning', 'thread_of_thought', 'step_back_prompting', 'analogical_prompting', 'prompt_paraphrasing', 'emotional_prompting', 'style_prompting', 'rephrase_and_respond', 'role_prompting', 'reverse_cot')" 
         
         self.llms_used = "('deepseek-ai/DeepSeek-V3', 'o3-mini', 'Qwen/Qwen2.5-Coder-32B-Instruct', 'meta-llama/Llama-3.3-70B-Instruct-Turbo')"
     
@@ -344,7 +344,7 @@ class TaskProgressRoutine:
         results = self.prompts_db.execute_sql(query)
         
         if not results:
-            raise ValueError("No rows returned from execute_sql for task progress")
+            raise ValueError(f"No rows returned from execute_sql for task progress, {self.prompts_table_name}")
         
         return results
 

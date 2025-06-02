@@ -6,12 +6,14 @@ from tqdm import tqdm
 import ast
 import re
 import traceback
+import shutil
 from tools.evaluation.general import acc, p_r_f1, map_score, mrr, exact_match
 from tools.evaluation.google_bleu import google_bleu
 from tools.evaluation.smooth_bleu import smooth_bleu
 from tools.evaluation.rouge import rouge_l
 from tools.evaluation.CodeBLEU.calc_code_bleu import code_bleu
 from tools.report_rq1 import *
+from tools.report_rq2 import *
 from tools.report_rq3 import *
 import numpy as np
 
@@ -19,14 +21,11 @@ import numpy as np
     
 class ResultsRoutine:
     def __init__(self, source_db_path, target_db_path):
+        self.source_db_path = source_db_path
         self.prompts_db = Database(source_db_path)
         self.results_db = Database(target_db_path)
-        # self.prompts_db_path = os.path.join(os.getcwd(), 'prompts.db')
-        # self.prompts_db = Database(self.prompts_db_path)
         self.report_db_path = os.path.join(os.getcwd(), 'reports.db')
         self.report_db = Database(self.report_db_path)
-        # self.backup_db_path = os.path.join(os.getcwd(), 'backup.db')
-        # self.backup_db = Database(self.backup_db_path)
         self.prompts_table_name = '_prompts_ready'
         self.excluded_tasks = "('code_search', 'code_to_code_retrieval', 'code_completion')"
         self.techniques_selected = "('exemplar_selection_knn', 'few_shot_contrastive_cot', 'tree_of_thought', 'self_ask', 'universal_self_consistency', 'self_refine', 'sg_in_context_learning', 'thread_of_thought', 'step_back_prompting', 'analogical_prompting', 'prompt_paraphrasing', 'emotional_prompting', 'style_prompting', 'rephrase_and_respond', 'role_prompting', 'reverse_cot')" 
@@ -157,11 +156,17 @@ class ResultsRoutine:
         
         self.results_db.execute_sql(query)
     
+    def get_prompts(self):
+        self.new_prompts_db = Database(self.source_db_path.replace('prompts.db', 'prompts_.db'))
+        prompts = self.new_prompts_db.to_df('_prompts_ready').to_dict(orient='records')
+        for prompt in prompts:
+            self.prompts_db.cache(prompt, '_prompts_ready')
+        
     def begin_eval(self):
-        # df_prompts = self.fetch_new_data()
-        # self.preprocess_data(df_prompts)
-        # # print(f'WARNING: skipping preprocessing data')
-        # self.eval_results()
+        df_prompts = self.fetch_new_data()
+        self.preprocess_data(df_prompts)
+        # print(f'WARNING: skipping preprocessing data')
+        self.eval_results()
         self.extract_reports()
         
     def create_table_report_rq3(self):
@@ -188,7 +193,7 @@ class ResultsRoutine:
         self.results_db.execute_sql(query)
         
         query =f'''
-            CREATE TABLE IF NOT EXISTS 'agg_ranked_performance' (
+            CREATE TABLE IF NOT EXISTS 'agg_ranked_performance_report' (
                 technique_name	TEXT NOT NULL,
                 z_performance_result REAL,
                 placement	INTEGER,
@@ -198,7 +203,7 @@ class ResultsRoutine:
         self.results_db.execute_sql(query)
         
         query =f'''
-            CREATE TABLE IF NOT EXISTS 'agg_ranked_performance_token' (
+            CREATE TABLE IF NOT EXISTS 'agg_ranked_performance_token_report' (
                 technique_name	TEXT NOT NULL,
                 z_performance_over_token REAL,
                 placement	INTEGER,
@@ -208,39 +213,11 @@ class ResultsRoutine:
         self.results_db.execute_sql(query)
         
         query =f'''
-            CREATE TABLE IF NOT EXISTS 'agg_ranked_performance_time' (
+            CREATE TABLE IF NOT EXISTS 'agg_ranked_performance_time_report' (
                 technique_name	TEXT NOT NULL,
                 z_performance_over_time REAL,
                 placement	INTEGER,
             PRIMARY KEY (technique_name)
-            );'''
-        
-        self.results_db.execute_sql(query)
-        return table_name
-    
-    
-    def create_table_report_rq1(self):
-        table_name = 'rq1_report'
-        query =f'''
-            CREATE TABLE IF NOT EXISTS '{table_name}' (
-                llm	TEXT NOT NULL,
-                task_name	TEXT NOT NULL,
-                technique_name	TEXT NOT NULL,
-                language	TEXT,
-                status TEXT NOT NULL,
-                metric_name TEXT,
-                metric_result REAL,
-                number_excluded REAL,
-                placement INTEGER,
-                avg_tokens_sent REAL,
-                avg_tokens_received REAL,
-                avg_total_tokens REAL,
-                avg_cost REAL,
-                std_dev_cost REAL,
-                avg_prompt_time REAL,
-                std_dev_prompt_time REAL,
-                obs	TEXT,
-            PRIMARY KEY (llm, task_name, technique_name, language)
             );'''
         
         self.results_db.execute_sql(query)
@@ -251,6 +228,10 @@ class ResultsRoutine:
             if affix.lower() in column.lower():
                 return column
         raise Exception(f'ERROR: weird affix {affix}, task metric: {task_metric}')
+    
+    def drop_table(self, table_name):
+        query =f'DROP TABLE IF EXISTS {table_name};'
+        self.results_db.execute_sql(query)
     
     def extract_reports(self):
         task_metric = {
@@ -266,65 +247,21 @@ class ResultsRoutine:
             'code_generation': '_codebleu',
         }
         
-        progress_bar_done = tqdm(total=len(task_metric), position=0, unit=("table rq1"))
+        report_tablenames = [report_tablename for report_tablename in self.results_db.list_tables() if 'report' in report_tablename or '_export' in report_tablename or '_TEMP_' in report_tablename]
+        
+        progress_bar_done = tqdm(total=len(report_tablenames), position=0, unit=("cleaning report tables"))
+        
+        for report_tablename in report_tablenames:
+            self.drop_table(report_tablename)
+            progress_bar_done.update(1)
+            
         results_tablenames = [results_tablename for results_tablename in self.results_db.list_tables() if '_results' not in results_tablename and '_result' in results_tablename and 'report' not in results_tablename]
         
-        for results_tablename in results_tablenames:
-            task_name = results_tablename.replace('_result', '')
-            metric_affix = task_metric[task_name]
-            df_results = self.results_db.to_df(results_tablename)
-            columns = df_results.columns
-            column_metric_name = self.select_metric_column(columns, metric_affix, task_name)
-            result = report_rq1(df_results, column_metric_name)
-            if result is not None:
-                rq1_tablename = self.create_table_report_rq1()
-                self.results_db.cache(result, rq1_tablename)
-                self.results_db.save()  
-                
-            progress_bar_done.update(1)
-            
-        global_results_df = self.results_db.to_df(rq1_tablename)    
-        result = complementary_report_rq1(global_results_df)
-        self.results_db.cache(result, rq1_tablename)
-        self.results_db.save()
-        
-        progress_bar_done = tqdm(total=len(task_metric), position=0, unit=("table rq3"))
-        for results_tablename in results_tablenames:
-            task_name = results_tablename.replace('_result', '')
-            metric_affix = task_metric[task_name]
-            df_results = self.results_db.to_df(results_tablename)
-            columns = df_results.columns
-            column_metric_name = self.select_metric_column(columns, metric_affix, task_name)
-            result = report_rq3(df_results, column_metric_name)
-            if result is not None:
-                rq3_tablename = self.create_table_report_rq3()
-                self.results_db.cache(result, rq3_tablename)
-                self.results_db.save()  
-                
-            progress_bar_done.update(1)
-            
-        global_results_df = self.results_db.to_df(rq3_tablename)    
-        results = complementary_report_rq3(global_results_df)
-        print(f'run')
-        for key, df in results.items():
-            self.results_db.cache(df, key)
-            self.results_db.save()
-        
-        # for results_tablename in results_tablenames:
-        #     task_name = results_tablename.replace('_result', '')
-        #     metric_affix = task_metric[task_name]
-        #     df_results = self.results_db.to_df(results_tablename)
-        #     columns = df_results.columns
-        #     column_metric_name = self.select_metric_column(columns, metric_affix, task_name)
-        #     result = report_rq1(df_results, column_metric_name)
-        #     if result is not None:
-        #         rq1_tablename = self.create_table_report_rq1()
-        #         self.results_db.cache(result, rq1_tablename)
-        #         self.results_db.save()  
-                
-        #     progress_bar_done.update(1)
-            
-        
+        report_rq1(results_tablenames, task_metric, self.results_db)
+        # report_rq2(self.results_db, self.prompts_db)
+        report_rq3(results_tablenames, task_metric, self.results_db)
+ 
+
     def fetch_new_data(self):
         df_preprocessed_prompt_data = self.results_db.to_df('prompting_results')
         df_prompts = self.prompts_db.to_df(self.prompts_table_name)
@@ -420,7 +357,7 @@ class ResultsRoutine:
         
         self.results_db.save()
             
-    # def eval_results(self):
+    def eval_results(self):
         from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
         
         futures = []
@@ -431,8 +368,6 @@ class ResultsRoutine:
         # for mode in modes:
         len_df = len(df_to_eval_grouped)
         progress_bar_done = tqdm(total=len_df, position=0, unit='evaluations')
-        df_llms_finished = self.report_db.to_df('progress_by_llm')
-        df_llms_finished = df_llms_finished[df_llms_finished['prompts_remaining'].astype(int) <= 10]
         
         with ProcessPoolExecutor(max_workers=8) as executor:
             for group_name, group in df_to_eval_grouped:
@@ -462,7 +397,7 @@ class ResultsRoutine:
                     done = any((current_df_status['technique_name'] == technique_name) &
                         (current_df_status['llm'] == llm) &
                         (current_df_status['task_name'] == task_name) &
-                        (current_df_status['status'] == 'success')) and any(df_llms_finished['llm'] == llm)
+                        (current_df_status['status'] == 'success'))
                     # print(f"debugging done: technique_name {any(current_df_status['technique_name'] == technique_name)}")
                     # print(f"debugging done: llm {any(current_df_status['llm'] == llm)}")
                     # print(f"debugging done: task_name {any(current_df_status['task_name'] == task_name)}")
@@ -995,7 +930,7 @@ def evaluate_task_results(task_name, technique_name, llm, group, max_fallback_no
     }
     if technique_name == 'prompt_paraphrasing':
         print(f'warning: skipping prompt paraphrasing')
-        return {}
+        return {}, task_name
     
     if None in preds:
         raise Exception(f'None present in preds')
@@ -1029,6 +964,7 @@ def evaluate_task_results(task_name, technique_name, llm, group, max_fallback_no
             # print(f'TO_CACHE: \n{to_cache}\n\n')
             
         except Exception as e:
+            print(f'Error in task_name {task_name}: {e}')  
             traceback.print_exc()
             to_cache = {
                 "llm": llm, 
@@ -1075,6 +1011,7 @@ def evaluate_task_results(task_name, technique_name, llm, group, max_fallback_no
             # print(f'TO_CACHE: \n{to_cache}\n\n')
             
         except Exception as e:
+            print(f'Error in task_name {task_name}: {e}')  
             traceback.print_exc()
             to_cache = {
                 "llm": llm, 
@@ -1118,6 +1055,7 @@ def evaluate_task_results(task_name, technique_name, llm, group, max_fallback_no
             # print(f'TO_CACHE: \n{to_cache}\n\n')
             
         except Exception as e:
+            print(f'Error in task_name {task_name}: {e}')  
             traceback.print_exc()
             to_cache = {
                 "llm": llm, 
@@ -1161,6 +1099,7 @@ def evaluate_task_results(task_name, technique_name, llm, group, max_fallback_no
             # print(f'TO_CACHE: \n{to_cache}\n\n')
             
         except Exception as e:
+            print(f'Error in task_name {task_name}: {e}')  
             traceback.print_exc()
             to_cache = {
                 "llm": llm, 
@@ -1219,7 +1158,7 @@ def evaluate_task_results(task_name, technique_name, llm, group, max_fallback_no
             # print(f'TO_CACHE: \n{to_cache}\n\n')
             
         except Exception as e:
-            # print(f'Error in task_name {task_name}: {e}')   
+            print(f'Error in task_name {task_name}: {e}')   
             traceback.print_exc() 
             to_cache = {
                 "llm": llm, 
@@ -1281,7 +1220,7 @@ def evaluate_task_results(task_name, technique_name, llm, group, max_fallback_no
             # print(f'TO_CACHE: \n{to_cache}\n\n')
             
         except Exception as e:
-            # print(f'Error in task_name {task_name}: {e}')   
+            print(f'Error in task_name {task_name}: {e}')   
             traceback.print_exc() 
             to_cache = {
                 "llm": llm, 
@@ -1338,7 +1277,7 @@ def evaluate_task_results(task_name, technique_name, llm, group, max_fallback_no
             # print(f'TO_CACHE: \n{to_cache}\n\n')
             
         except Exception as e:
-            # print(f'Error in task_name {task_name}: {e}') 
+            print(f'Error in task_name {task_name}: {e}') 
             traceback.print_exc()    
             to_cache = {
                 "llm": llm, 
@@ -1394,7 +1333,7 @@ def evaluate_task_results(task_name, technique_name, llm, group, max_fallback_no
             # print(f'TO_CACHE: \n{to_cache}\n\n')
             
         except Exception as e:
-            # print(f'Error in task_name {task_name}: {e}')    
+            print(f'Error in task_name {task_name}: {e}')    
             traceback.print_exc() 
             to_cache = {
                 "llm": llm, 
@@ -1450,7 +1389,7 @@ def evaluate_task_results(task_name, technique_name, llm, group, max_fallback_no
             # print(f'TO_CACHE: \n{to_cache}\n\n')
             
         except Exception as e:
-            # print(f'Error in task_name {task_name}: {e}')   
+            print(f'Error in task_name {task_name}: {e}')   
             traceback.print_exc()  
             to_cache = {
                 "llm": llm, 
@@ -1510,7 +1449,7 @@ def evaluate_task_results(task_name, technique_name, llm, group, max_fallback_no
             # print(f'TO_CACHE: \n{to_cache}\n\n')
             
         except Exception as e:
-            # print(f'Error in task_name {task_name}: {e}')   
+            print(f'Error in task_name {task_name}: {e}')   
             traceback.print_exc() 
             to_cache = {
                 "llm": llm, 
@@ -1533,7 +1472,7 @@ def evaluate_task_results(task_name, technique_name, llm, group, max_fallback_no
             
     else:
         results["error"] = "Task not recognized for evaluation."
-        return None
+        return None, task_name
     
     cpl_to_cache = {
         f'avg_tokens_sent': group["input_tokens"].astype(int).mean(),

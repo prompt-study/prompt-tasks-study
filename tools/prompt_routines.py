@@ -103,6 +103,7 @@ class Routine:
             
             if len(message.content) == 0:
                 raise Exception(f'Llm {self.model_name} returned message with zero len string. message: {message}')
+            
             self.to_prompt.append(message)
             self.conversation_history.append(f'---{type(message)}\n---{message.content}\n\n')
         except Exception as e:
@@ -119,7 +120,7 @@ class Routine:
                     message.content = message.content.replace('{output_answer}', self.output_answer['content'].content)
                     self.output_answer['status'] = False
                     
-                if self.technique == 'universal_self_consistency' and self.output_text is not None:  
+                if (self.technique == 'universal_self_consistency' or self.technique == 'winner_0') and self.output_text is not None:  
                     message.content = message.content.replace('{output_text}', self.output_text)
                     
                 self.to_prompt.append(message)
@@ -164,6 +165,13 @@ class RephraseAndRespond(Routine):
 
 
 class RolePrompting(Routine):
+    def __init__(self, row):
+        super().__init__(row)
+        self.routine = {
+            
+        }
+        
+class Control0(Routine):
     def __init__(self, row):
         super().__init__(row)
         self.routine = {
@@ -330,6 +338,46 @@ class UniversalSelfConsistency(Routine):
         # self.conversation_history = conversation_history
         self.send_prompt()
 
+class Winner0(Routine):
+    def __init__(self, row):
+        super().__init__(row)
+        self.routine = {
+            'self_consistency_multi_prompt': self.self_consistency_multi_prompt,
+            'prompt_with_output_text': self.prompt_with_output_text
+        }
+        
+    def self_consistency_multi_prompt(self):
+        count = 0
+        max_count = 10
+        to_repeat = self.to_prompt[0:4]
+        outputs = []
+        while True:
+            outputs.append(self.llm_chain_invoke(prompt_messages=to_repeat).content)
+            count += 1
+            if count > max_count:
+                self.output_text = '\n-- response: '.join(outputs)
+                break
+                
+    def prompt_with_output_text(self):
+        # to_prompt = []
+        # conversation_history = []
+        
+        # for index, _ in enumerate(self.to_prompt):
+        #     message = self.to_prompt[index]
+        #     conversation_history_message = self.conversation_history[index]
+        #     if '{output_text}' in message.content:
+        #         print(f'=={index}here is the old to_prompt: {message.content}')
+        #         message.content = message.content.replace('{output_text}', self.output_text)
+                
+        #         print(f'=={index}also the old conversation history: {conversation_history_message}')
+        #         conversation_history_message = conversation_history_message.replace('{output_text}', self.output_text) 
+            
+        #     to_prompt.append(message)  
+        #     conversation_history.append(conversation_history_message) 
+            
+        # self.to_prompt = to_prompt
+        # self.conversation_history = conversation_history
+        self.send_prompt()
 
 class ExemplarSelectionKNN(Routine):
     def __init__(self, row):

@@ -266,6 +266,7 @@ class Database:
         return saved
     
     def _prepare_insert_sql(self, table_name, columns):
+
         cols = ', '.join(columns)
         placeholders = ', '.join([f':{col}' for col in columns])
         return text(f"""

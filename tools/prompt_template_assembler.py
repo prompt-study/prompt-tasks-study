@@ -22,6 +22,59 @@ import hashlib
 import asyncio
 import shutil
 import sys
+from transformers import AutoTokenizer, AutoModel
+from langchain.embeddings.base import Embeddings
+import torch
+from typing import List
+from huggingface_hub import InferenceClient
+
+
+import torch
+from typing import List
+from transformers import AutoTokenizer, AutoModel
+from langchain.embeddings.base import Embeddings
+
+def mean_pooling(model_output, attention_mask):
+    # model_output[0] is last_hidden_state: (batch, seq_len, hidden_size)
+    token_embeddings = model_output[0]
+    input_mask_expanded = attention_mask.unsqueeze(-1).expand(token_embeddings.size()).float()
+    return torch.sum(token_embeddings * input_mask_expanded, 1) / torch.clamp(input_mask_expanded.sum(1), min=1e-9)
+
+class JinaEmbeddings(Embeddings):
+    def __init__(
+        self,
+        model_name: str = "jinaai/jina-embeddings-v2-base-code",
+        device: str = "cpu",
+    ):
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            model_name, trust_remote_code=True, force_download=False
+        )
+        self.model = AutoModel.from_pretrained(
+            model_name, trust_remote_code=True, force_download=False
+        ).to(device)
+        self.device = device
+
+    def embed_documents(self, texts: List[str], batch_size: int = 8) -> List[List[float]]:
+        embeddings = []
+        for i in range(0, len(texts), batch_size):
+            batch_texts = texts[i:i + batch_size]
+            inputs = self.tokenizer(
+                batch_texts,
+                padding=True,
+                truncation=True,
+                return_tensors="pt"
+            ).to(self.device)
+
+            with torch.no_grad():
+                model_output = self.model(**inputs)
+                pooled = mean_pooling(model_output, inputs['attention_mask'])
+            embeddings.extend(pooled.cpu().tolist())
+        return embeddings
+
+    def embed_query(self, text: str) -> List[float]:
+        return self.embed_documents([text])[0]
+
+
 
 class PromptTemplateAssembler:
     def __init__(self):
@@ -61,184 +114,184 @@ class PromptTemplateAssembler:
         
         self.templates_to_select = {
             'assert_generation': {
+                # 'control_0': (1,),
+                # 'winner_0': (1,),
                 'exemplar_selection_knn': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'few_shot_contrastive_cot': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'tree_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15),
-                'self_ask': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'universal_self_consistency': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'self_refine': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15), #
-                'sg_in_context_learning': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15), #
-                'thread_of_thought': (1, 3, 4, 8, 9, 11, 12, 13, 15, 16), #
-                'step_back_prompting': (3, 4, 5, 7, 8, 11, 15, 16, 17, 18), #
-                'analogical_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15), #
-                # 'prompt_paraphrasing': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'emotional_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20), #
-                'style_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15), #
-                'rephrase_and_respond': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15), #
-                'role_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 14, 15), #
-                # 'reverse_cot': (),
+                # 'few_shot_contrastive_cot': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'tree_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15),
+                # 'self_ask': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'universal_self_consistency': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'self_refine': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15), #
+                # 'sg_in_context_learning': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15), #
+                # 'thread_of_thought': (1, 3, 4, 8, 9, 11, 12, 13, 15, 16), #
+                # 'step_back_prompting': (3, 4, 5, 7, 8, 11, 15, 16, 17, 18), #
+                # 'analogical_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15), #
+                # 'emotional_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20), #
+                # 'style_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15), #
+                # 'rephrase_and_respond': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15), #
+                # 'role_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 14, 15), #
                 },
             'bug_fixing': {
+                # 'control_0': (1,),
+                # 'winner_0': (1,),
                 'exemplar_selection_knn': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'few_shot_contrastive_cot': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'tree_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'self_ask': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'universal_self_consistency': (1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 13, 14, 15),
-                'self_refine': (1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'sg_in_context_learning': (1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'thread_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'step_back_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'analogical_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                # 'prompt_paraphrasing': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'emotional_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20),
-                'style_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'rephrase_and_respond': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'role_prompting': (1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 14, 15),
-                # 'reverse_cot': (),
+                # 'few_shot_contrastive_cot': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'tree_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'self_ask': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'universal_self_consistency': (1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 13, 14, 15),
+                # 'self_refine': (1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'sg_in_context_learning': (1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'thread_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'step_back_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'analogical_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'emotional_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20),
+                # 'style_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'rephrase_and_respond': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'role_prompting': (1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 14, 15),
                 },
             'clone_detection': {
+                # 'control_0': (1,),
+                # 'winner_0': (1,),
                 'exemplar_selection_knn': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'few_shot_contrastive_cot': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'tree_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'self_ask': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'universal_self_consistency': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'self_refine': (1, 2, 4, 5, 7, 10, 11, 12, 13, 14),
-                'sg_in_context_learning': (1, 2, 4, 7, 10, 11, 12, 13, 14, 16),
-                'thread_of_thought': (1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'step_back_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'analogical_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                # 'prompt_paraphrasing': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'emotional_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 16, 17, 18, 19, 20),
-                'style_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15),
-                'rephrase_and_respond': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'role_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 14, 15),
-                # 'reverse_cot': (),
+                # 'few_shot_contrastive_cot': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'tree_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'self_ask': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'universal_self_consistency': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'self_refine': (1, 2, 4, 5, 7, 10, 11, 12, 13, 14),
+                # 'sg_in_context_learning': (1, 2, 4, 7, 10, 11, 12, 13, 14, 16),
+                # 'thread_of_thought': (1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'step_back_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'analogical_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'emotional_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 16, 17, 18, 19, 20),
+                # 'style_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15),
+                # 'rephrase_and_respond': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'role_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 14, 15),
                 },
             'code_generation': {
+                # 'control_0': (1,),
+                # 'winner_0': (1,),
                 'exemplar_selection_knn': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'few_shot_contrastive_cot': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'tree_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'self_ask': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'universal_self_consistency': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'self_refine': (1, 2, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15),
-                'sg_in_context_learning': (1, 2, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15),
-                'thread_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'step_back_prompting': (1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'analogical_prompting': (1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                # 'prompt_paraphrasing': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'emotional_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20),
-                'style_prompting': (1, 2, 3, 4, 7, 8, 9, 10, 11, 12, 13, 14),
-                'rephrase_and_respond': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'role_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 14, 15),
-                # 'reverse_cot': (),
+                # 'few_shot_contrastive_cot': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'tree_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'self_ask': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'universal_self_consistency': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'self_refine': (1, 2, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15),
+                # 'sg_in_context_learning': (1, 2, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15),
+                # 'thread_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'step_back_prompting': (1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'analogical_prompting': (1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'emotional_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20),
+                # 'style_prompting': (1, 2, 3, 4, 7, 8, 9, 10, 11, 12, 13, 14),
+                # 'rephrase_and_respond': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'role_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 14, 15),
                 },
             'code_question_answering': {
+                # 'control_0': (1,),
+                # 'winner_0': (1,),
                 'exemplar_selection_knn': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'few_shot_contrastive_cot': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'tree_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'self_ask': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'universal_self_consistency': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'self_refine': (1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 14, 15),
-                'sg_in_context_learning': (1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 14, 15),
-                'thread_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'step_back_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'analogical_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                # 'prompt_paraphrasing': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'emotional_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20),
-                'style_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'rephrase_and_respond': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'role_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 14, 15),
-                # 'reverse_cot': (),
+                # 'few_shot_contrastive_cot': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'tree_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'self_ask': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'universal_self_consistency': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'self_refine': (1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 14, 15),
+                # 'sg_in_context_learning': (1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 14, 15),
+                # 'thread_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'step_back_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'analogical_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'emotional_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20),
+                # 'style_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'rephrase_and_respond': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'role_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 14, 15),
                 },
             'code_summarization': {
+                # 'control_0': (1,),
+                # 'winner_0': (1,),
                 'exemplar_selection_knn': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'few_shot_contrastive_cot': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'tree_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'self_ask': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'universal_self_consistency': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'self_refine': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'sg_in_context_learning': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'thread_of_thought': (1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15),
-                'step_back_prompting': (1, 4, 5, 6, 7, 9, 10, 11, 13, 14, 15),
-                'analogical_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 14, 15),
-                # 'prompt_paraphrasing': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'emotional_prompting': (1, 2, 3, 4, 5, 6, 16, 17, 18, 19, 20),
-                'style_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15),
-                'rephrase_and_respond': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'role_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 14, 15),
-                # 'reverse_cot': (),
+                # 'few_shot_contrastive_cot': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'tree_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'self_ask': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'universal_self_consistency': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'self_refine': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'sg_in_context_learning': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'thread_of_thought': (1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15),
+                # 'step_back_prompting': (1, 4, 5, 6, 7, 9, 10, 11, 13, 14, 15),
+                # 'analogical_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 14, 15),
+                # 'emotional_prompting': (1, 2, 3, 4, 5, 6, 16, 17, 18, 19, 20),
+                # 'style_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15),
+                # 'rephrase_and_respond': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'role_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 14, 15),
                 },
             'code_translation': {
+                # 'control_0': (1,),
+                # 'winner_0': (1,),
                 'exemplar_selection_knn': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'few_shot_contrastive_cot': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'tree_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'self_ask': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'universal_self_consistency': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'self_refine': (1, 2, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14),
-                'sg_in_context_learning': (1, 2, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14),
-                'thread_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'step_back_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'analogical_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                # 'prompt_paraphrasing': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'emotional_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20),
-                'style_prompting': (1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'rephrase_and_respond': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'role_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 14, 15),
-                # 'reverse_cot': (),
+                # 'few_shot_contrastive_cot': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'tree_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'self_ask': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'universal_self_consistency': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'self_refine': (1, 2, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14),
+                # 'sg_in_context_learning': (1, 2, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14),
+                # 'thread_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'step_back_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'analogical_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'emotional_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20),
+                # 'style_prompting': (1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'rephrase_and_respond': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'role_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 14, 15),
                 },
             'defect_detection': {
+                # 'control_0': (1,),
+                # 'winner_0': (1,),
                 'exemplar_selection_knn': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'few_shot_contrastive_cot': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'tree_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'self_ask': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'universal_self_consistency': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'self_refine': (1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 13, 14, 15),
-                'sg_in_context_learning': (1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 13, 14, 15),
-                'thread_of_thought': (1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'step_back_prompting': (2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'analogical_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                # 'prompt_paraphrasing': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'emotional_prompting': (1, 2, 3, 4, 5, 6, 7, 16, 17, 18, 19, 20),
-                'style_prompting': (1, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15),
-                'rephrase_and_respond': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'role_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 14, 15),
-                # 'reverse_cot': (),
+                # 'few_shot_contrastive_cot': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'tree_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'self_ask': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'universal_self_consistency': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'self_refine': (1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 13, 14, 15),
+                # 'sg_in_context_learning': (1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 13, 14, 15),
+                # 'thread_of_thought': (1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'step_back_prompting': (2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'analogical_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'emotional_prompting': (1, 2, 3, 4, 5, 6, 7, 16, 17, 18, 19, 20),
+                # 'style_prompting': (1, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15),
+                # 'rephrase_and_respond': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'role_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 14, 15),
                 },
             'exception_type': {
+                # 'control_0': (1,),
+                # 'winner_0': (1,),
                 'exemplar_selection_knn': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'few_shot_contrastive_cot': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'tree_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'self_ask': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'universal_self_consistency': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'self_refine': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'sg_in_context_learning': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'thread_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'step_back_prompting': (1, 2, 4, 5, 6, 7, 9, 11, 12, 13, 14, 15),
-                'analogical_prompting': (1, 2, 4, 5, 6, 7, 9, 11, 12, 13, 14, 15),
-                # 'prompt_paraphrasing': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'emotional_prompting': (1, 2, 3, 4, 5, 6, 7, 16, 17, 18, 19, 20),
-                'style_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14),
-                'rephrase_and_respond': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'role_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 14, 15),
-                # 'reverse_cot': (),
+                # 'few_shot_contrastive_cot': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'tree_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'self_ask': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'universal_self_consistency': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'self_refine': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'sg_in_context_learning': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'thread_of_thought': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'step_back_prompting': (1, 2, 4, 5, 6, 7, 9, 11, 12, 13, 14, 15),
+                # 'analogical_prompting': (1, 2, 4, 5, 6, 7, 9, 11, 12, 13, 14, 15),
+                # 'emotional_prompting': (1, 2, 3, 4, 5, 6, 7, 16, 17, 18, 19, 20),
+                # 'style_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14),
+                # 'rephrase_and_respond': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'role_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 14, 15),
                 },
             'mutant_generation': {
+                # 'control_0': (1,),
+                # 'winner_0': (1,),
                 'exemplar_selection_knn': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'few_shot_contrastive_cot': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'tree_of_thought': (1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'self_ask': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'universal_self_consistency': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15),
-                'self_refine': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'sg_in_context_learning': (1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15),
-                'thread_of_thought': (1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15),
-                'step_back_prompting': (1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15),
-                'analogical_prompting': (1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15),
-                # 'prompt_paraphrasing': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'emotional_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20),
-                'style_prompting': (1, 2, 3, 4, 5, 7, 10, 12, 13, 14),
-                'rephrase_and_respond': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                'role_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 14, 15),
-                # 'reverse_cot': (),
+                # 'few_shot_contrastive_cot': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'tree_of_thought': (1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'self_ask': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'universal_self_consistency': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15),
+                # 'self_refine': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'sg_in_context_learning': (1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15),
+                # 'thread_of_thought': (1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15),
+                # 'step_back_prompting': (1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15),
+                # 'analogical_prompting': (1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15),
+                # 'emotional_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20),
+                # 'style_prompting': (1, 2, 3, 4, 5, 7, 10, 12, 13, 14),
+                # 'rephrase_and_respond': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+                # 'role_prompting': (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 14, 15),
                 },
         }   
        
@@ -282,18 +335,55 @@ class PromptTemplateAssembler:
                 
             import_tag = 'reference' 
             
+        pt_exceptions = ['winner_0', 'control_0']
             
         file_parsers = []    
         for file in tqdm(files):
+            print(f'file: {file} import_tag: {import_tag}')
             file_parser = FileParser(file, import_tag)
             prompt_templates = file_parser._extract_variations()
+            index = 0
             for key, prompt_template_variations in prompt_templates.items():
+                # print(f'here is one prompt template variations: {key}\n {prompt_template_variations}')
                 for prompt_template in prompt_template_variations:
+                    
+                    if prompt_template['piece_id'] == 0:
+                        index += 1
+                        
                     if self.is_valid_prompt_template(prompt_template):
+                        prompt_template['technique_variation_id_idx'] = index
                         source_db.cache(prompt_template, '_prompt_pieces')
-                
+
+                        
         source_db.save()
+        variation_ids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        df_prompt_pieces = source_db.to_df('_prompt_pieces')
+        
+        
+        for pt_exception in pt_exceptions:
+            df_prompt_pieces_c = df_prompt_pieces[df_prompt_pieces['technique_name'] == pt_exception]
+            for id in variation_ids:
+                df_prompt_pieces_c['technique_variation_id'] = id
+                df_prompt_pieces_c['technique_variation_id_idx'] = id
+                dict_list = df_prompt_pieces_c.to_dict(orient='records')
+                for row in dict_list:
+                    source_db.cache(row, '_prompt_pieces')
+        source_db.save()    
+        
         return source_db
+    
+                        #     if prompt_template['technique_name'] in pt_exceptions:
+                        #     for id in range(9):
+                        #         prompt_template['technique_variation_id'] = id +1
+                        #         source_db.cache(prompt_template, '_prompt_pieces')
+                        # else  
+                    #     parsed_item.update({
+                    #     'technique_variation_id': index,
+                    #     'technique_variation_id_idx': None,
+                    #     'technique_name': self.technique,
+                    #     'task_name': current_task_name,
+                    #     'obs':  None,
+                    # })
 
     def get_dataset_metadata(self, target_path, source_db):
         """
@@ -345,7 +435,7 @@ class PromptTemplateAssembler:
         source_db.save()
         return source_db
     
-    def extract_source_data(self, target_path, source_db, restart=True, sample_number=100):
+    def extract_source_data(self, target_path, source_db, restart=True):
         if restart:
             source_db = self.get_dataset_metadata(target_path, source_db)
         df_dataset_metadata = source_db.to_df('_dataset_metadata')
@@ -638,17 +728,17 @@ class PromptTemplateAssembler:
             pass        
         
         collection_name = table_name.replace("source", "example")
-        
-        embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
-        # embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
-        
         # embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
+        # embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
+        embeddings = JinaEmbeddings(model_name="jinaai/jina-embeddings-v2-base-code")  # or "cuda" if using GPU
+
         vector_store = Chroma(
             collection_name=collection_name,
             embedding_function=embeddings,  
             persist_directory=f"./{collection_name}_chromadb"
         )
-        vector_store.add_documents(documents)
+        for document in tqdm(documents):
+            vector_store.add_documents([document])
     
     def query_data(self, table_name, sample_size, source_db):
         filter_language = "('python', 'java', '.java --> .cs', '.cs --> .java')"
@@ -747,21 +837,23 @@ class PromptTemplateAssembler:
             'status': 'ready',
             'technique_name': [
                 'exemplar_selection_knn', 
-                'few_shot_contrastive_cot', 
-                'tree_of_thought', 
-                'self_ask', 
-                'universal_self_consistency', 
-                'self_refine', 
-                'sg_in_context_learning', 
-                'thread_of_thought', 
-                'step_back_prompting', 
-                'analogical_prompting', 
-                'prompt_paraphrasing', 
-                'emotional_prompting', 
-                'style_prompting', 
-                'rephrase_and_respond', 
-                'role_prompting', 
-                'reverse_cot',
+                # 'few_shot_contrastive_cot', 
+                # 'tree_of_thought', 
+                # 'self_ask', 
+                # 'universal_self_consistency', 
+                # 'self_refine', 
+                # 'sg_in_context_learning', 
+                # 'thread_of_thought', 
+                # 'step_back_prompting', 
+                # 'analogical_prompting', 
+                # 'prompt_paraphrasing', 
+                # 'emotional_prompting', 
+                # 'style_prompting', 
+                # 'rephrase_and_respond', 
+                # 'role_prompting', 
+                # 'reverse_cot',
+                # 'winner_0',
+                # 'control_0',
                 ],
             'task_name': [
                 'defect_detection',
@@ -797,7 +889,7 @@ class PromptTemplateAssembler:
             
             df_grouped = df.groupby(["task_name", "technique_name", "language", "task_instance_id", "technique_variation_id_idx"])
             
-            embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
+            embeddings = JinaEmbeddings(model_name="jinaai/jina-embeddings-v2-base-code")
             for group_key, group_df in tqdm(df_grouped, total=len(df_grouped), desc="Processing Groups"):
                 dict_list, embeddings = self._craft_prompt(group_df, embeddings)
                 db.cache(dict_list, '_prompts_ready')
@@ -999,7 +1091,7 @@ class PromptTemplateAssembler:
         substitutions = df_variables[df_variables['variable_name'] != 'target'].drop_duplicates()
         prompt = Prompt(task_name=task_name, substitutions=substitutions, language=language)
         
-        if technique_name == 'exemplar_selection_knn':
+        if technique_name == 'exemplar_selection_knn' or technique_name == 'winner_0':
             collection_name = f'example_{task_name}'
             
             vector_store = Chroma(
@@ -1013,7 +1105,7 @@ class PromptTemplateAssembler:
         for row in df_pieces.itertuples(index=False):
             messager = row.message_template_type
             message = row.piece_content
-            if technique_name == 'exemplar_selection_knn':
+            if technique_name == 'exemplar_selection_knn' or technique_name == 'winner_0':
                 message = self.incorporate_examples(message, examples)
             prompt.input_text_line(messager, message)
 

@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: mutant_generation | Best: exemplar_selection_knn vs Other: universal_self_consistency
+
+1. **Task-Specific Contextual Relevance**: The exemplar_selection_knn technique selects the most similar code examples to the input, ensuring that the mutations are contextually relevant and syntactically correct. This approach directly aligns with the task of generating small, meaningful modifications, whereas universal_self_consistency may over-generalize or introduce unrelated changes for broader "robustness."
+
+2. **Precision in Mutation Scope**: Exemplar_selection_knn focuses on applying minor, targeted modifications (e.g., removing a line or parameter) as demonstrated in the provided examples. Universal_self_consistency, however, often introduces larger, semantic changes (e.g., renaming methods, adding error handling) that deviate from the task's goal of subtle mutations.
+
+3. **Consistency with Task Requirements**: The exemplar_selection_knn technique strictly adheres to the instruction to "output solely the mutated code," avoiding extraneous explanations or refactoring. Universal_self_consistency, by contrast, tends to generate verbose, opinionated responses (e.g., justifying readability or best practices) that are irrelevant to the core task of syntactic mutation.

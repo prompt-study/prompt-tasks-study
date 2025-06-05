@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: code_generation | Best: universal_self_consistency vs Other: self_refine
+
+1. **Comprehensive Consensus**: Universal self consistency aggregates multiple reasoning outputs and selects the most coherent solution based on majority consensus. This ensures that the final code is well-rounded and incorporates the best ideas from various iterations, leading to a more robust and complete implementation.
+
+2. **Initial Quality Assurance**: By generating multiple responses and selecting the most consistent one, universal self consistency ensures that the initial code quality is high. This reduces the need for iterative refinement and feedback loops, as the selected response is already well-structured and logically sound.
+
+3. **Contextual Coherence**: Universal self consistency maintains contextual coherence across different parts of the code by ensuring that the selected solution aligns with the majority view. This prevents inconsistencies and ensures that all methods and fields are logically connected and function together seamlessly.

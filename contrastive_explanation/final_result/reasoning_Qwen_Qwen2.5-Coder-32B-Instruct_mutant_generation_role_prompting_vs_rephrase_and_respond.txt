@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: mutant_generation | Best: role_prompting vs Other: rephrase_and_respond
+
+1. **Focused Output**: Role prompting directs the model to provide only the mutated code, avoiding unnecessary explanations or rephrasing. This focus ensures that the output is precisely what is needed for mutant generation, leading to higher quality and relevance.
+
+2. **Contextual Understanding**: By assigning a specific role (e.g., Software Developer, Quality Assurance Engineer), the model gains a contextual understanding of the task, which helps it make more semantically meaningful changes. This context guides the model to generate mutants that are more likely to be effective in assessing test suite robustness.
+
+3. **Minimalistic Changes**: The role-based instructions emphasize making small changes, which the model interprets accurately. In contrast, the rephrase_and_respond technique often results in the model adding formatting changes or other non-essential modifications, diluting the effectiveness of the mutants.

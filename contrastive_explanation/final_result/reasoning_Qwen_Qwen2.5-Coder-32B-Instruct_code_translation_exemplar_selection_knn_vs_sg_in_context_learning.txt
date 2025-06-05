@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: code_translation | Best: exemplar_selection_knn vs Other: sg_in_context_learning
+
+1. **Focused Context**: Exemplar selection KNN provides a focused context by selecting the most similar code examples, which helps the model understand the specific nuances and patterns of the code translation task. This targeted context allows the model to generate more accurate and relevant translations compared to the broader, auto-generated examples in sg_in_context_learning.
+
+2. **Relevance and Consistency**: The examples selected by KNN are highly relevant to the specific code snippet being translated, ensuring consistency in style, naming conventions, and method implementations. This relevance helps maintain the intended behavior and semantics of the original code, leading to higher quality translations.
+
+3. **Simplified Output**: Exemplar selection KNN prompts are designed to produce only the translated code, without additional explanations or context. This simplification ensures that the output is clean and directly usable, whereas sg_in_context_learning often includes explanations and additional context, which can lead to cluttered and less precise translations.

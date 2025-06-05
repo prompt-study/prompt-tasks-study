@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: code_question_answering | Best: sg_in_context_learning vs Other: step_back_prompting
+
+1. **Contextual Relevance**: The `sg_in_context_learning` technique generates in-context examples that closely simulate few-shot learning, making the model more attuned to the specific nuances and requirements of the task. This results in responses that are more directly relevant and accurate to the questions asked, as seen in the example where the code correctly addressed the question of replacing multiple substrings.
+
+2. **Focused Evaluation**: The `sg_in_context_learning` prompts are designed to focus on evaluating the code against the question directly, leading to more precise and accurate assessments. This is evident in the example where the code for reading from stdin was correctly identified as true, as the prompt explicitly asked to mark the code as true if it fully answers the question.
+
+3. **Minimal Overthinking**: The `sg_in_context_learning` technique avoids the need for the model to step back and reflect on high-level principles, which can sometimes lead to overthinking or missing the specific details required by the question. This is demonstrated in the example where the code for splitting data into chunks by value was correctly identified as false, as the prompt did not require the model to overanalyze the code beyond its direct relevance to the question.

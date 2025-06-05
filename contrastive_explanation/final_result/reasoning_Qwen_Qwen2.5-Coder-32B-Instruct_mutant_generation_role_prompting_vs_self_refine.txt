@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: mutant_generation | Best: role_prompting vs Other: self_refine
+
+1. **Focused Output**: Role prompting directs the model to provide only the mutated code, avoiding unnecessary explanations or feedback. This focus ensures that the output is concise and directly relevant to the task, leading to higher quality and more accurate mutants.
+
+2. **Consistent Persona**: By assigning a specific persona (e.g., developer, reviewer), role prompting provides a consistent context and style for the model's responses. This consistency helps the model generate mutants that are more aligned with the intended task and expected outcomes, improving the quality of the generated code.
+
+3. **Simplified Instructions**: Role prompting uses simpler and more direct instructions, which are easier for the model to interpret and follow. This simplicity reduces the likelihood of misinterpretation or overcomplication, resulting in more accurate and effective mutants compared to the iterative and self-evaluative process of self-refinement.

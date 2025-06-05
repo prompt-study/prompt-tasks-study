@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: mutant_generation | Best: role_prompting vs Other: analogical_prompting
+
+1. **Focused Task Orientation**: Role prompting assigns a specific persona (e.g., Code Reviewer, Quality Assurance Engineer) to the task, which directs the model to focus on generating mutants as part of a specific professional role. This focus leads to more relevant and contextually appropriate mutations, as the model understands the task's objectives and constraints better.
+
+2. **Simplified Communication**: By assigning a role, the prompts become more straightforward and concise, reducing the need for additional explanations or examples. This simplification allows the model to generate the mutated code directly without unnecessary elaboration, resulting in higher-quality and more precise outputs.
+
+3. **Reduced Redundancy and Explanation**: Analogical prompting often requires the model to provide explanations or examples of how mutations are created, which can lead to redundant information and less focus on the actual mutated code. Role prompting, on the other hand, instructs the model to provide only the mutated code, ensuring that the response is concise and directly relevant to the task, thus improving the evaluation score.

@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: code_question_answering | Best: sg_in_context_learning vs Other: role_prompting
+
+1. **Contextual Relevance**: The `sg_in_context_learning` technique generates in-context examples that are directly relevant to the task at hand, providing a clear framework for evaluating the quality of the code response. This context helps the model understand the specific requirements and expectations, leading to more accurate assessments.
+
+2. **Detailed Feedback**: The `sg_in_context_learning` prompts are designed to elicit detailed feedback by asking the model to explain why a code snippet does or does not fully address the question. This detailed explanation helps in identifying gaps and ensuring the code is comprehensive, which is often lacking in the more straightforward `role_prompting` approach.
+
+3. **Consistent Evaluation Criteria**: The `sg_in_context_learning` technique uses consistent evaluation criteria by providing examples that clearly mark correct and incorrect responses. This consistency helps the model learn to apply the same standards across different questions, resulting in more reliable and uniform responses.

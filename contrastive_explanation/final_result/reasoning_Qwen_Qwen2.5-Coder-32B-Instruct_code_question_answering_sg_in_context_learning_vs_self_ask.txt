@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: code_question_answering | Best: sg_in_context_learning vs Other: self_ask
+
+1. **Direct Relevance**: The `sg_in_context_learning` technique generates in-context examples that are directly relevant to the task at hand, ensuring that the model's responses are closely aligned with the provided context and examples. This direct relevance helps the model to produce more accurate and contextually appropriate answers without the need for additional clarifying questions.
+
+2. **Simplified Workflow**: By using pre-generated in-context examples, `sg_in_context_learning` streamlines the workflow, allowing the model to focus on answering the question based on the given context without the overhead of generating and answering clarifying sub-questions. This simplification can lead to more efficient and focused responses.
+
+3. **Reduced Ambiguity**: The `sg_in_context_learning` technique minimizes ambiguity by providing clear examples that guide the model's understanding of what constitutes a correct answer. This reduces the likelihood of the model misinterpreting the question or providing tangentially related but ultimately incorrect responses, as seen in some of the `self_ask` examples where additional clarifications were necessary.

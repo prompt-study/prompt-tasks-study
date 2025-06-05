@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: code_translation | Best: exemplar_selection_knn vs Other: tree_of_thought
+
+1. **Contextual Relevance**: Exemplar selection KNN provides contextually relevant examples that closely match the input code, allowing the model to generate more accurate translations. By using similar code snippets as examples, the model can better understand the expected structure and conventions in C#, leading to higher quality translations.
+
+2. **Direct Translation Focus**: The exemplar_selection_knn technique focuses directly on translating the provided code without the need for intermediate reasoning steps. This direct approach minimizes the risk of errors that can occur during the iterative process of the tree_of_thought technique, where multiple reasoning paths might introduce inconsistencies or inaccuracies.
+
+3. **Consistent Output Format**: Exemplar selection KNN ensures that the output format is consistent with the provided examples, which are already correctly translated. This consistency helps maintain the expected structure and style in the translated code, resulting in higher evaluation scores compared to the tree_of_thought technique, which may deviate from the expected format due to its more complex reasoning process.

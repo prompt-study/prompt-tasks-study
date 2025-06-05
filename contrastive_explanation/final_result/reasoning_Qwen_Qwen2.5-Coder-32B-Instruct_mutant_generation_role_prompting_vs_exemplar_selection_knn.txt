@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: mutant_generation | Best: role_prompting vs Other: exemplar_selection_knn
+
+1. **Focused Context**: Role prompting provides a clear and specific context by assigning a persona (e.g., Software Architect, Quality Assurance Engineer) to the task, which helps the model understand the intent and scope of the task better. This focused context leads to more relevant and targeted mutant generation.
+
+2. **Guided Communication Style**: By tailoring the communication style to the role, role prompting ensures that the instructions are interpreted in a way that aligns with the responsibilities and expectations of the assigned persona. This guidance helps the model generate mutants that are more likely to be semantically meaningful and useful for assessing test suite robustness.
+
+3. **Consistent Quality**: Role prompting consistently produces high-quality mutants across different examples because it relies on a clear, role-based instruction set rather than the variability and potential noise introduced by selecting similar code examples. This consistency ensures that the generated mutants are reliable and maintain a high evaluation score.

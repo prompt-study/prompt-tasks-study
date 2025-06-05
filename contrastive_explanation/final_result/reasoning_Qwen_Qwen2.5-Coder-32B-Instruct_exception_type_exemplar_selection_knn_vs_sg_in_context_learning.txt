@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: exception_type | Best: exemplar_selection_knn vs Other: sg_in_context_learning
+
+1. **Relevance of Exemplars**: Exemplar selection KNN provides highly relevant and contextually similar code examples, which helps the model understand the specific patterns and exception types associated with similar code snippets. This relevance ensures that the model's predictions are more accurate and contextually appropriate.
+
+2. **Focused Context**: The KNN technique enriches the prompt with the most pertinent examples, focusing the model's attention on the specific task of exception type prediction. This focused context reduces the likelihood of the model being misled by irrelevant or less relevant examples, leading to higher quality responses.
+
+3. **Consistent Exception Handling Practices**: By using KNN to select exemplars, the model is exposed to consistent and well-established exception handling practices from similar codebases. This consistency helps the model learn and apply the correct exception types more reliably, as it is trained on a curated set of high-quality examples.

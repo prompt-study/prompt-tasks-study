@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: mutant_generation | Best: role_prompting vs Other: sg_in_context_learning
+
+1. **Focused Output**: Role prompting directs the model to provide only the mutated code, avoiding unnecessary explanations or additional context. This focus ensures that the output is concise and directly relevant to the task, leading to higher quality and more accurate mutants.
+
+2. **Consistent Style**: By assigning a specific role (e.g., Algorithm Designer, Software Architect), the model is guided to maintain a consistent style and approach in generating mutants. This consistency helps in producing mutants that are small, semantically altered, and syntactically correct, as required by the task.
+
+3. **Reduced Complexity**: Role prompting simplifies the task by removing the need for the model to generate additional markers or labels (e.g., ###original### and ###mutant###). This reduction in complexity allows the model to concentrate on the core task of generating mutants, resulting in higher quality and more reliable outputs.

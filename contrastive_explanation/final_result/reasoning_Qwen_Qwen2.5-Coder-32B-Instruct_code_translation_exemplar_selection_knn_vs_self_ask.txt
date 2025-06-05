@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: code_translation | Best: exemplar_selection_knn vs Other: self_ask
+
+1. **Focused Translation**: The **exemplar_selection_knn** technique performs better because it directly uses similar code examples to enrich the prompt context, ensuring the translation is more focused and accurate. By leveraging existing examples, the model can better understand the nuances of the code structure and semantics, leading to more precise translations.
+
+2. **Minimal Distractors**: The **exemplar_selection_knn** technique minimizes unnecessary clarifications and sub-questions, which can introduce noise and distract from the core task of translation. This streamlined approach allows the model to generate the translated code more efficiently and with higher quality, as it avoids the overhead of additional context-seeking steps.
+
+3. **Consistent Output Format**: The **exemplar_selection_knn** technique maintains a consistent output format by using examples that strictly adhere to the specified format (translated code only). This consistency ensures that the final output is clean and meets the task requirements without any extraneous information, leading to higher evaluation scores.

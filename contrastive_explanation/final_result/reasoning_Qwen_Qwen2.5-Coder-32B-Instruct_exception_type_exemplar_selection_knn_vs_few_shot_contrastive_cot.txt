@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: exception_type | Best: exemplar_selection_knn vs Other: few_shot_contrastive_cot
+
+1. **Contextual Relevance**: Exemplar selection KNN tends to provide more contextually relevant examples by selecting the most similar code snippets based on the k-nearest neighbor approach. This ensures that the examples used to guide the response are closely related to the specific task of exception type prediction, leading to more accurate and contextually appropriate answers.
+
+2. **Direct Example Matching**: KNN directly matches the input code with similar examples from the dataset, which can lead to more precise and direct solutions. This method avoids the need for additional reasoning steps, as the response is derived from actual, relevant code examples that have already been solved correctly, making it more reliable for tasks like exception type prediction.
+
+3. **Reduced Overthinking**: Few-shot contrastive CoT involves providing both correct and incorrect chain-of-thought examples to refine reasoning, which can sometimes lead to overthinking or unnecessary complexity in the response. In contrast, KNN focuses on providing the most similar correct examples, reducing the likelihood of introducing irrelevant or overly detailed reasoning that might not be necessary for the task, thus leading to more straightforward and accurate answers.

@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: mutant_generation | Best: role_prompting vs Other: universal_self_consistency
+
+1. **Focused Output**: Role prompting directs the model to provide a specific type of output (mutated code only) by assigning a clear persona (e.g., Developer, Software Architect). This focus ensures that the response adheres strictly to the task requirements, leading to higher quality and relevant mutants.
+
+2. **Simplicity and Clarity**: The role_prompting technique uses straightforward instructions that are easy to understand and follow, reducing the likelihood of the model deviating from the task. In contrast, the universal_self_consistency technique involves multiple reasoning steps and consensus selection, which can introduce complexity and inconsistencies in the final output.
+
+3. **Minimal Unnecessary Changes**: By assigning a specific role, the model is less likely to introduce unrelated or unnecessary changes to the code, such as formatting improvements or additional functionality. This results in mutants that are more focused on altering the semantic behavior of the code, as intended by the task.

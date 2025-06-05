@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: code_translation | Best: exemplar_selection_knn vs Other: role_prompting
+
+1. **Contextual Consistency**: Exemplar selection KNN provides contextually consistent examples that closely match the input code, allowing the model to generate translations that follow a similar pattern and structure. This consistency is crucial for maintaining the intended behavior and semantics of the code during translation.
+
+2. **Pattern Recognition**: By using a k-nearest neighbor approach, the exemplar selection KNN technique can identify and replicate specific patterns and idioms from the provided examples, leading to more accurate and idiomatic translations. This pattern recognition helps in preserving the style and conventions of the target language.
+
+3. **Reduced Extraneous Information**: Exemplar selection KNN focuses on the most relevant code examples, reducing the inclusion of extraneous information or irrelevant details that might otherwise be introduced by role prompting. This focus ensures that the output is concise and directly addresses the translation task, improving the quality of the translated code.

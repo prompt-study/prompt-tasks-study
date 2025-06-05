@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: exception_type | Best: exemplar_selection_knn vs Other: self_ask
+
+1. **Contextual Relevance**: Exemplar selection using k-nearest neighbors (knn) provides contextually relevant examples that closely match the given code snippet. This helps the model understand the specific patterns and typical exceptions associated with similar code, leading to more accurate predictions.
+
+2. **Reduced Cognitive Load**: The exemplar_selection_knn technique offloads the need for the model to generate clarifying questions by providing directly relevant examples. This reduces cognitive load and allows the model to focus on matching the context rather than decomposing the problem into sub-questions.
+
+3. **Consistent Exception Patterns**: By using similar code examples, the exemplar_selection_knn technique helps the model recognize consistent exception patterns and behaviors. This consistency improves the quality of the response by ensuring that the predicted exception type aligns with common practices in similar code structures.

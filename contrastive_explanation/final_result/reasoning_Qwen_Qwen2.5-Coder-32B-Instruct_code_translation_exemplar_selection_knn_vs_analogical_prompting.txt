@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: code_translation | Best: exemplar_selection_knn vs Other: analogical_prompting
+
+1. **Contextual Relevance**: Exemplar selection KNN provides highly relevant examples that closely match the structure and style of the code to be translated. This context helps the model understand the specific patterns and conventions used in the Java code, leading to more accurate and idiomatic C# translations.
+
+2. **Consistent Syntax Adaptation**: By using similar examples, the KNN technique ensures that the model consistently adapts Java syntax to C# syntax in a way that aligns with the provided examples. This consistency is crucial for preserving the semantics and behavior of the original code during translation.
+
+3. **Reduced Cognitive Load**: The KNN technique minimizes the cognitive load on the model by providing clear, direct examples that the model can follow closely. This approach avoids the need for the model to infer or generate new translation strategies, which can lead to errors or less accurate translations, as seen in the analogical prompting technique.

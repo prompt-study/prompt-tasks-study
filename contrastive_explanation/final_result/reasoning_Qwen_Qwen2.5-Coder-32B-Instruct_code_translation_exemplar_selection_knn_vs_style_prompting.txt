@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: code_translation | Best: exemplar_selection_knn vs Other: style_prompting
+
+1. **Contextual Relevance**: Exemplar selection KNN provides the model with relevant examples that closely match the input code snippet, allowing it to generate a more accurate and contextually appropriate translation. This technique leverages the similarity of past examples to guide the translation process, ensuring that the output adheres to the patterns and structures seen in the provided examples.
+
+2. **Consistent Transformation Patterns**: By using KNN to select exemplars, the model learns consistent transformation patterns from Java to C#. This consistency is crucial for maintaining the intended behavior and semantics of the code, as seen in the examples where the output consistently follows a specific pattern of using `InvokeOptions` and `RequestMarshaller`.
+
+3. **Enhanced Semantic Understanding**: The exemplar selection KNN technique enriches the prompt context with semantically similar code examples, which helps the model better understand the underlying logic and structure of the Java code. This deeper understanding allows the model to produce more precise and functionally equivalent C# code, as opposed to style_prompting, which focuses more on the tone and format rather than the semantic content.

@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: code_translation | Best: exemplar_selection_knn vs Other: step_back_prompting
+
+1. **Contextual Relevance**: Exemplar selection knn provides contextually relevant examples that closely match the input code snippet, allowing the model to generate highly accurate translations. In contrast, step back prompting focuses on general principles, which can lead to less precise translations as the model may not have specific examples to reference.
+
+2. **Direct Translation Focus**: The exemplar_selection_knn technique directly focuses on translating the code by providing similar examples, ensuring that the output is a direct and accurate translation of the input. Step back prompting, however, includes additional steps of reflection and explanation, which can introduce unnecessary details and reduce the quality of the translated code.
+
+3. **Consistency in Style and Naming Conventions**: By using similar examples, exemplar_selection_knn ensures that the translated code adheres to the style and naming conventions of the target language consistently. Step back prompting, while it mentions naming conventions, does not enforce them as strictly, leading to inconsistencies in the translated code.

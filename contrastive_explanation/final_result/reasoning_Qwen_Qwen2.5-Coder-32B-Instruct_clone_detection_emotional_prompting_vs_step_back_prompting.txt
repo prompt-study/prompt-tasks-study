@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: clone_detection | Best: emotional_prompting vs Other: step_back_prompting
+
+1. **Focused Output**: Emotional prompting directs the model to focus on delivering a clear and concise answer, which is crucial for tasks like clone detection where the output needs to be strictly TRUE or FALSE. The emotional prompts emphasize the importance of attention to detail and final verification, ensuring the model does not provide unnecessary explanations or deviate from the required format.
+
+2. **Reduced Redundancy**: Emotional prompts avoid the redundancy of asking the model to first explain the criteria for clone detection before making a judgment. This streamlined approach allows the model to directly assess the code snippets and provide the answer without additional steps, which can sometimes lead to confusion or irrelevant information in the response.
+
+3. **Clarity and Precision**: Emotional prompts use language that encourages clarity and precision in the response. Phrases like "Let your attention to detail shine through" and "Are you sure that's your final answer?" reinforce the need for accuracy and thoroughness, which are essential for correctly identifying code clones. This focus on precision helps in maintaining the quality of the output by minimizing the chances of errors or misinterpretations.

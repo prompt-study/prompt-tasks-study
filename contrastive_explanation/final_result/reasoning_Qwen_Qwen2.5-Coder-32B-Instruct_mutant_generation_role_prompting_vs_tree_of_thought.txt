@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: mutant_generation | Best: role_prompting vs Other: tree_of_thought
+
+1. **Focused Task Execution**: Role prompting assigns a specific persona (e.g., Software Developer or Code Reviewer) to the task, which helps the model to focus on generating a single, relevant mutant without getting sidetracked by unnecessary thought processes. This focused approach leads to higher-quality and more relevant mutants.
+
+2. **Simplified Instructions**: Role prompting provides straightforward instructions that are easy to follow, such as "Generate a mutant of the code by making small changes." This simplicity allows the model to quickly understand the task and produce a mutant with minimal alterations, as required. In contrast, the tree_of_thought technique involves multiple steps and iterative reasoning, which can complicate the task and lead to less effective mutants.
+
+3. **Direct Output Requirement**: Role prompting explicitly instructs the model to provide only the mutated code, without any additional commentary or intermediate steps. This direct output requirement ensures that the response is concise and directly addresses the task, resulting in higher evaluation scores. The tree_of_thought technique, on the other hand, includes reminders about iterative processes and intermediate evaluations, which can confuse the model and lead to less focused and less effective outputs.

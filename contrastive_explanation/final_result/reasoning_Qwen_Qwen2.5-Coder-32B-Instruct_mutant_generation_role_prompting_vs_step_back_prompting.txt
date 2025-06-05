@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: mutant_generation | Best: role_prompting vs Other: step_back_prompting
+
+1. **Focused Output**: Role prompting directs the model to provide only the mutated code, avoiding unnecessary explanations or additional content. This focus ensures the output is concise and directly relevant to the task, leading to higher quality and more accurate mutants.
+
+2. **Contextual Understanding**: By assigning a specific role (e.g., Code Reviewer, DevOps Engineer), the model gains a contextual understanding of the task, which helps it make more informed and relevant changes. This role-specific context guides the model to generate mutants that are semantically altered but syntactically correct, improving the evaluation score.
+
+3. **Reduced Overthinking**: Role prompting minimizes overthinking by providing a clear directive and persona, which helps the model avoid complex or tangential reasoning. This streamlined approach ensures that the model focuses on making small, targeted changes rather than proposing extensive or unrelated modifications, resulting in more effective mutants.

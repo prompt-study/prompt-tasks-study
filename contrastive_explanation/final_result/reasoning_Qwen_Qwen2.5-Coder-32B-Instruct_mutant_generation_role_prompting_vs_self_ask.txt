@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: mutant_generation | Best: role_prompting vs Other: self_ask
+
+1. **Focused Output**: Role prompting directs the model to a specific persona (e.g., Software Architect, Quality Assurance Engineer) which naturally steers the model to provide the desired output without unnecessary clarifications or questions. This focus ensures that the model generates the mutated code directly, as required by the task.
+
+2. **Clarity in Instructions**: By assigning a role, the instructions become clearer and more actionable for the model. The role provides context that helps the model understand the task's intent and the type of response expected, reducing the likelihood of the model asking for additional details or making assumptions that could lead to irrelevant clarifications.
+
+3. **Reduced Overthinking**: Role prompting minimizes overthinking by the model, as it is guided by the persona's typical responsibilities and communication style. This approach helps the model to quickly generate a semantically altered version of the code without getting sidetracked by unnecessary questions or considerations, thus maintaining the quality and relevance of the response.

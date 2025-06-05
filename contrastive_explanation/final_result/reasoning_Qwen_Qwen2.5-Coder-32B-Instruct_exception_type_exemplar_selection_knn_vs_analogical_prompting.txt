@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: exception_type | Best: exemplar_selection_knn vs Other: analogical_prompting
+
+1. **Contextual Relevance**: Exemplar selection KNN provides contextually relevant examples by selecting the most similar code snippets, which helps the model understand the specific nuances and patterns of the code. This direct relevance ensures that the model's response is more aligned with the actual requirements of the task, leading to higher quality and accurate exception type predictions.
+
+2. **Specificity in Exception Handling**: KNN-based exemplar selection focuses on specific instances of exception handling in similar code, allowing the model to learn the exact types of exceptions that are typically raised in those contexts. This specificity helps in predicting the most appropriate exception type, as opposed to analogical prompting which may generalize too broadly.
+
+3. **Reduced Overfitting to Analogies**: Analogical prompting can sometimes lead to overfitting to the analogies provided, where the model might interpret the analogy too literally or miss the specific details of the code. KNN, on the other hand, relies on actual code examples, reducing the risk of misinterpretation and ensuring that the model's response is grounded in real-world coding practices.

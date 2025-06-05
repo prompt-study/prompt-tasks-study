@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: exception_type | Best: exemplar_selection_knn vs Other: role_prompting
+
+1. **Contextual Relevance**: Exemplar selection KNN provides contextually relevant examples by selecting the most similar code snippets, which helps the model understand the specific patterns and exceptions associated with similar code structures. This leads to more accurate predictions of the correct exception type.
+
+2. **Pattern Recognition**: By using a k-nearest neighbor approach, the technique can identify common patterns and error handling practices in the provided examples, allowing the model to generalize better and predict the most likely exception type based on the code's behavior and structure.
+
+3. **Reduced Bias from Persona**: Role prompting introduces a persona (e.g., Security Engineer, Quality Assurance Engineer) which can bias the model's response towards the persona's typical concerns and knowledge, potentially leading to less accurate or contextually appropriate exception type predictions compared to the unbiased, context-driven approach of exemplar selection KNN.

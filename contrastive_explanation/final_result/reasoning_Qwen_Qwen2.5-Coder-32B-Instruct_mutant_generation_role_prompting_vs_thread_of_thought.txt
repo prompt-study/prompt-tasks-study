@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: mutant_generation | Best: role_prompting vs Other: thread_of_thought
+
+1. **Focused Output**: Role prompting directs the model to provide only the mutated code, avoiding unnecessary explanations or breakdowns. This focus ensures the response is concise and directly relevant to the task, leading to higher quality and more accurate mutants.
+
+2. **Contextual Understanding**: By assigning a specific role (e.g., Software Architect, Senior Software Engineer, Quality Assurance Engineer), the model better understands the context and expectations of the task. This role-specific context helps the model generate mutants that are semantically altered but syntactically correct, improving the quality of the output.
+
+3. **Minimal Distraction**: Thread of thought prompts encourage a detailed, step-by-step analysis, which can introduce distractions and lead to changes that go beyond small semantic alterations. Role prompting, on the other hand, keeps the model focused on the task at hand, reducing the likelihood of introducing unrelated or excessive modifications.

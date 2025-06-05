@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: exception_type | Best: exemplar_selection_knn vs Other: step_back_prompting
+
+1. **Contextual Relevance**: Exemplar selection KNN provides contextually relevant examples by selecting the most similar code snippets, which helps the model understand the specific scenario and the type of exception that is typically used in similar situations. This direct context is more effective than a general overview provided by step-back prompting.
+
+2. **Focused Guidance**: The exemplar_selection_knn technique focuses the model's attention on specific, relevant code examples, which can lead to more accurate predictions of the appropriate exception type. In contrast, step-back prompting requires the model to generalize from a broader set of principles, which can sometimes lead to less precise answers.
+
+3. **Immediate Application**: Exemplar selection KNN allows the model to immediately apply learned patterns from similar examples to the current code snippet, reducing the need for abstract reasoning. This immediate application of learned patterns can result in higher-quality and more accurate responses compared to the step-back prompting technique, which relies on the model's ability to abstract and apply general principles.

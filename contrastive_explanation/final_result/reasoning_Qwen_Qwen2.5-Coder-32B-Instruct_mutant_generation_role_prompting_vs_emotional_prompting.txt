@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: mutant_generation | Best: role_prompting vs Other: emotional_prompting
+
+1. **Focused Instructions**: Role prompting provides clear, task-specific instructions by assigning a persona (e.g., Quality Assurance Engineer) that guides the model to focus on generating small, semantically altered code. This specificity helps the model understand the exact requirements of mutant generation, leading to more accurate and relevant mutations.
+
+2. **Minimal Extraneous Information**: Role prompting avoids the inclusion of unnecessary emotional or motivational language, which can distract the model from the core task. By keeping the instructions straightforward and task-oriented, the model can produce concise and direct outputs, such as the mutated code, without additional commentary or explanations.
+
+3. **Consistent Output Format**: Role prompting ensures that the model adheres to the specified format by emphasizing the need to provide only the mutated code. This consistency is crucial for mutant generation, where the output must be a direct, altered version of the input code without any additional text or explanations, ensuring the evaluation score remains high.

@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: code_question_answering | Best: sg_in_context_learning vs Other: universal_self_consistency
+
+1. **Contextual Clarity**: The `sg_in_context_learning` technique generates in-context examples that simulate few-shot learning, providing clear and relevant examples that help the model understand the task requirements more accurately. This clarity allows the model to make more precise judgments about whether the provided code fully answers the question.
+
+2. **Direct Evaluation**: The prompts in `sg_in_context_learning` are designed to directly evaluate the code against the question, using simple and straightforward instructions like "Decide if the code fully resolves the question." This direct approach minimizes ambiguity and ensures that the model focuses on the core task of code question answering without additional layers of reasoning.
+
+3. **Simplified Reasoning**: The `sg_in_context_learning` prompts do not require the model to aggregate multiple reasoning outputs, which can introduce inconsistencies or errors. By focusing on a single evaluation, the technique reduces cognitive load on the model, leading to more reliable and accurate responses.

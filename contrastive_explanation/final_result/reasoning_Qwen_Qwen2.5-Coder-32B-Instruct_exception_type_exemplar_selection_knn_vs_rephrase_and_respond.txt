@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: exception_type | Best: exemplar_selection_knn vs Other: rephrase_and_respond
+
+1. **Contextual Relevance**: Exemplar selection KNN leverages similar code examples to provide contextually relevant information, which helps the model understand the specific exception types that are typically used in similar scenarios. This contextual guidance often leads to more accurate predictions compared to rephrasing alone, which may not capture the nuances of the codebase.
+
+2. **Consistency in Exception Handling**: By using KNN to select relevant examples, the technique ensures that the model observes consistent patterns in exception handling within similar code structures. This consistency can help the model predict the most appropriate exception type more reliably, as it is based on observed practices rather than a generic rephrasing of the question.
+
+3. **Reduced Ambiguity**: Exemplar selection KNN reduces ambiguity by providing concrete examples that the model can directly reference. This direct reference minimizes the risk of the model making assumptions or choosing an exception type based on a broader, less specific understanding of the code. In contrast, rephrasing the question may introduce ambiguity, leading to less precise predictions.

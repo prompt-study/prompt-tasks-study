@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: code_summarization | Best: sg_in_context_learning vs Other: role_prompting
+
+1. **Contextual Examples**: The **sg_in_context_learning** technique provides in-context examples that simulate few-shot learning, allowing the model to understand the desired format and style of the summary directly from the examples. This guidance helps the model generate more accurate and concise summaries that align with the provided model.
+
+2. **Clear Instructions**: The prompts in **sg_in_context_learning** are more explicit in instructing the model to provide a concise, one-sentence summary using the provided examples as a model. This clarity reduces ambiguity and ensures that the model focuses on the essential aspects of the code, leading to higher-quality summaries.
+
+3. **Reduced Role Influence**: By not assigning a specific role (like Technical Lead or Data Scientist), **sg_in_context_learning** avoids potential biases or assumptions that might come with a persona. This neutrality allows the model to focus solely on summarizing the code without being influenced by the communication style or expectations associated with a particular role.

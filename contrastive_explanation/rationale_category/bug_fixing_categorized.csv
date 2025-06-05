@@ -1,0 +1,13 @@
+Task,Reason,Frequency,Category
+bug_fixing,Focused Correction,1,Clarity / Structure
+bug_fixing,Readability and Formatting,1,Clarity / Structure
+bug_fixing,Higher Evaluation Scores,1,Evaluation / Performance
+bug_fixing,Structured Example Guidance,1,Clarity / Structure
+bug_fixing,Consistency in Task Focus,1,Clarity / Structure
+bug_fixing,Efficiency in Problem-Solving,1,Efficiency / Generalization
+bug_fixing,Contextual Understanding,1,Relevance / Context Understanding
+bug_fixing,Example-Based Learning,1,Guided Examples / Instruction
+bug_fixing,Direct Correction,1,Clarity / Structure
+bug_fixing,Clear In-Context Examples,1,Relevance / Context Understanding
+bug_fixing,Consistent Output Structure,1,Clarity / Structure
+bug_fixing,Focused Task Execution,1,Clarity / Structure

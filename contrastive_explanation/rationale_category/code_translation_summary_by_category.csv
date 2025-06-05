@@ -1,0 +1,8 @@
+Task,Category,Frequency
+code_translation,Clarity / Structure,2
+code_translation,Efficiency / Generalization,1
+code_translation,Guided Examples / Instruction,1
+code_translation,Noise / Ambiguity Reduction,1
+code_translation,Precision / Correctness,1
+code_translation,Relevance / Context Understanding,3
+code_translation,Uncategorized,3

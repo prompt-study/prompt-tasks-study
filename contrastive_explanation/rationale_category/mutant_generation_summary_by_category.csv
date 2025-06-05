@@ -1,0 +1,7 @@
+Task,Category,Frequency
+mutant_generation,Clarity / Structure,4
+mutant_generation,Efficiency / Generalization,1
+mutant_generation,Noise / Ambiguity Reduction,1
+mutant_generation,Precision / Correctness,1
+mutant_generation,Relevance / Context Understanding,4
+mutant_generation,Uncategorized,1

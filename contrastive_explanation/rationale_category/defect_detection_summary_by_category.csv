@@ -1,0 +1,7 @@
+Task,Category,Frequency
+defect_detection,Clarity / Structure,6
+defect_detection,Comprehensiveness / Robustness,1
+defect_detection,Evaluation / Performance,1
+defect_detection,Precision / Correctness,1
+defect_detection,Reasoning / Analysis,1
+defect_detection,Relevance / Context Understanding,2

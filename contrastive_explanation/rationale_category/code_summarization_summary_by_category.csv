@@ -1,0 +1,7 @@
+Task,Category,Frequency
+code_summarization,Clarity / Structure,3
+code_summarization,Efficiency / Generalization,1
+code_summarization,Evaluation / Performance,2
+code_summarization,Noise / Ambiguity Reduction,1
+code_summarization,Relevance / Context Understanding,3
+code_summarization,Uncategorized,2

@@ -1,0 +1,12 @@
+Task,Reason,Frequency,Category
+exception_type,Contextual Relevance,2,Relevance / Context Understanding
+exception_type,Efficiency,1,Efficiency / Generalization
+exception_type,Consistency,1,Uncategorized
+exception_type,Contextual Similarity,1,Relevance / Context Understanding
+exception_type,Task-Specific Guidance,1,Precision / Correctness
+exception_type,Consistency in Formatting,1,Clarity / Structure
+exception_type,Focused Learning,1,Clarity / Structure
+exception_type,Reduced Ambiguity,1,Noise / Ambiguity Reduction
+exception_type,Focused Restatement,1,Clarity / Structure
+exception_type,Streamlined Response,1,Clarity / Structure
+exception_type,Enhanced Clarity and Format Adherence,1,Clarity / Structure

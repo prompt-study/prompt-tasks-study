@@ -1,0 +1,13 @@
+Task,Reason,Frequency,Category
+defect_detection,Detailed Step-by-Step Analysis,1,Precision / Correctness
+defect_detection,Contextual Commentary,1,Relevance / Context Understanding
+defect_detection,Comprehensive Conclusion,1,Comprehensiveness / Robustness
+defect_detection,Structured Step-by-Step Analysis,1,Clarity / Structure
+defect_detection,Clear Summaries and Insights,1,Clarity / Structure
+defect_detection,Focused Defect Identification,1,Clarity / Structure
+defect_detection,Structured Analysis,1,Clarity / Structure
+defect_detection,Clear Explanation,1,Clarity / Structure
+defect_detection,Step-by-Step Reasoning,1,Reasoning / Analysis
+defect_detection,Clear Role Orientation,1,Clarity / Structure
+defect_detection,Contextual Consistency,1,Relevance / Context Understanding
+defect_detection,Reduced Overhead in Self-Evaluation,1,Evaluation / Performance

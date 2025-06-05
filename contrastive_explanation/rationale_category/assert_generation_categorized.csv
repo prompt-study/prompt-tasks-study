@@ -1,0 +1,11 @@
+Task,Reason,Frequency,Category
+assert_generation,Contextual Relevance,3,Relevance / Context Understanding
+assert_generation,Focused Prompting,1,Clarity / Structure
+assert_generation,Consistent Quality,1,Uncategorized
+assert_generation,Consistency in Patterns,1,Uncategorized
+assert_generation,Precision in Assertion Generation,1,Precision / Correctness
+assert_generation,Focused Knowledge Retrieval,1,Relevance / Context Understanding
+assert_generation,Reduced Ambiguity,1,Noise / Ambiguity Reduction
+assert_generation,Relevant Context Retrieval,1,Relevance / Context Understanding
+assert_generation,Domain-Specific Guidance,1,Relevance / Context Understanding
+assert_generation,Noise Reduction and Consistency,1,Noise / Ambiguity Reduction

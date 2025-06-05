@@ -1,0 +1,7 @@
+Task,Category,Frequency
+exception_type,Clarity / Structure,5
+exception_type,Efficiency / Generalization,1
+exception_type,Noise / Ambiguity Reduction,1
+exception_type,Precision / Correctness,1
+exception_type,Relevance / Context Understanding,3
+exception_type,Uncategorized,1

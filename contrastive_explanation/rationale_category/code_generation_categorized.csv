@@ -1,0 +1,11 @@
+Task,Reason,Frequency,Category
+code_generation,Contextual Understanding,3,Relevance / Context Understanding
+code_generation,Comprehensive Implementation,1,Comprehensiveness / Robustness
+code_generation,Consistency and Coherence,1,Clarity / Structure
+code_generation,Consensus-Driven Quality,1,Uncategorized
+code_generation,Robustness to Variability,1,Comprehensiveness / Robustness
+code_generation,Adaptability to Task Requirements,1,Relevance / Context Understanding
+code_generation,Improved Code Generation,1,Uncategorized
+code_generation,Consensus Aggregation,1,Efficiency / Generalization
+code_generation,Broader Context Understanding,1,Relevance / Context Understanding
+code_generation,Adaptive Reasoning and Flexibility,1,Efficiency / Generalization

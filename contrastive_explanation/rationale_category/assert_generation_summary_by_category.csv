@@ -1,0 +1,6 @@
+Task,Category,Frequency
+assert_generation,Clarity / Structure,1
+assert_generation,Noise / Ambiguity Reduction,2
+assert_generation,Precision / Correctness,1
+assert_generation,Relevance / Context Understanding,6
+assert_generation,Uncategorized,2

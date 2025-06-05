@@ -1,0 +1,13 @@
+Task,Reason,Frequency,Category
+code_summarization,Conciseness,1,Clarity / Structure
+code_summarization,Relevance,1,Relevance / Context Understanding
+code_summarization,Evaluation Scores,1,Evaluation / Performance
+code_summarization,Conciseness Focus,1,Clarity / Structure
+code_summarization,Task Alignment,1,Relevance / Context Understanding
+code_summarization,Evaluation Metric Fit,1,Evaluation / Performance
+code_summarization,Clear Task Definition,1,Clarity / Structure
+code_summarization,Targeted Response,1,Uncategorized
+code_summarization,Reduced Ambiguity,1,Noise / Ambiguity Reduction
+code_summarization,Concise Template Alignment,1,Relevance / Context Understanding
+code_summarization,Reduced Cognitive Overhead,1,Efficiency / Generalization
+code_summarization,Emphasis on Output Style,1,Uncategorized

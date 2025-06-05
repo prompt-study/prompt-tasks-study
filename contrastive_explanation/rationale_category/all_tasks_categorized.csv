@@ -1,0 +1,114 @@
+Task,Reason,Frequency,Category
+assert_generation,Focused Prompting,1,Clarity / Structure
+assert_generation,Reduced Ambiguity,1,Noise / Ambiguity Reduction
+assert_generation,Noise Reduction and Consistency,1,Noise / Ambiguity Reduction
+assert_generation,Precision in Assertion Generation,1,Precision / Correctness
+assert_generation,Contextual Relevance,3,Relevance / Context Understanding
+assert_generation,Focused Knowledge Retrieval,1,Relevance / Context Understanding
+assert_generation,Relevant Context Retrieval,1,Relevance / Context Understanding
+assert_generation,Domain-Specific Guidance,1,Relevance / Context Understanding
+assert_generation,Consistent Quality,1,Uncategorized
+assert_generation,Consistency in Patterns,1,Uncategorized
+bug_fixing,Focused Correction,1,Clarity / Structure
+bug_fixing,Readability and Formatting,1,Clarity / Structure
+bug_fixing,Structured Example Guidance,1,Clarity / Structure
+bug_fixing,Consistency in Task Focus,1,Clarity / Structure
+bug_fixing,Direct Correction,1,Clarity / Structure
+bug_fixing,Consistent Output Structure,1,Clarity / Structure
+bug_fixing,Focused Task Execution,1,Clarity / Structure
+bug_fixing,Efficiency in Problem-Solving,1,Efficiency / Generalization
+bug_fixing,Higher Evaluation Scores,1,Evaluation / Performance
+bug_fixing,Example-Based Learning,1,Guided Examples / Instruction
+bug_fixing,Contextual Understanding,1,Relevance / Context Understanding
+bug_fixing,Clear In-Context Examples,1,Relevance / Context Understanding
+clone_detection,Simplified Response Requirement,1,Clarity / Structure
+clone_detection,Engagement and Clarity,1,Clarity / Structure
+clone_detection,Structured Problem Decomposition,1,Clarity / Structure
+clone_detection,Clear and Direct Focus,1,Clarity / Structure
+clone_detection,Reduced Cognitive Load,1,Efficiency / Generalization
+clone_detection,Reduced Cognitive Overhead,1,Efficiency / Generalization
+clone_detection,Detailed Justification,1,Precision / Correctness
+clone_detection,Task Decomposition,1,Reasoning / Analysis
+clone_detection,Contextual Clarity,1,Relevance / Context Understanding
+clone_detection,Contextual Understanding,1,Relevance / Context Understanding
+clone_detection,Clarification Through Questions,1,Uncategorized
+clone_detection,Encouragement of Detail Orientation,1,Uncategorized
+code_generation,Consistency and Coherence,1,Clarity / Structure
+code_generation,Comprehensive Implementation,1,Comprehensiveness / Robustness
+code_generation,Robustness to Variability,1,Comprehensiveness / Robustness
+code_generation,Consensus Aggregation,1,Efficiency / Generalization
+code_generation,Adaptive Reasoning and Flexibility,1,Efficiency / Generalization
+code_generation,Contextual Understanding,3,Relevance / Context Understanding
+code_generation,Adaptability to Task Requirements,1,Relevance / Context Understanding
+code_generation,Broader Context Understanding,1,Relevance / Context Understanding
+code_generation,Consensus-Driven Quality,1,Uncategorized
+code_generation,Improved Code Generation,1,Uncategorized
+code_question_answering,Simplicity and Directness,1,Clarity / Structure
+code_question_answering,Simplified Decision-Making,1,Clarity / Structure
+code_question_answering,Focus on Core Requirements,1,Clarity / Structure
+code_question_answering,Enhanced Conciseness,1,Clarity / Structure
+code_question_answering,Consistent Output Format,1,Clarity / Structure
+code_question_answering,Consensus-Driven Accuracy,1,Evaluation / Performance
+code_question_answering,Robustness to Noise,1,Noise / Ambiguity Reduction
+code_question_answering,Contextual Relevance,1,Relevance / Context Understanding
+code_question_answering,Improved Contextual Understanding,1,Relevance / Context Understanding
+code_question_answering,Direct Role Alignment,1,Relevance / Context Understanding
+code_question_answering,Reduced Overhead,1,Uncategorized
+code_question_answering,Consistent Output Selection,1,Uncategorized
+code_summarization,Conciseness,1,Clarity / Structure
+code_summarization,Conciseness Focus,1,Clarity / Structure
+code_summarization,Clear Task Definition,1,Clarity / Structure
+code_summarization,Reduced Cognitive Overhead,1,Efficiency / Generalization
+code_summarization,Evaluation Scores,1,Evaluation / Performance
+code_summarization,Evaluation Metric Fit,1,Evaluation / Performance
+code_summarization,Reduced Ambiguity,1,Noise / Ambiguity Reduction
+code_summarization,Relevance,1,Relevance / Context Understanding
+code_summarization,Task Alignment,1,Relevance / Context Understanding
+code_summarization,Concise Template Alignment,1,Relevance / Context Understanding
+code_summarization,Targeted Response,1,Uncategorized
+code_summarization,Emphasis on Output Style,1,Uncategorized
+code_translation,Focused Output,1,Clarity / Structure
+code_translation,Focused Learning,1,Clarity / Structure
+code_translation,Efficiency in Learning,1,Efficiency / Generalization
+code_translation,Consistency with Examples,1,Guided Examples / Instruction
+code_translation,Reduced Noise and Aggregation Overhead,1,Noise / Ambiguity Reduction
+code_translation,Consistency Through Specific Examples,1,Precision / Correctness
+code_translation,Contextual Similarity,2,Relevance / Context Understanding
+code_translation,Targeted Contextual Guidance,1,Relevance / Context Understanding
+code_translation,Reduced Complexity,1,Uncategorized
+code_translation,Consistency in Translation,1,Uncategorized
+code_translation,Efficient Generalization,1,Uncategorized
+defect_detection,Structured Step-by-Step Analysis,1,Clarity / Structure
+defect_detection,Clear Summaries and Insights,1,Clarity / Structure
+defect_detection,Focused Defect Identification,1,Clarity / Structure
+defect_detection,Structured Analysis,1,Clarity / Structure
+defect_detection,Clear Explanation,1,Clarity / Structure
+defect_detection,Clear Role Orientation,1,Clarity / Structure
+defect_detection,Comprehensive Conclusion,1,Comprehensiveness / Robustness
+defect_detection,Reduced Overhead in Self-Evaluation,1,Evaluation / Performance
+defect_detection,Detailed Step-by-Step Analysis,1,Precision / Correctness
+defect_detection,Step-by-Step Reasoning,1,Reasoning / Analysis
+defect_detection,Contextual Commentary,1,Relevance / Context Understanding
+defect_detection,Contextual Consistency,1,Relevance / Context Understanding
+exception_type,Consistency in Formatting,1,Clarity / Structure
+exception_type,Focused Learning,1,Clarity / Structure
+exception_type,Focused Restatement,1,Clarity / Structure
+exception_type,Streamlined Response,1,Clarity / Structure
+exception_type,Enhanced Clarity and Format Adherence,1,Clarity / Structure
+exception_type,Efficiency,1,Efficiency / Generalization
+exception_type,Reduced Ambiguity,1,Noise / Ambiguity Reduction
+exception_type,Task-Specific Guidance,1,Precision / Correctness
+exception_type,Contextual Relevance,2,Relevance / Context Understanding
+exception_type,Contextual Similarity,1,Relevance / Context Understanding
+exception_type,Consistency,1,Uncategorized
+mutant_generation,Focused Output,1,Clarity / Structure
+mutant_generation,Minimal Distraction,1,Clarity / Structure
+mutant_generation,Focused Guidance,1,Clarity / Structure
+mutant_generation,Task-Focused Directives,1,Clarity / Structure
+mutant_generation,Reduced Cognitive Aggregation,1,Efficiency / Generalization
+mutant_generation,Reduced Ambiguity,1,Noise / Ambiguity Reduction
+mutant_generation,Precision in Instructions,1,Precision / Correctness
+mutant_generation,Contextual Relevance,2,Relevance / Context Understanding
+mutant_generation,Contextual Understanding,1,Relevance / Context Understanding
+mutant_generation,Clear Role Alignment,1,Relevance / Context Understanding
+mutant_generation,Consistency in Mutations,1,Uncategorized

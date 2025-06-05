@@ -1,0 +1,50 @@
+Task,Category,Frequency
+assert_generation,Relevance / Context Understanding,6
+assert_generation,Noise / Ambiguity Reduction,2
+assert_generation,Clarity / Structure,1
+assert_generation,Precision / Correctness,1
+bug_fixing,Clarity / Structure,7
+bug_fixing,Relevance / Context Understanding,2
+bug_fixing,Efficiency / Generalization,1
+bug_fixing,Evaluation / Performance,1
+bug_fixing,Guided Examples / Instruction,1
+clone_detection,Clarity / Structure,4
+clone_detection,Efficiency / Generalization,2
+clone_detection,Relevance / Context Understanding,2
+clone_detection,Precision / Correctness,1
+clone_detection,Reasoning / Analysis,1
+code_generation,Relevance / Context Understanding,5
+code_generation,Comprehensiveness / Robustness,2
+code_generation,Efficiency / Generalization,2
+code_generation,Clarity / Structure,1
+code_question_answering,Clarity / Structure,5
+code_question_answering,Relevance / Context Understanding,3
+code_question_answering,Evaluation / Performance,1
+code_question_answering,Noise / Ambiguity Reduction,1
+code_summarization,Clarity / Structure,3
+code_summarization,Relevance / Context Understanding,3
+code_summarization,Evaluation / Performance,2
+code_summarization,Efficiency / Generalization,1
+code_summarization,Noise / Ambiguity Reduction,1
+code_translation,Relevance / Context Understanding,3
+code_translation,Clarity / Structure,2
+code_translation,Efficiency / Generalization,1
+code_translation,Guided Examples / Instruction,1
+code_translation,Noise / Ambiguity Reduction,1
+code_translation,Precision / Correctness,1
+defect_detection,Clarity / Structure,6
+defect_detection,Relevance / Context Understanding,2
+defect_detection,Comprehensiveness / Robustness,1
+defect_detection,Evaluation / Performance,1
+defect_detection,Precision / Correctness,1
+defect_detection,Reasoning / Analysis,1
+exception_type,Clarity / Structure,5
+exception_type,Relevance / Context Understanding,3
+exception_type,Efficiency / Generalization,1
+exception_type,Noise / Ambiguity Reduction,1
+exception_type,Precision / Correctness,1
+mutant_generation,Clarity / Structure,4
+mutant_generation,Relevance / Context Understanding,4
+mutant_generation,Efficiency / Generalization,1
+mutant_generation,Noise / Ambiguity Reduction,1
+mutant_generation,Precision / Correctness,1

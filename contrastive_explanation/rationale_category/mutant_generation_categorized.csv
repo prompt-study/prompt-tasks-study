@@ -1,0 +1,12 @@
+Task,Reason,Frequency,Category
+mutant_generation,Contextual Relevance,2,Relevance / Context Understanding
+mutant_generation,Focused Output,1,Clarity / Structure
+mutant_generation,Contextual Understanding,1,Relevance / Context Understanding
+mutant_generation,Minimal Distraction,1,Clarity / Structure
+mutant_generation,Consistency in Mutations,1,Uncategorized
+mutant_generation,Precision in Instructions,1,Precision / Correctness
+mutant_generation,Focused Guidance,1,Clarity / Structure
+mutant_generation,Reduced Ambiguity,1,Noise / Ambiguity Reduction
+mutant_generation,Clear Role Alignment,1,Relevance / Context Understanding
+mutant_generation,Task-Focused Directives,1,Clarity / Structure
+mutant_generation,Reduced Cognitive Aggregation,1,Efficiency / Generalization

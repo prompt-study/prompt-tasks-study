@@ -1,0 +1,7 @@
+Task,Category,Frequency
+clone_detection,Clarity / Structure,4
+clone_detection,Efficiency / Generalization,2
+clone_detection,Precision / Correctness,1
+clone_detection,Reasoning / Analysis,1
+clone_detection,Relevance / Context Understanding,2
+clone_detection,Uncategorized,2

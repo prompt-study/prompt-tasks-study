@@ -1,0 +1,12 @@
+Task,Reason,Frequency,Category
+code_translation,Contextual Similarity,2,Relevance / Context Understanding
+code_translation,Focused Output,1,Clarity / Structure
+code_translation,Consistency with Examples,1,Guided Examples / Instruction
+code_translation,Reduced Complexity,1,Uncategorized
+code_translation,Consistency in Translation,1,Uncategorized
+code_translation,Efficiency in Learning,1,Efficiency / Generalization
+code_translation,Focused Learning,1,Clarity / Structure
+code_translation,Efficient Generalization,1,Uncategorized
+code_translation,Targeted Contextual Guidance,1,Relevance / Context Understanding
+code_translation,Consistency Through Specific Examples,1,Precision / Correctness
+code_translation,Reduced Noise and Aggregation Overhead,1,Noise / Ambiguity Reduction

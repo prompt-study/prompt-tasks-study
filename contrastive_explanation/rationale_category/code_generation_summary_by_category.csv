@@ -1,0 +1,6 @@
+Task,Category,Frequency
+code_generation,Clarity / Structure,1
+code_generation,Comprehensiveness / Robustness,2
+code_generation,Efficiency / Generalization,2
+code_generation,Relevance / Context Understanding,5
+code_generation,Uncategorized,2

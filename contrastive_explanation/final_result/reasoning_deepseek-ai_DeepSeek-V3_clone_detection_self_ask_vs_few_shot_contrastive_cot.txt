@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: clone_detection | Best: self_ask vs Other: few_shot_contrastive_cot
+
+1. **Clarity in Problem Decomposition**: The **self_ask** technique prompts the model to break down the task into smaller, clarifying questions before answering. This ensures a more thorough understanding of the code snippets' functionality and structure, leading to more accurate clone detection. In contrast, **few_shot_contrastive_cot** relies on pre-defined reasoning chains, which may not adapt as well to the nuances of each unique code comparison.
+
+2. **Reduced Overhead from Examples**: **Self_ask** avoids the need for correct and incorrect examples, which can introduce noise or bias in **few_shot_contrastive_cot**. By focusing on generating sub-questions, the model can directly address the task without being influenced by potentially irrelevant or misleading examples, resulting in cleaner and more precise responses.
+
+3. **Dynamic Reasoning Adaptation**: The **self_ask** technique allows the model to dynamically tailor its reasoning to the specific code snippets being compared. This flexibility ensures that the model can handle a wider variety of code structures and functionalities, whereas **few_shot_contrastive_cot** may be constrained by the fixed reasoning patterns provided in the examples, limiting its adaptability.

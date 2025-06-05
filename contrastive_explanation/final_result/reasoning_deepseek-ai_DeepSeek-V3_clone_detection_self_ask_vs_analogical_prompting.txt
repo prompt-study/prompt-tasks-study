@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: clone_detection | Best: self_ask vs Other: analogical_prompting
+
+1. **Problem Decomposition**: The self_ask technique encourages the model to break down the task into smaller, more manageable sub-questions before answering. This is particularly useful for clone detection, where understanding the functionality, structure, and purpose of each code snippet is critical. By decomposing the problem, the model can systematically compare these aspects, leading to a more accurate assessment of whether the snippets are clones.
+
+2. **Explicit Clarification**: Self_ask prompts the model to ask clarifying questions if there are ambiguities in the task. This ensures that the model fully understands the nuances of the code snippets before making a judgment. In clone detection, where subtle differences in logic or purpose can determine whether snippets are clones, this explicit clarification reduces the risk of misinterpretation.
+
+3. **Structured Reasoning**: The self_ask technique forces the model to follow a structured reasoning process, which includes evaluating the functionality, structure, and intent of the code snippets. This structured approach contrasts with analogical_prompting, which relies on abstract analogies that may not directly apply to the technical specifics of code comparison. The result is a more methodical and reliable analysis.

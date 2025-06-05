@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: clone_detection | Best: self_ask vs Other: exemplar_selection_knn
+
+1. **Problem Decomposition**: The self_ask technique encourages the model to break down the task into smaller, more manageable sub-questions before providing a final answer. This ensures a more thorough analysis of the code snippets, leading to a more accurate determination of whether they are clones. In contrast, exemplar_selection_knn relies on pre-selected examples, which may not always align perfectly with the current task, leading to less precise results.
+
+2. **Contextual Understanding**: Self_ask prompts the model to consider additional clarifying questions, which helps it better understand the nuances of the code snippets, such as their functionality and structure. This deeper contextual understanding is crucial for clone detection, where subtle differences can determine whether code snippets are clones. Exemplar_selection_knn, on the other hand, may miss these nuances by relying on surface-level similarities from the provided examples.
+
+3. **Flexibility in Analysis**: The self_ask technique allows the model to adapt its reasoning based on the specific details of the code snippets, making it more flexible and accurate. It can dynamically adjust its approach to the task, whereas exemplar_selection_knn is constrained by the fixed set of examples it uses for comparison, potentially limiting its ability to handle unique or complex cases effectively.

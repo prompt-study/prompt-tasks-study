@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: bug_fixing | Best: sg_in_context_learning vs Other: universal_self_consistency
+
+1. **Focused Contextual Examples**: The `sg_in_context_learning` technique provides clear, labeled examples of buggy and fixed code, which helps the model understand the specific task of identifying and correcting bugs. This direct guidance ensures the model focuses on the exact problem, whereas `universal_self_consistency` relies on aggregating multiple reasoning outputs, which can dilute the focus and introduce noise.
+
+2. **Simplified Task Structure**: By presenting the task as a straightforward comparison between "bug" and "fix" examples, `sg_in_context_learning` reduces complexity. The model can directly map the input to the desired output format. In contrast, `universal_self_consistency` involves meta-reasoning and consensus-building, which adds unnecessary layers of abstraction for a task as concrete as bug fixing.
+
+3. **Higher Precision in Corrections**: The `sg_in_context_learning` technique often leads to more precise and actionable fixes because it mimics a few-shot learning scenario tailored to the task. The model can apply patterns from the provided examples directly. On the other hand, `universal_self_consistency` may overgeneralize or introduce irrelevant improvements (e.g., renaming variables) that don't address the core bug.

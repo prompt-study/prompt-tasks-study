@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: assert_generation | Best: exemplar_selection_knn vs Other: style_prompting
+
+1. **Contextual Relevance**: The exemplar_selection_knn technique selects the most similar code examples using a k-nearest neighbor approach, which ensures that the generated assertions are contextually relevant to the given code. In contrast, style_prompting focuses on tone and format, which does not provide the necessary contextual understanding for accurate assertion generation.
+
+2. **Precision in Assertion Logic**: By leveraging similar code examples, exemplar_selection_knn can infer the correct assertion logic (e.g., assertEquals, assertNotNull) based on patterns in the provided examples. Style_prompting, however, lacks this precision as it prioritizes stylistic adherence over logical correctness.
+
+3. **Consistency with Testing Frameworks**: The exemplar_selection_knn technique often produces assertions that align with standard testing frameworks (e.g., JUnit), as it learns from examples that follow these conventions. Style_prompting may generate assertions that deviate from these standards, leading to lower evaluation scores.

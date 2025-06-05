@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: bug_fixing | Best: sg_in_context_learning vs Other: role_prompting
+
+1. **Contextual Learning**: The **sg_in_context_learning** technique provides explicit examples of buggy and fixed code, which helps the model understand the task better by simulating few-shot learning. This contextual grounding ensures the model generates more accurate and relevant fixes, as seen in the refined and explained responses. In contrast, **role_prompting** lacks such contextual examples, leading to less precise or incomplete fixes.
+
+2. **Detailed Explanations**: **sg_in_context_learning** encourages the model to include explanations and justifications for the fixes, which improves the quality and clarity of the response. For example, the model often breaks down the changes and highlights best practices. **Role_prompting**, however, typically focuses on providing only the corrected code without elaboration, missing opportunities for deeper understanding.
+
+3. **Error Handling and Robustness**: The **sg_in_context_learning** technique often results in code that includes additional checks (e.g., null checks) and error handling, making the fixes more robust. This is because the model learns from the provided examples to anticipate potential issues. **Role_prompting**, on the other hand, tends to produce minimal fixes that address only the immediate bug, ignoring edge cases or broader improvements.

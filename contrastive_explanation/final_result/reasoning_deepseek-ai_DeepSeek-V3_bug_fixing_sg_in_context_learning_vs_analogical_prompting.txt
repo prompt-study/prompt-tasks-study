@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: bug_fixing | Best: sg_in_context_learning vs Other: analogical_prompting
+
+1. **Explicit Error-Fix Pairing**: The **sg_in_context_learning** technique explicitly pairs buggy code with its corrected version, providing clear examples of what constitutes a bug and how to fix it. This direct contrast helps the model understand the specific changes needed, whereas **analogical_prompting** relies on abstract analogies that may not translate as effectively to concrete code fixes.
+
+2. **Contextual Consistency**: By labeling code snippets as ###bug### and ###fix###, **sg_in_context_learning** maintains a consistent format that reinforces the task's structure. This consistency helps the model focus on the task of identifying and correcting bugs, while **analogical_prompting**'s focus on abstract concepts can distract from the immediate goal of fixing code.
+
+3. **Reduced Ambiguity**: **sg_in_context_learning** provides clear, task-specific examples that reduce ambiguity about what the model should do. In contrast, **analogical_prompting** introduces additional layers of interpretation (e.g., relating code to abstract concepts), which can lead to less precise or off-target responses, as seen in the comparison examples where fixes were often superficial or missed the core issue.

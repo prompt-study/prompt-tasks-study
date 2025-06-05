@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: bug_fixing | Best: sg_in_context_learning vs Other: tree_of_thought
+
+1. **Clear Problem-Solution Pairing**: The **sg_in_context_learning** technique provides explicit examples of buggy and fixed code, which helps the model understand the context and expected corrections. In contrast, **tree_of_thought** lacks such clear examples, leading to less precise or incomplete fixes. The structured pairing in **sg_in_context_learning** ensures the model focuses on the specific issues and their resolutions.
+
+2. **Contextual Guidance**: **sg_in_context_learning** includes detailed explanations of the bugs and fixes, which guide the model to produce more accurate and meaningful corrections. The **tree_of_thought** technique, while iterative, often omits such contextual details, resulting in responses that are either unchanged or minimally adjusted without addressing the root cause.
+
+3. **Avoidance of Redundant Iterations**: **sg_in_context_learning** directly addresses the task with relevant examples, avoiding unnecessary reasoning loops. **tree_of_thought**, with its emphasis on iterative exploration, can lead to overcomplication or stagnation, as seen in the responses where the final output often mirrors the input without meaningful improvement. The direct approach of **sg_in_context_learning** yields more efficient and effective results.

@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: assert_generation | Best: exemplar_selection_knn vs Other: self_ask
+
+1. **Contextual Similarity**: The exemplar_selection_knn technique leverages similar code examples to provide contextually relevant assertions, which helps the model generate accurate assertions by matching patterns from the nearest neighbors. In contrast, self_ask may not have access to such relevant examples, leading to less precise assertions.
+
+2. **Direct Guidance**: Exemplar_selection_knn directly provides assertion templates from similar code snippets, reducing ambiguity and guiding the model to produce correct assertions. Self_ask, while useful for problem decomposition, may introduce unnecessary complexity or misdirection by focusing on sub-questions rather than the final assertion.
+
+3. **Consistency in Formatting**: The exemplar_selection_knn technique ensures the generated assertions follow a consistent format (e.g., using `org.junit.Assert` methods) by drawing from standardized examples. Self_ask, lacking such examples, may produce assertions in non-standard formats (e.g., plain `assert` statements), which are less reliable in a testing context.

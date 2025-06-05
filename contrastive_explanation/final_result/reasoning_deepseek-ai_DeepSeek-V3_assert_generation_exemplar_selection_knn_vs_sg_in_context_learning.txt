@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: assert_generation | Best: exemplar_selection_knn vs Other: sg_in_context_learning
+
+1. **Contextual Relevance**: The exemplar_selection_knn technique selects the most similar code examples using a k-nearest neighbor approach, ensuring that the provided examples are highly relevant to the task at hand. This relevance helps the model generate more accurate assertions by leveraging patterns and structures from closely related code snippets. In contrast, sg_in_context_learning may generate less relevant examples, leading to assertions that don't fully align with the code's requirements.
+
+2. **Consistency in Patterns**: By using exemplar_selection_knn, the model is exposed to consistent patterns and assertion types from similar code examples, which reinforces the correct way to formulate assertions. This consistency reduces variability in the model's responses. On the other hand, sg_in_context_learning might introduce variability by auto-generating examples that don't consistently follow the same patterns, resulting in less reliable assertions.
+
+3. **Precision in Assertion Generation**: The exemplar_selection_knn technique's focus on similar examples allows the model to generate precise assertions that match the specific context of the code, such as checking method return values or exception handling. This precision is often lost in sg_in_context_learning, where the generated examples might not capture the exact nuances of the code, leading to generic or incorrect assertions.

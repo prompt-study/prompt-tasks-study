@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: assert_generation | Best: exemplar_selection_knn vs Other: universal_self_consistency
+
+1. **Contextual Relevance**: The exemplar_selection_knn technique selects the most similar code examples using a k-nearest neighbor approach, ensuring that the provided context is highly relevant to the task. This relevance helps the model generate assertions that are directly applicable to the given code snippet, unlike universal_self_consistency, which may aggregate less relevant or generic responses.
+
+2. **Precision in Assertion Generation**: By leveraging similar examples, exemplar_selection_knn guides the model to produce precise assertions that match the specific behavior or properties of the code. Universal_self_consistency, on the other hand, might generate broader or less specific assertions due to its reliance on consensus from multiple, potentially varied, reasoning paths.
+
+3. **Consistency with Human Judgment**: The exemplar_selection_knn technique aligns more closely with human-provided assertions because it mimics how humans might reference similar past examples to solve a problem. Universal_self_consistency, while robust, can sometimes over-generalize or introduce noise by combining multiple outputs, leading to less accurate or less human-like assertions.

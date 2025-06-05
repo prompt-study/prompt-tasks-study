@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: assert_generation | Best: exemplar_selection_knn vs Other: emotional_prompting
+
+1. **Contextual Relevance**: The exemplar_selection_knn technique selects the most similar code examples using a k-nearest neighbor approach, which ensures that the provided context is highly relevant to the task. This relevance helps the model generate accurate assertions by leveraging patterns from similar code snippets. In contrast, emotional_prompting focuses on affective language, which does not contribute to the technical precision needed for assertion generation.
+
+2. **Technical Precision**: Assert generation requires exact matching of expected outcomes with actual results, which is a highly technical task. The exemplar_selection_knn technique provides concrete examples of correct assertions, enabling the model to learn and replicate precise patterns. Emotional_prompting, while useful for engaging documentation, lacks the technical specificity needed to generate correct assertions.
+
+3. **Consistency in Output**: The exemplar_selection_knn technique consistently produces high-quality assertions because it relies on structured, similar examples that guide the model's output. Emotional_prompting, on the other hand, introduces variability by prioritizing emotional engagement over technical accuracy, leading to inconsistent and often incorrect assertions.

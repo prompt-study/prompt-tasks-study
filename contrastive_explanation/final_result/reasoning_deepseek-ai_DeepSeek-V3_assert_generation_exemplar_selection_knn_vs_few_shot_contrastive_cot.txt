@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: assert_generation | Best: exemplar_selection_knn vs Other: few_shot_contrastive_cot
+
+1. **Code-Specific Context Matching**: The exemplar_selection_knn technique selects the most similar code examples using a k-nearest neighbor approach, which ensures that the provided context is highly relevant to the task at hand. This allows the model to generate assertions that are more precise and aligned with the specific code logic, whereas few_shot_contrastive_cot may not always provide code-specific examples, leading to less accurate assertions.
+
+2. **Direct Assertion Generation**: Exemplar_selection_knn focuses on directly generating the assertion statement without additional reasoning steps, which is more efficient for this task. In contrast, few_shot_contrastive_cot involves chain-of-thought reasoning, which can introduce unnecessary complexity and deviations from the straightforward assertion generation needed for code validation.
+
+3. **Consistency with Examples**: The exemplar_selection_knn technique leverages multiple high-quality examples that demonstrate the exact format and logic required for the assertions. This consistency helps the model produce correct assertions reliably, while few_shot_contrastive_cot's contrastive examples (correct vs. incorrect) may confuse the model or dilute the focus on the correct pattern.

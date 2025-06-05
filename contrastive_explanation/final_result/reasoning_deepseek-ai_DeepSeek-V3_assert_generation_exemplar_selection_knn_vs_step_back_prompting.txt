@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: assert_generation | Best: exemplar_selection_knn vs Other: step_back_prompting
+
+1. **Contextual Similarity**: The exemplar_selection_knn technique selects the most similar code examples using a k-nearest neighbor approach, which provides highly relevant context for generating assertions. This ensures the model can directly infer the correct assertion type (e.g., `assertEquals`, `assertNotNull`) based on structurally similar code snippets, leading to more accurate results. In contrast, step_back_prompting relies on high-level reflection, which may miss specific patterns in the code.
+
+2. **Precision in Assertion Matching**: By leveraging concrete examples, exemplar_selection_knn allows the model to match the exact assertion pattern needed for the given code (e.g., comparing values, checking nullity). Step_back_prompting, while useful for planning, often defaults to generic assertions like `assertNotNull` because it lacks the granularity to infer the precise test condition from the code.
+
+3. **Reduced Ambiguity**: The exemplar-based approach minimizes ambiguity by providing clear, task-specific examples that guide the model to the correct assertion. Step_back_prompting, which asks the model to "step back" and reason abstractly, can introduce variability or overgeneralization, resulting in less precise assertions (e.g., missing the exact comparison value or method call).

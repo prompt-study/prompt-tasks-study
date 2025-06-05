@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: assert_generation | Best: exemplar_selection_knn vs Other: self_refine
+
+1. **Contextual Similarity**: The exemplar_selection_knn technique leverages similar code examples to provide contextually relevant assertions. By selecting the most similar code snippets using k-nearest neighbors, it ensures that the generated assertions are aligned with the patterns and logic observed in comparable code, leading to higher accuracy.
+
+2. **Consistency in Patterns**: This technique benefits from consistent assertion patterns found in the exemplars. Since the examples are selected based on similarity, the model can reliably reproduce assertion styles and types that are commonly used in similar contexts, reducing variability and improving quality.
+
+3. **Reduced Ambiguity**: By grounding the assertion generation in concrete, similar examples, exemplar_selection_knn minimizes the risk of ambiguous or incorrect assertions. The model has less room for error because it follows proven patterns rather than iteratively refining potentially flawed initial guesses.

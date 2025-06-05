@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: bug_fixing | Best: sg_in_context_learning vs Other: style_prompting
+
+1. **Contextual Understanding**: The **sg_in_context_learning** technique provides examples of buggy and fixed code, which helps the model understand the context and patterns of common bugs and their fixes. This contextual grounding enables the model to generate more accurate and comprehensive fixes, as seen in the responses where it adds null checks and error handling. In contrast, **style_prompting** focuses only on the immediate fix without broader context, leading to less robust solutions.
+
+2. **Example-Driven Learning**: By showing demonstrations of buggy and fixed code, **sg_in_context_learning** leverages few-shot learning, which is highly effective for tasks like bug fixing. The model can generalize from these examples to identify and correct similar issues in the target code. **Style_prompting**, however, lacks such examples, resulting in fixes that may miss deeper or related issues (e.g., ignoring null checks or edge cases).
+
+3. **Detailed Explanations**: The **sg_in_context_learning** technique often includes explanations for the fixes, which reinforces the model's ability to justify and validate its corrections. This leads to higher-quality responses that address not just the immediate bug but also potential side effects. **Style_prompting**, being more concise and solution-focused, often omits these explanations, resulting in less informative and sometimes incomplete fixes.

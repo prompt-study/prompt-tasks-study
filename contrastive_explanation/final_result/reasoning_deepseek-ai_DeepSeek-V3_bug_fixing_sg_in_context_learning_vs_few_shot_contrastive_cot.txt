@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: bug_fixing | Best: sg_in_context_learning vs Other: few_shot_contrastive_cot
+
+1. **Clear Bug-Fix Pairing**: The sg_in_context_learning technique explicitly pairs buggy and fixed code examples with labels (###bug### and ###fix###), making it easier for the model to understand the exact changes needed. This direct contrast helps the model focus on the specific issues and their solutions, whereas few_shot_contrastive_cot relies more on abstract reasoning, which can lead to less precise fixes.
+
+2. **Task-Specific Context**: sg_in_context_learning provides concrete, task-relevant examples that closely mirror the input, ensuring the model stays focused on the bug-fixing task. In contrast, few_shot_contrastive_cot often includes broader reasoning steps or general advice, which can distract from the immediate need to identify and fix the bug in the provided code snippet.
+
+3. **Consistency in Output**: The structured format of sg_in_context_learning (bug/fix labels) ensures the model produces consistent and directly applicable fixes. Few_shot_contrastive_cot, while useful for broader reasoning, can sometimes generate verbose or tangential explanations, leading to less actionable or lower-quality fixes for the specific bug at hand.

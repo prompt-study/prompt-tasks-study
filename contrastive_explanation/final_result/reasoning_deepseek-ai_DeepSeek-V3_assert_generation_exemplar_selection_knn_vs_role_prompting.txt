@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: assert_generation | Best: exemplar_selection_knn vs Other: role_prompting
+
+1. **Contextual Relevance**: The exemplar_selection_knn technique provides highly relevant examples that are structurally and semantically similar to the target code, enabling the model to generate assertions that match the specific context of the code snippet. In contrast, role_prompting relies on a generic persona (e.g., "Data Scientist" or "Security Engineer"), which lacks the precise contextual cues needed for accurate assertion generation.
+
+2. **Pattern Recognition**: By leveraging k-nearest neighbors, exemplar_selection_knn identifies patterns in the provided examples, such as common assertion types (e.g., `assertEquals`, `assertNotNull`) and their usage in similar code contexts. Role_prompting, however, does not explicitly guide the model to recognize these patterns, leading to less accurate or irrelevant assertions.
+
+3. **Task-Specific Guidance**: Exemplar_selection_knn directly addresses the task by focusing on assertion generation through concrete examples, ensuring the model stays on topic. Role_prompting, while useful for broader tasks, distracts the model with unrelated role-based expectations (e.g., security checks or data analysis), reducing its effectiveness for this specific task.

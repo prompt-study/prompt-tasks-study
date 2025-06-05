@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: assert_generation | Best: exemplar_selection_knn vs Other: rephrase_and_respond
+
+1. **Contextual Similarity**: The exemplar_selection_knn technique leverages similar code examples to provide context, which helps the model generate assertions that are more aligned with the specific patterns and structures in the given code. This is particularly useful in software engineering tasks where the correct assertion often depends on the surrounding code logic and variable usage.
+
+2. **Precision in Assertion Generation**: By selecting the most relevant examples, exemplar_selection_knn ensures that the generated assertions are precise and directly applicable to the code snippet. In contrast, rephrase_and_respond may introduce ambiguity or over-generalization, leading to less accurate assertions.
+
+3. **Consistency with Best Practices**: The exemplar_selection_knn technique often includes assertions from well-tested or standard codebases, ensuring that the generated assertions follow best practices (e.g., using JUnit assertions). Rephrase_and_respond, while attempting to clarify the task, may deviate from these standards, resulting in less reliable or unconventional assertions.

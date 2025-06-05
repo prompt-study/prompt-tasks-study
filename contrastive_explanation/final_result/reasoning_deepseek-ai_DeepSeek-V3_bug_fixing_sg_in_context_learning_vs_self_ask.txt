@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: bug_fixing | Best: sg_in_context_learning vs Other: self_ask
+
+1. **Contextual Understanding**: The **sg_in_context_learning** technique provides explicit examples of buggy and fixed code, which helps the model understand the task's context and expected output format. In contrast, **self_ask** relies on the model to generate clarifying questions, which can lead to unnecessary detours or incomplete understanding if the model fails to ask the right questions. The direct examples in **sg_in_context_learning** ensure the model focuses on the task without ambiguity.
+
+2. **Task-Specific Guidance**: By presenting paired examples (buggy and fixed code), **sg_in_context_learning** offers clear, task-specific guidance on how to identify and resolve bugs. This structured approach ensures the model follows a proven pattern for bug fixing. **Self_ask**, however, lacks this direct guidance, often resulting in generic or overly cautious responses that don't address the bug as effectively.
+
+3. **Consistency in Output**: The **sg_in_context_learning** technique enforces a consistent output format (e.g., labeled ###bug### and ###fix### sections), which aligns with the task's requirements. This consistency improves the quality and relevance of the response. **Self_ask**, on the other hand, may produce varied or verbose outputs, as it prioritizes problem decomposition over direct solution delivery, leading to less precise fixes.

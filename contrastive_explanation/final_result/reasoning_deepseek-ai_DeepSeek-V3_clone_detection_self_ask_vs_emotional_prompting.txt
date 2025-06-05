@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: clone_detection | Best: self_ask vs Other: emotional_prompting
+
+1. **Structured Problem Decomposition**: The self_ask technique encourages the model to break down the task into smaller, more manageable sub-questions before providing a final answer. This structured approach ensures a thorough analysis of the code snippets, leading to more accurate clone detection, whereas emotional_prompting focuses on affective language, which is irrelevant for this technical task.
+
+2. **Focus on Technical Precision**: Self_ask prompts prioritize clarity and precision by asking the model to verify its understanding before answering. This reduces the risk of misinterpretation or superficial analysis, which emotional_prompting might introduce by emphasizing emotional engagement over technical rigor.
+
+3. **Consistency in Output Format**: Self_ask prompts explicitly guide the model to adhere to a strict output format (e.g., ###TRUE### or ###FALSE###), ensuring uniformity and reliability in responses. Emotional_prompting, by contrast, risks deviating from this format due to its focus on creating engaging but less structured responses.

@@ -1,0 +1,30 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: clone_detection | Best: emotional_prompting vs Other: thread_of_thought
+
+The **emotional_prompting** technique, while not typically the best fit for technical tasks like clone detection, can still outperform **thread_of_thought** in certain scenarios due to its ability to engage the model in a more conversational and empathetic manner. Here are three reasons why **emotional_prompting** might perform better than **thread_of_thought** for this task:
+
+1. **Simplified Response Requirement**:
+   - **Explanation**: The task specifically requires a simple TRUE or FALSE response. Emotional prompting can sometimes lead to more concise and direct answers, as the model focuses on providing a clear, straightforward response rather than a detailed analysis.
+
+2. **Reduced Cognitive Load**:
+   - **Explanation**: By using emotional language, the model might be less burdened with the need to provide a step-by-step analysis, allowing it to quickly assess the code snippets and deliver a final verdict. This can be particularly useful when the task is well-defined and the answer is binary.
+
+3. **Engagement and Clarity**:
+   - **Explanation**: Emotional prompts can make the interaction more engaging, which might help the model stay focused on the core task of determining code similarity. This engagement can sometimes lead to clearer and more accurate binary judgments, as the model is less likely to get sidetracked by unnecessary details.
+
+While these reasons suggest potential advantages, it's important to note that for tasks requiring detailed analysis and structured reasoning, **thread_of_thought** is generally more effective.🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: clone_detection | Best: self_ask vs Other: rephrase_and_respond
+
+1. **Structured Problem Decomposition**: The self_ask technique encourages the model to break down the task into smaller, more manageable sub-questions (e.g., analyzing purpose, structure, and functionality). This systematic approach ensures a thorough comparison of the code snippets, leading to more accurate clone detection. In contrast, rephrase_and_respond focuses on restating the question without deepening the analysis, which can miss critical details.
+
+2. **Contextual Clarity**: By prompting the model to ask and answer clarifying questions, self_ask ensures that the model fully understands the nuances of the task before responding. This reduces ambiguity and improves the relevance of the final answer. Rephrase_and_respond, while useful for restating the query, does not inherently resolve ambiguities, potentially leading to less precise responses.
+
+3. **Detailed Justification**: Self_ask often results in responses that include explicit reasoning (e.g., "The two code snippets serve different purposes..."), which aligns with the need for explainability in clone detection. Rephrase_and_respond tends to produce shorter, less detailed answers, which may lack the depth needed to confidently assess clone status. The added justification in self_ask responses enhances their reliability.🔍 Running test: meta-llama/Llama-3.3-70B-Instruct-Turbo | Task: clone_detection | Best: self_ask vs Other: universal_self_consistency
+
+1. **Clarification Through Questions**: The self_ask technique performs better because it allows for clarification through questions, ensuring that the model understands the task requirements accurately before providing a response. This leads to more precise and relevant answers, as seen in the examples where the self_ask technique helped identify the correct clones. By asking clarifying questions, the model can avoid misunderstandings and provide more accurate results.
+2. **Task Decomposition**: The self_ask technique enables effective task decomposition, breaking down complex tasks into smaller, manageable parts, which helps in identifying clones more accurately. This decomposition allows the model to analyze each part of the code snippets separately, leading to a more thorough understanding of their functionality and structure. As a result, the self_ask technique can identify clones more reliably than the universal_self_consistency technique.
+3. **Contextual Understanding**: The self_ask technique provides a deeper contextual understanding of the task, enabling the model to consider the specific requirements and nuances of clone detection. By asking questions and seeking clarification, the model can develop a more comprehensive understanding of the code snippets and their purposes, leading to more accurate clone detection results. This contextual understanding is essential for identifying clones correctly, as it allows the model to recognize subtle differences and similarities between code snippets.🔍 Running test: o3-mini-2025-01-31 | Task: clone_detection | Best: emotional_prompting vs Other: rephrase_and_respond
+
+1. Clear and Direct Focus: Emotional_prompting emphasizes precision by instructing the model to concentrate solely on the task (i.e., determining clone status) without extraneous explanations. This focused language minimizes ambiguity and potential detours, ensuring that the response meets the specific output format requirements.
+
+2. Encouragement of Detail Orientation: By using affective language that praises attention to detail, emotional_prompting motivates the model to thoroughly analyze the code snippets. This extra push to "let your attention to detail shine" often results in more careful verification, reducing the risk of misinterpretation.
+
+3. Reduced Cognitive Overhead: Emotional_prompting avoids the need to rephrase and contextualize the prompt, which can introduce unnecessary complexity. This streamlined approach helps maintain simplicity in processing, ensuring that the result is a straightforward, high-quality answer that adheres strictly to the required response format.

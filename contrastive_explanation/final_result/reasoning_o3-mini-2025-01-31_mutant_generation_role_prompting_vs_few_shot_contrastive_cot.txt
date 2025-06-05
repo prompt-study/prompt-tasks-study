@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: mutant_generation | Best: role_prompting vs Other: few_shot_contrastive_cot
+
+1. Focused Persona Guidance: When using role_prompting, the model adopts a specific professional persona (e.g., DevOps Engineer or Security Engineer) which aligns its reasoning with industry norms. This targeted framing helps it generate precise, context-aware mutants, avoiding extraneous reasoning that might lead to less optimal code alterations.
+
+2. Direct Task Orientation: Role_prompting emphasizes a clear understanding of the task by instructing the model to simply generate a closely mutated version of the code. This leads to concise output that focuses on the required code transformation, without the distraction of elaborated internal thought processes as seen in few_shot_contrastive_cot.
+
+3. Reduced Cognitive Overhead: By not requiring a detailed chain-of-thought explanation, role_prompting minimizes the risk of incorporating unnecessary or erroneous reasoning steps. This streamlined approach ensures that only the minimal and relevant changes are made, leading to a more accurate mutant generation suitable for evaluating test suite robustness.

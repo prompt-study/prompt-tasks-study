@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: defect_detection | Best: role_prompting vs Other: self_refine
+
+1. Clear Role Orientation: Role_prompting directly assigns the model a clear persona (e.g., Security Engineer or Technical Lead) that inherently focuses the analysis on relevant technical and security details. This focused perspective cuts through ambiguity and encourages responses that are more aligned with the specific defect detection task.
+
+2. Contextual Consistency: By embedding role-based context within the prompt, role_prompting ensures that the model maintains a consistent mindset throughout the analysis. This leads to higher quality, domain-specific reasoning and fewer deviations that might arise during iterative self-refinement.
+
+3. Reduced Overhead in Self-Evaluation: Role_prompting avoids the additional iterative steps of self_refine, which can sometimes lead to overcomplication or drift from the core message. With a predefined role guiding the response, the model can deliver a more straightforward and reliable answer without the potential side effects of multiple revision passes.

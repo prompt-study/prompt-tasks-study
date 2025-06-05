@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: mutant_generation | Best: role_prompting vs Other: self_refine
+
+1. Clear Role Definition: Role_prompting explicitly assigns the model a specific persona (e.g., DevOps Engineer or Software Developer), which guides the model to focus on the task with the mindset and priorities of that role. This clear framing reduces ambiguity and directly encourages high-quality responses tailored to the mutation task.
+
+2. Task-Specific Focus: With role_prompting, the instructions emphasize producing only the mutated code, avoiding extraneous commentary or lengthy self-evaluation. The model is more streamlined in its output, concentrating on generating a small, meaningful mutation rather than introducing additional modifications or self-analysis steps.
+
+3. Reduced Cognitive Overhead: Role_prompting minimizes the need for iterative self-refinement and detailed internal feedback, which can distract from the primary mutation objective. By eliminating the self-review step inherent in self_refine techniques, the model reduces the risk of unnecessary changes or overcomplication, leading to cleaner and more focused mutant code.

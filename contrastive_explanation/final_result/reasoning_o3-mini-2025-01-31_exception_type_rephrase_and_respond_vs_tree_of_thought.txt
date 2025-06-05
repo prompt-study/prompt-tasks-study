@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: exception_type | Best: rephrase_and_respond vs Other: tree_of_thought
+
+1. Clarity and Focus: The rephrase_and_respond technique prompts the model to restate the problem clearly and then deliver a concise answer. This helps maintain focus on the exact question asked, reducing the chance for extraneous details that might confuse the key point.
+
+2. Efficiency in Reasoning: By asking for a reworded and elaborated version of the prompt, rephrase_and_respond encourages the model to directly target the required task. This direct approach is more efficient for a problem with a clear solution, while tree_of_thought may unnecessarily branch into multiple reasoning paths.
+
+3. Minimized Cognitive Overhead: The rephrase_and_respond method naturally limits the amount of intermediate thought exposed in the final answer. In contrast, tree_of_thought often includes extended internal reasoning steps that increase complexity without adding substantial value to straightforward exception type predictions.

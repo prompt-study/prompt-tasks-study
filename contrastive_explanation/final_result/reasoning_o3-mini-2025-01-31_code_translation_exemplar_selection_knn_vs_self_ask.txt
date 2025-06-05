@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_translation | Best: exemplar_selection_knn vs Other: self_ask
+
+1. Example-Based Context: The exemplar_selection_knn technique enriches the prompt with highly relevant examples, ensuring that the model can pattern-match the specific transformation rules required for code translation. This direct context leads to more precise adherence to the coding conventions and translation patterns, unlike self_ask, which relies on internal decomposition.
+
+2. Consistency in Transformation: By incorporating similar high-quality examples, exemplar_selection_knn promotes consistent output patterns that mirror the provided samples. This consistency minimizes deviations and errors in key aspects such as method naming, invocation structure, and marshaller references, ensuring uniformity across translations.
+
+3. Reduced Ambiguity: With explicit, context-rich examples, the exemplar_selection_knn method reduces the risk of misinterpreting the task's requirements. In contrast, self_ask may lead the model to generalize or ask unnecessary clarifying questions, which can inadvertently introduce inconsistencies or incomplete translations.

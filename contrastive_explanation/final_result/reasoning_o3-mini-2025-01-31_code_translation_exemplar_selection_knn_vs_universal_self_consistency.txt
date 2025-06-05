@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_translation | Best: exemplar_selection_knn vs Other: universal_self_consistency
+
+1. Targeted Contextual Guidance: The exemplar_selection_knn technique enriches the prompt with highly relevant, similar code examples. This direct inclusion of domain-specific translations helps the model mirror best practices and conventions in the target language, leading to more precise and context-aware translations.
+
+2. Consistency Through Specific Examples: By selecting examples that closely match the given code snippet, the exemplar_selection_knn approach provides clear illustrations of desired transformations. This consistency in example-driven guidance minimizes ambiguity and ensures that the translated code adheres strictly to established patterns.
+
+3. Reduced Noise and Aggregation Overhead: Unlike the universal_self_consistency method, which aggregates multiple outputs and may include extraneous explanations, exemplar_selection_knn delivers focused, example-based responses. This reduction in noise allows the model to concentrate on the exact translation task without the confusion introduced by combining diverse reasoning paths.

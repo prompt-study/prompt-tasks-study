@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_translation | Best: exemplar_selection_knn vs Other: emotional_prompting
+
+1. Context-Rich Examples: The exemplar_selection_knn technique includes curated code examples that closely resemble the task at hand, which provides the model with clear, detailed mappings between Java and C# constructs. This context directly informs the model how to structure the translated code, leading to precise and semantically correct results.
+
+2. Direct Guidance: By incorporating similar code snippets in the prompt, exemplar_selection_knn offers concrete guidance on the formatting, naming conventions, and method structures expected in C#. This reduces ambiguity and minimizes the chance of the model reverting to literal or incorrect translations that emotional_prompting might produce.
+
+3. Task-Specific Precision: Exemplar selection focuses on the specifics of code structure and transformation without extraneous stylistic cues, ensuring the model concentrates on accurately converting the logic and syntax. In contrast, emotional_prompting, while engaging, may dilute the technical focus by introducing sentiment rather than clear technical direction.

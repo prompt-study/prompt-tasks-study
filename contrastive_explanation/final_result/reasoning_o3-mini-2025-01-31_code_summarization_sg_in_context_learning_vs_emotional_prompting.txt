@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_summarization | Best: sg_in_context_learning vs Other: emotional_prompting
+
+1. Focused Example Guidance: The sg_in_context_learning approach provides clear, structured examples that directly illustrate the expected output format. This precise guidance helps the model focus exclusively on the technical aspects of code summarization, whereas emotional_prompting’s motivational language can dilute the focus and introduce unnecessary verbosity.
+
+2. Consistency and Precision: By using explicit in-context examples, the sg_in_context_learning method consistently mimics the desired concise style and technical accuracy. This results in summaries that are uniformly succinct and factual, in contrast to emotional_prompting where affective language may lead to overly elaborate or stylistically varied responses.
+
+3. Reduced Distraction: The technical, example-driven prompts of sg_in_context_learning minimize non-essential content, keeping the model’s attention on producing an accurate summary of the code. In comparison, emotional_prompting incorporates extra commentary focused on encouragement and motivation, which can distract from the core task of distilling code functionality.

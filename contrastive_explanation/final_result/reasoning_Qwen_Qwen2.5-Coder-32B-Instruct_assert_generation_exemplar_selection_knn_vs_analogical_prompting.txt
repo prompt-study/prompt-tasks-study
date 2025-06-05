@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: assert_generation | Best: exemplar_selection_knn vs Other: analogical_prompting
+
+1. **Contextual Relevance**: Exemplar selection KNN provides contextually relevant examples by selecting the most similar code snippets, which helps the model understand the specific patterns and assertions needed for the given code. This direct relevance ensures that the generated assertions are more accurate and meaningful compared to analogical prompting, which relies on abstract analogies that may not capture the nuances of the code.
+
+2. **Specificity and Precision**: KNN-based techniques offer more specific and precise assertions by leveraging actual code examples that closely match the input code. This specificity allows the model to generate assertions that directly validate the intended behavior of the code, whereas analogical prompting can lead to more general or less precise assertions that do not fully capture the required validation.
+
+3. **Reduced Abstraction**: Analogical prompting introduces an additional layer of abstraction by relating software concepts to familiar contexts, which can sometimes lead to misunderstandings or misinterpretations of the code's logic. In contrast, exemplar selection KNN uses concrete examples, reducing the risk of abstraction-related errors and ensuring that the assertions are directly derived from similar, well-understood code patterns.

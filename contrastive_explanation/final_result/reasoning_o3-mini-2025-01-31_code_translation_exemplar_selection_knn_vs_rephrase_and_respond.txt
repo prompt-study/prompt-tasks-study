@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_translation | Best: exemplar_selection_knn vs Other: rephrase_and_respond
+
+1. Contextual Examples: Exemplar_selection_knn enriches the prompt with similar code examples, which provide clear guidance on exact translation patterns and naming conventions. This targeted context helps the model mimic established patterns precisely, reducing ambiguity in code transformations.
+
+2. Consistency in Output: By supplying concrete examples, the technique naturally enforces consistent output styles and semantic mappings, ensuring that translated code meets the specific standards expected for the task. This eliminates variations that may occur when the model is given more open-ended, narrative-based instructions.
+
+3. Focused Response: Exemplar_selection_knn directs the model to output only the translated code, avoiding unnecessary explanations. This leads to a streamlined and precise answer that adheres closely to the task requirements, maintaining clarity and correctness in the translation process.

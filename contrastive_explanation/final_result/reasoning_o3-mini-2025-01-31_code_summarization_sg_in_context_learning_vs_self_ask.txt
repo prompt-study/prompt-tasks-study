@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_summarization | Best: sg_in_context_learning vs Other: self_ask
+
+1. Concise Formatting: sg_in_context_learning directly uses the provided examples to guide the output, ensuring that the summary is concise and adheres strictly to the one-sentence requirement. This structured prompt format leads to focused and streamlined responses, unlike self_ask which may expand into extra clarifying details that detract from brevity.
+
+2. Example Consistency: The sg_in_context_learning technique leverages in-context examples that serve as clear models for how to structure and phrase the summary. This consistency with human-provided examples promotes higher quality outputs, whereas the self_ask method might overcomplicate the task by introducing extra questions that deviate from the established example patterns.
+
+3. Efficiency in Execution: sg_in_context_learning generates the summary directly without detouring into preliminary questions or additional analyses, thus minimizing the risk of over-elaboration. In contrast, self_ask tends to include a series of clarifications that can slow down the process and dilute the directness of the final summary, resulting in lower-quality, less focused responses.

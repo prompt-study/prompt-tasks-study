@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_translation | Best: exemplar_selection_knn vs Other: self_refine
+
+1. Clear Template Guidance: Exemplar_selection_knn supplies exact, high-quality examples of desired output, which serves as a clear template for translation. This explicit guidance helps the model produce consistent and accurate translations without ambiguity.
+
+2. Consistency with Domain Patterns: By using similar context examples, the technique reinforces established coding patterns and conventions. This alignment reduces syntactic and semantic errors that may occur when the model attempts to self-refine without a robust contextual framework.
+
+3. Reduced Iterative Overhead: The exemplar method allows the model to produce near-final responses in one step, bypassing the potential pitfalls of iterative self-correction. This efficiency minimizes the chances of compounding errors and ensures that the output remains tightly aligned with proven examples.

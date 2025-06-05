@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_translation | Best: exemplar_selection_knn vs Other: thread_of_thought
+
+1. Direct Example Referencing: Exemplar selection knn feeds the model with specific, similar translation examples, which ensures that the output closely follows the established patterns and conventions. This clear guidance helps the model produce precise translated code without unnecessary deviations.
+
+2. Consistent Output Format: By leveraging carefully chosen exemplars, the technique enforces a strict output structure that aligns with the task requirements—returning only the translated code. This contrasts with thread_of_thought, which might include additional reasoning steps that clutter the final output.
+
+3. Focused Task Alignment: Exemplar selection knn minimizes extraneous explanation by emphasizing matching examples, so the model's attention is entirely on code translation. In comparison, thread_of_thought encourages a lengthy reasoning process that can lead to over-elaboration and a drift from the concise output requested.

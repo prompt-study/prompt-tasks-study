@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_translation | Best: exemplar_selection_knn vs Other: step_back_prompting
+
+1. Example-Driven Specificity: The exemplar_selection_knn technique provides the model with concrete examples of code translation, which directly illustrate the exact pattern required for the task. By seeing multiple input-output pairs, the model can mirror the translation style and output structure effectively, ensuring high-quality conversions.
+
+2. Direct Context Enrichment: With exemplar_selection_knn, the context includes code segments that are highly relevant to the current problem, thus reducing ambiguity. This enriched context guides the model towards recognizing domain-specific patterns and converting code with the correct semantics, unlike the abstract guidelines in step_back_prompting.
+
+3. Reduced Overhead and Distractions: Exemplar_selection_knn focuses solely on translating code by offering precise examples, leaving little room for extraneous explanations or deviations. In contrast, step_back_prompting provides detailed reflection on guidelines, which can lead to additional non-essential details and lower fidelity in the final transformed code.

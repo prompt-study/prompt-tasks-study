@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: clone_detection | Best: emotional_prompting vs Other: analogical_prompting
+
+1. **Clarity and Focus**: Emotional prompting provides clear, direct instructions that focus the model on the specific task of clone detection. By using phrases like "Bring your full analytical strength to this task" and "Use your discernment to deliver a clear answer," the model is directed to concentrate on the analytical aspect of the task, leading to more accurate and focused responses.
+
+2. **Simplicity and Directness**: The emotional prompting technique uses straightforward and direct language, which is easier for the model to interpret and follow. This simplicity avoids the potential confusion that can arise from analogies, which might require additional interpretation or context. The direct instructions in emotional prompting ensure that the model understands exactly what is expected, resulting in higher-quality and more precise outputs.
+
+3. **Relevance and Precision**: Emotional prompting avoids the use of analogies, which can sometimes introduce irrelevant or tangential information. By sticking to task-specific language, emotional prompting ensures that the model's response is directly relevant to the task of clone detection. This relevance is crucial for tasks that require precise and accurate analysis, as it minimizes the risk of the model incorporating extraneous information that could lead to incorrect or less reliable responses.

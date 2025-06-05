@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: bug_fixing | Best: sg_in_context_learning vs Other: analogical_prompting
+
+1. **Contextual Examples**: The **sg_in_context_learning** technique provides specific examples of problematic and clean code, which helps the model understand the exact nature of the changes required. This direct context allows the model to generate more accurate and relevant fixes compared to analogical prompting, which relies on abstract comparisons.
+
+2. **Code Structure Preservation**: By using in-context examples, **sg_in_context_learning** ensures that the overall structure and logic of the code are preserved while making necessary corrections. This approach minimizes the risk of introducing new errors or altering the intended behavior of the code, which can happen when using analogical prompting that might not fully capture the nuances of the original code.
+
+3. **Readability and Naming Conventions**: The **sg_in_context_learning** technique explicitly demonstrates improvements in readability and adherence to naming conventions through examples. This guidance helps the model produce cleaner and more maintainable code, whereas analogical prompting may not provide such detailed instructions, leading to less polished fixes.

@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: mutant_generation | Best: role_prompting vs Other: tree_of_thought
+
+1. Clarity of Instruction: Role prompting provides a clear role and direct task description, which minimizes ambiguity. This clear framing helps the model focus on generating subtle mutations without overcomplicating the process through unnecessary iterative reasoning.
+
+2. Conciseness and Focus: Role prompting instructs the model to output just the mutated code, while tree_of_thought invites intermediate steps and analyses. With tree_of_thought, the extra reasoning steps can introduce unintended modifications and distract from the core objective of making small, precise changes.
+
+3. Consistency in Output: By assigning a specific role, the model is nudged to adopt a consistent style that aligns with domain expectations, leading to higher-quality and more reliable code transformations. In contrast, the iterative approach of tree_of_thought can yield varied responses, resulting in inconsistent modifications that may not align with the intended minimal mutation.

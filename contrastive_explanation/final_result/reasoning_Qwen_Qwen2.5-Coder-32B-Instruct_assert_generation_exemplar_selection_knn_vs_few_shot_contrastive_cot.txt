@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: assert_generation | Best: exemplar_selection_knn vs Other: few_shot_contrastive_cot
+
+1. **Contextual Relevance**: Exemplar selection knn provides contextually relevant examples by selecting the most similar code snippets, which helps the model understand the specific patterns and logic of the given code. This focused context allows the model to generate more accurate and meaningful assertions tailored to the code's behavior.
+
+2. **Simplified Prompting**: The exemplar_selection_knn technique uses a straightforward prompt structure that focuses solely on the task of generating an assertion, without the need for additional instructions on reasoning processes. This simplicity can lead to more direct and effective responses, as the model is not distracted by extraneous information.
+
+3. **Reduced Cognitive Load**: By using similar code examples, the exemplar_selection_knn technique reduces the cognitive load on the model, as it can rely on the patterns and structures it has seen in the examples to generate the correct assertion. In contrast, the few_shot_contrastive_cot technique requires the model to engage in detailed reasoning and contrastive thinking, which can introduce errors if not executed correctly.

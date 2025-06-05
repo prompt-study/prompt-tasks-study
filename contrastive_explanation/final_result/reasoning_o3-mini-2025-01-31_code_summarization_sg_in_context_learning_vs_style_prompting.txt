@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_summarization | Best: sg_in_context_learning vs Other: style_prompting
+
+1. Clear Format Guidance: With sg_in_context_learning, the prompt includes explicit example pairs indicating the desired structure and labeling (e.g., using "###summary###"), which helps the model clearly understand the expected output format. This explicit guidance reduces ambiguity compared to style_prompting, where the model must infer format solely from tone-related instructions.
+
+2. Demonstrated Content Focus: The in-context examples provide concrete instances of code and its corresponding summarization, allowing the model to learn what key technical details to capture in a concise manner. In contrast, style_prompting emphasizes tone over content precision, making it harder for the model to consistently identify and summarize the essential parts of the code.
+
+3. Consistency in Output: By presenting multiple examples, sg_in_context_learning sets a pattern that the model can replicate, ensuring greater consistency in summarization quality across different inputs. Meanwhile, style_prompting's broader instructions may lead to varied interpretations, resulting in less uniform and sometimes overly verbose responses.

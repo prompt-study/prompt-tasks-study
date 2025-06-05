@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_summarization | Best: sg_in_context_learning vs Other: role_prompting
+
+1. Contextual Examples: sg_in_context_learning provides explicit code-summary pairs that serve as concrete examples, guiding the model toward the desired response style and content. This direct demonstration helps the model to better understand the nuances of the task, resulting in summaries that are concise and aligned with the provided examples.
+
+2. Pattern Reinforcement: With in-context examples embedded in the prompt, the model is encouraged to mirror the structure, language, and level of detail shown in the samples. This consistency in pattern and style leads to outputs that are more faithful and high-quality compared to when only a role description is provided.
+
+3. Task-Specific Focus: The sg_in_context_learning technique automatically delivers multiple detailed examples, effectively focusing the model on the specific code summarization task. This focused context helps minimize extraneous or verbose explanations that can occur with generic role prompting, ensuring clearer and more precise summaries.

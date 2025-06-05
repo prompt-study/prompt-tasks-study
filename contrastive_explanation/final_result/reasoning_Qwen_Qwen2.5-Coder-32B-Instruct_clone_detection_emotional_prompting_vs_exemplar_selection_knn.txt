@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: clone_detection | Best: emotional_prompting vs Other: exemplar_selection_knn
+
+1. **Clarity and Simplicity**: Emotional prompting uses clear and straightforward instructions, which are easier for the model to interpret and follow. This simplicity ensures that the model focuses on the core task of determining code similarity without being overwhelmed by additional context or examples, leading to more accurate and concise responses.
+
+2. **Directness in Response**: Emotional prompting instructs the model to provide a direct and unambiguous response (TRUE or FALSE) using a specific format (###TRUE### or ###FALSE###). This directness minimizes the risk of the model providing extraneous information or deviating from the required format, ensuring the response is precisely what is needed for the task.
+
+3. **Reduced Overfitting to Examples**: Exemplar selection KNN relies on similar code examples to enrich the prompt context, which can sometimes lead to overfitting to the examples provided. This means the model might start to recognize patterns specific to the examples rather than the general task of clone detection. Emotional prompting, on the other hand, avoids this by focusing on the task itself without the need for additional examples, thus maintaining a broader and more generalized approach to clone detection.

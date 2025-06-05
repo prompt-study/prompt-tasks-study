@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: mutant_generation | Best: role_prompting vs Other: universal_self_consistency
+
+1. Clear Role Alignment: When the model adopts a specific persona (like a Quality Assurance Engineer), it is primed to focus on domain-specific considerations and deliver precise code mutations. This role alignment streamlines the decision-making process, ensuring clarity and relevance in the generated mutant code.
+
+2. Task-Focused Directives: Role prompting delivers clear, succinct instructions that emphasize the code mutation task without extraneous reasoning. This directness leads the model to produce concise, high-quality outputs that adhere strictly to the requirements, resulting in fewer deviations from the intended behavior.
+
+3. Reduced Cognitive Aggregation: Universal self-consistency involves synthesizing multiple responses to form a consensus, which can dilute focus and introduce inconsistencies. In contrast, role prompting prompts the model to provide one targeted answer, thereby minimizing overhead and ensuring that the response closely aligns with subtle mutation objectives.

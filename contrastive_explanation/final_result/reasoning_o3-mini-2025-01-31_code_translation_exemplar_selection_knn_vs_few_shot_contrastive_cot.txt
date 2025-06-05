@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_translation | Best: exemplar_selection_knn vs Other: few_shot_contrastive_cot
+
+1. Contextual Relevance: The exemplar_selection_knn method retrieves highly similar code examples that closely match the target translation scenario, providing directly relevant context that guides the model to produce accurate code conversions. In contrast, few_shot_contrastive_cot may mix in reasoning paths that introduce less precise contextual cues for the specific code translation task.
+
+2. Focus on Output Quality: By using exemplars that are already vetted for correctness, the exemplar_selection_knn approach emphasizes high-quality output without unnecessary intermediate reasoning. This leads to a cleaner, more idiomatic code translation compared to the verbose chain-of-thought process in few_shot_contrastive_cot, which might result in distracting or extraneous content.
+
+3. Reduced Ambiguity: Exemplar_selection_knn leverages precise examples that directly illustrate best practices in language-specific translation, making it easier for the model to replicate the right syntax and semantics. In contrast, the contrastive chain-of-thought approach can introduce ambiguity by presenting both correct and incorrect reasoning steps, which might confuse the final translation outcome.

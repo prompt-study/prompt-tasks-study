@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: clone_detection | Best: emotional_prompting vs Other: self_ask
+
+1. **Simplicity in Response**: Emotional prompting directs the model to provide a straightforward, concise answer (TRUE or FALSE) without additional commentary, which aligns with the task's requirement for a clear and direct response. In contrast, self-ask prompts often lead to more verbose explanations, which, while informative, do not meet the task's strict format requirements.
+
+2. **Focus on Task**: Emotional prompting emphasizes the importance of the task to the user, encouraging the model to focus solely on the comparison of the code snippets without getting sidetracked by additional questions or clarifications. This focus ensures that the model adheres to the task's objective of determining code similarity.
+
+3. **Reduced Redundancy**: Emotional prompts avoid the unnecessary generation of clarifying questions, which can introduce redundancy and detract from the efficiency of the response. By not prompting for additional questions, the model can quickly assess the code snippets and provide the required answer, maintaining the task's brevity and precision.

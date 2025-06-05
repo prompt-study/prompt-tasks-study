@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_summarization | Best: sg_in_context_learning vs Other: exemplar_selection_knn
+
+1. Precision in Guided Examples: The sg_in_context_learning technique auto-generates tailored examples that closely mimic the desired output format and phrasing. This ensures that the model receives clear, structured guidance, which leads to more precise and aligned summaries compared to relying on similar but less controlled examples from a k-nearest neighbor selection.
+
+2. Consistent Formatting Cues: By including explicit markers (e.g., ###summary###) and patterned pairs of code and summary examples, sg_in_context_learning reinforces the expected output style and structure. This consistency helps the model generate summaries that are succinct and uniform, whereas exemplar_selection_knn might introduce variations that reduce clarity.
+
+3. Enhanced Contextual Relevance: The auto-generated in-context examples are specifically designed to simulate few-shot learning for the given task, making them highly relevant to the particular nuances of code summarization. In contrast, selecting exemplars based on similarity via knn may inadvertently include examples that are less directly applicable, resulting in responses that can be either verbose or misaligned with the target style.

@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: mutant_generation | Best: role_prompting vs Other: step_back_prompting
+
+1. Defined Expertise: By assigning a specific role (such as Data Scientist, Technical Lead, or Software Architect), the model taps into a tailored set of knowledge and coding practices. This focused persona helps the model understand exactly what kind of mutation is required and apply domain-specific insights, leading to more accurate and relevant code modifications.
+
+2. Concise Task Focus: Role prompting clearly directs the model to produce the mutated code only, reducing extraneous details and internal explanations. This focused approach minimizes deviations from the task, ensuring that the mutation is small, semantically altered yet syntactically correct, which results in a cleaner and higher-quality output.
+
+3. Reduced Ambiguity: With role prompting, the instructions about what to change are implicit in the role’s expertise, so the model doesn’t have to generate or elaborate on a general plan first. This clarity removes extra reasoning steps and potential misinterpretation, leading to more predictable and consistent results tailored to the mutation requirements.

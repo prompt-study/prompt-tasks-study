@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: exception_type | Best: rephrase_and_respond vs Other: thread_of_thought
+
+1. Focused Question Restatement: The rephrase_and_respond technique forces the model to restate the query in its own words, ensuring it fully grasps what’s being asked. This leads to a clear and precise identification of exception types without getting sidetracked by less relevant code details.
+
+2. Direct Answer Formatting: By emphasizing a specific response format (e.g., “###ExceptionType###”), the rephrase approach minimizes ambiguity in the final output. This structured format is particularly effective for exception type prediction, resulting in responses that align perfectly with expected answer templates.
+
+3. Enhanced Clarity and Conciseness: Rephrasing encourages the model to distill the core problem and requirements before answering, which aids in generating concise, on-point responses. This method avoids overcomplicating the explanation with unnecessary step-by-step code traversal, making the answer clearer and more accessible.

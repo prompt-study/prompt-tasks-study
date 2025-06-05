@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: bug_fixing | Best: sg_in_context_learning vs Other: self_ask
+
+1. **Contextual Examples**: The **sg_in_context_learning** technique provides the model with contextual examples of problematic and clean code, which helps the model understand the expected format and style of the output. This guidance allows the model to generate more accurate and consistent fixes, as it has seen similar transformations before.
+
+2. **Direct Fix Focus**: The **sg_in_context_learning** technique prompts the model to deliver a corrected variant directly, without asking for clarifying questions. This approach ensures that the model focuses on providing a solution rather than getting sidetracked by assumptions or additional inquiries, leading to more efficient and straightforward bug fixes.
+
+3. **Readability and Conventions**: By using examples that demonstrate proper naming conventions, spacing, and formatting, the **sg_in_context_learning** technique helps the model produce code that adheres to standard coding practices. This results in higher-quality, more readable code that is easier to maintain and understand.

@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_summarization | Best: sg_in_context_learning vs Other: few_shot_contrastive_cot
+
+1. Concise Pattern Replication: The sg_in_context_learning technique provides clear, structured examples that directly model the desired one-sentence code summary, enabling the model to mimic this concise style. This direct pattern replication helps the model generate summaries that are succinct and to the point, which is ideal for code summarization tasks.
+
+2. Focused Guidance Without Overexplanation: Unlike few_shot_contrastive_cot, which requires outlining multiple reasoning steps, the sg_in_context_learning approach focuses on delivering the final output without unnecessary verbosity. This streamlined guidance reduces the temptation to overexplain and keeps the summary focused on the essential functionality of the code.
+
+3. Reduced Cognitive Overhead: With predefined in-context examples, the sg_in_context_learning technique minimizes the cognitive load of having to generate and process extensive intermediate reasoning chains. This allows the model to devote more capacity to understanding the code logic directly and producing a clear, concise summary, rather than balancing explanation and summary generation as in contrastive methods.

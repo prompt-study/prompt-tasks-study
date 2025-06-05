@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_summarization | Best: sg_in_context_learning vs Other: universal_self_consistency
+
+1. Clear Exemplars: The sg_in_context_learning technique provides explicit examples that clearly illustrate the expected output format and level of detail. This direct guidance helps the model understand precisely what is required, leading to concise and relevant summaries.
+
+2. Precise Instruction Adherence: By embedding detailed examples and structured markers (like ###summary###), sg_in_context_learning steers the model toward a specific response style. This targeted approach minimizes ambiguity and maintains focus on the single-sentence summary format, unlike the broader consensus method.
+
+3. Focused Context Utilization: In-context examples concentrate the model’s attention on key elements of the task, ensuring that the summary remains aligned with well-defined criteria. In contrast, universal_self_consistency aggregates multiple outputs, which can dilute focus, introduce verbosity, and lead to less consistent summarization.

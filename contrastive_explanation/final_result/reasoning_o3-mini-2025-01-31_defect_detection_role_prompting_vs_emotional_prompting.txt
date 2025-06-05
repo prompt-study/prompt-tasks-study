@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: defect_detection | Best: role_prompting vs Other: emotional_prompting
+
+1. Clarity of Expertise: Role prompting explicitly assigns a professional role (e.g., Code Reviewer or Senior Software Engineer), which primes the model to draw on technical knowledge and follow industry best practices. This clear context helps the model focus on defect detection strictly from a technical perspective, reducing ambiguity and ensuring precise answers.
+
+2. Task-Focused Responses: By using role prompting, the model is encouraged to adopt a persona that prioritizes technical accuracy and efficiency over emotional engagement. This focus minimizes distractions that can arise from affective language, leading to responses that are directly aligned with the requirements of defect detection.
+
+3. Consistency and Professionalism: Role prompting promotes a consistent, formal tone that mirrors how experienced professionals conduct code reviews. In contrast, emotional prompting introduces personal tones that might detract from factual correctness, thereby ensuring that the responses are both reliable and suited to rigorous software engineering domains.

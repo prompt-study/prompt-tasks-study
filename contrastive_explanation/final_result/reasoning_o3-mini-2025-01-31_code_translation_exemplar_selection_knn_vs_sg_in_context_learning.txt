@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_translation | Best: exemplar_selection_knn vs Other: sg_in_context_learning
+
+1. Targeted Example Selection: Exemplar_selection_knn retrieves the most similar and relevant examples from a curated pool, ensuring that the translated code follows the expected conventions and context. This targeted approach minimizes ambiguity because the model leverages high-quality, directly applicable examples, resulting in more accurate translations.
+
+2. Consistency in Formatting: Since the exemplars provide explicit code translation pairs with correct output, the technique guides the model to generate responses that strictly adhere to the desired formatting and style. The consistent structure in the provided examples ensures that the translated code meets the specific requirements of the task.
+
+3. Reduced Generation Variability: By relying on concrete, high-quality examples, exemplar_selection_knn limits the need for the model to generate novel in-context examples on the fly. This reduces possible errors or inconsistencies that can arise from auto-generating in-context examples, leading to more reliable and precise code translations.

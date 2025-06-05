@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: defect_detection | Best: role_prompting vs Other: tree_of_thought
+
+1. Clarity of Instruction: Role_prompting gives the model a clear identity (e.g., Software Architect, Technical Lead) so that it focuses on delivering concise and precise answers. This clarity minimizes unnecessary reasoning details and ensures the answer directly addresses the defect detection requirement.
+
+2. Conciseness in Output: With role_prompting, the model is instructed to output only the final answer (e.g., ###TRUE### or ###FALSE###), reducing the risk of including intermediate reasoning. This leads to responses that are both terse and task-specific, aligning well with the binary nature of defect detection.
+
+3. Reduced Cognitive Overhead: Role_prompting avoids the multi-step, branching thought processes required by the tree_of_thought method, which can introduce uncertainties. By keeping the reasoning implicit, the model produces more focused responses that meet the task criteria without the potential pitfalls of over-explaining or deviating from the desired format.

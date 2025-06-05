@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: mutant_generation | Best: role_prompting vs Other: sg_in_context_learning
+
+1. Clear Persona Guidance: When assigned a specific role (e.g., Software Developer or Quality Assurance Engineer), the model taps into a more focused expertise, resulting in concise, task-specific responses that align with professional coding practices. This targeted orientation helps the model prioritize quality mutations over extraneous explanation or format clutter.
+
+2. Instruction Simplicity and Precision: The role_prompting technique delivers a single, straightforward instruction—"generate a mutant of the code"—that reduces ambiguity. In contrast, sg_in_context_learning involves multiple examples with additional formatting instructions, which can lead to unwanted commentary or structural changes that detract from producing clean mutant code.
+
+3. Output Consistency and Relevance: With role_prompting, the requirement to provide "mutated code only" drives the model to generate outputs directly answering the task, whereas sg_in_context_learning reinforces a dual sample format (Original and Mutant) that may dilute focus. This streamlined approach results in higher evaluation scores due to more uniform and contextually appropriate mutant generation.

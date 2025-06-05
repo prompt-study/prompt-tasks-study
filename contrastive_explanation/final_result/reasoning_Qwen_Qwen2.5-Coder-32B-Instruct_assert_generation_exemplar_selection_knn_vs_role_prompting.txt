@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: assert_generation | Best: exemplar_selection_knn vs Other: role_prompting
+
+1. **Contextual Relevance**: Exemplar selection KNN provides contextually relevant examples that closely match the given code snippet, allowing the model to generate assertions that are more aligned with the specific logic and structure of the code. This technique leverages similar code patterns to guide the model, ensuring that the generated assertions are more accurate and meaningful.
+
+2. **Consistency in Output Format**: The exemplar selection KNN technique consistently uses a specific format for assertions, such as `org.junit.Assert.assertEquals(expected, actual)`, which is the standard format for assertions in JUnit tests. This consistency helps the model to produce assertions in the correct format, avoiding syntax errors and ensuring that the assertions are directly usable in test cases.
+
+3. **Reduced Role Bias**: Role prompting can introduce bias based on the persona assigned (e.g., Senior Software Engineer, Data Scientist, Code Reviewer). Different roles may have varying preferences or styles for writing assertions, which can lead to inconsistent or incorrect outputs. In contrast, exemplar selection KNN focuses on the code itself, minimizing the influence of role-specific biases and producing more reliable and task-specific assertions.

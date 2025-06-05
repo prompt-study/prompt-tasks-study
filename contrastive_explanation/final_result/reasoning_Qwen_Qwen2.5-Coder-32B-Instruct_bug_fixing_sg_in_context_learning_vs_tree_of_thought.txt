@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: bug_fixing | Best: sg_in_context_learning vs Other: tree_of_thought
+
+1. **Clear Contextual Guidance**: The `sg_in_context_learning` technique provides clear, in-context examples that simulate few-shot learning, helping the model understand the expected format and structure of the response. This structured guidance ensures that the model consistently generates high-quality, well-formatted bug fixes.
+
+2. **Focused Correction**: By explicitly asking for paired examples of flawed and corrected code, `sg_in_context_learning` focuses the model on the specific task of identifying and fixing bugs. This targeted approach leads to more accurate and relevant corrections compared to the broader, iterative reasoning of `tree_of_thought`.
+
+3. **Direct Feedback Mechanism**: The `sg_in_context_learning` technique allows for direct feedback on the correctness of the bug fix by comparing the flawed and corrected code. This immediate feedback mechanism helps the model learn from its mistakes and improve the quality of its responses, whereas `tree_of_thought` relies on a more abstract iterative process that may not provide as clear or direct feedback.

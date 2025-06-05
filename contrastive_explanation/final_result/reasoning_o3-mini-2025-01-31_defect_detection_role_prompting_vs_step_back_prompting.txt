@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: defect_detection | Best: role_prompting vs Other: step_back_prompting
+
+1. Clear Role Context: Role_prompting explicitly assigns a specific persona (e.g., Security Engineer, Code Reviewer, Technical Lead), which immediately focuses the model on the relevant domain knowledge and criteria specific to defect detection. This targeted guidance minimizes ambiguity and helps the model deliver more precise and contextually appropriate answers.
+
+2. Direct and Succinct Responses: With role_prompting, the instructions emphasize a direct answer format (e.g., responding with just ###TRUE### or ###FALSE###), which reduces unnecessary elaboration. The persona approach encourages the model to rely on its specialized expertise, leading to responses that are concise and to the point.
+
+3. Enhanced Domain-Specific Reasoning: By adopting a specific role, the model taps into domain-specific conventions and best practices, which are essential for accurately assessing code defects. This contrasts with step_back_prompting, where the broader reflection on principles can dilute focus, potentially leading to less targeted and sometimes overly detailed reasoning that isn’t tailored to the immediate task at hand.

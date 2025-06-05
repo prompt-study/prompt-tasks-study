@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: mutant_generation | Best: role_prompting vs Other: rephrase_and_respond
+
+1. Clear Role Identity: Assigning a specific role (e.g., Software Developer, Senior Software Engineer, Quality Assurance Engineer) primes the model with expert-level knowledge and context, which helps tailor the output to meet industry-specific expectations. This clarity leads the model to produce concise, relevant, and technically sound mutant code.
+
+2. Focused Instruction Adherence: Role prompting reduces the tendency to rephrase or include extraneous narrative by concentrating the model's attention strictly on the technical task. This results in responses that directly address the code mutation without unnecessary or verbose elaboration.
+
+3. Domain-Specific Communication Style: By specifying a role, the prompt encourages the model to adopt the communication style and decision-making process of a professional in that field. This alignment with industry practices ensures that the modifications are both subtle and technically appropriate, improving the overall mutation quality.

@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_summarization | Best: sg_in_context_learning vs Other: rephrase_and_respond
+
+1. Explicit Structured Guidance: With sg_in_context_learning, the model receives clear, well-defined examples that directly illustrate the desired format and succinct style of responses. This focused guidance helps ensure the generated summaries are both concise and aligned precisely with the task requirements.
+
+2. Consistent Format Enforcement: The in-context examples set a concrete standard for brevity, forcing the model to mimic a one-sentence summary that integrates code functionality neatly. This consistency in format is harder to achieve with rephrase_and_respond, which tends to produce more expansive and sometimes verbose explanations.
+
+3. Reduced Cognitive Overhead: The sg_in_context_learning technique leverages pre-populated exemplars, which reduce the cognitive load on the model by minimizing the need to interpret variable, rephrased instructions. This leads to more direct and accurate outputs, whereas the rephrase_and_respond approach can introduce unnecessary details and stray from the concise summary required.

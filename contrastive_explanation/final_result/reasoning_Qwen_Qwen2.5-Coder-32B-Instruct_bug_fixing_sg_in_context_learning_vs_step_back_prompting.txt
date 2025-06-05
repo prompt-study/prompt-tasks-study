@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: bug_fixing | Best: sg_in_context_learning vs Other: step_back_prompting
+
+1. **Contextual Examples**: The `sg_in_context_learning` technique provides in-context examples that simulate few-shot learning, allowing the model to learn from specific instances of problematic and clean code. This direct exposure to corrected examples helps the model understand the nuances of code improvements, leading to more accurate and contextually relevant fixes.
+
+2. **Focused Corrections**: By presenting the problematic and clean code side-by-side, the `sg_in_context_learning` technique highlights specific changes made to fix the code. This focused approach ensures that the model learns the exact modifications needed, such as naming conventions, formatting, and logical corrections, resulting in higher-quality bug fixes.
+
+3. **Readability and Clarity**: The `sg_in_context_learning` technique emphasizes readability and clarity in the provided examples, which the model then replicates in its responses. This focus on clean and well-formatted code helps the model generate more maintainable and understandable fixes, improving the overall quality of the output.

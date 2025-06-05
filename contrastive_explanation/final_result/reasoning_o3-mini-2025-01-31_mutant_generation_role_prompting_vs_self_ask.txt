@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: mutant_generation | Best: role_prompting vs Other: self_ask
+
+1. Clear Role Definition: By assigning a specific role (e.g., Senior Software Engineer, Quality Assurance Engineer), the role_prompting technique immediately sets an authoritative context that aligns the model’s expertise with the task requirements. This clarity reduces ambiguity and guides the model to generate responses that are precise and tailored to the nuances of software mutation tasks.
+
+2. Focused Task Execution: Role prompting directs the model to focus solely on the given instruction with explicit outcomes, such as providing only the mutated code. This emphasis minimizes extraneous dialogue, prevents digressions, and helps the model prioritize generating code changes that are both subtle and relevant to the intended mutation.
+
+3. Reduced Over-clarification: Since role prompting already implies expert-level understanding, it eliminates the need for the model to ask follow-up questions. In contrast, self_ask may lead the model to seek clarifications, which can delay or derail the production of a direct answer; thus, role prompting leads to more immediate and high-quality outputs by avoiding unnecessary inquiries.

@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: mutant_generation | Best: role_prompting vs Other: analogical_prompting
+
+1. Focused Persona: Role prompting assigns a clear, domain-specific persona (like a Code Reviewer or Senior Software Engineer) which directs the model to adopt a precise perspective and adhere to relevant coding standards. This targeted approach minimizes ambiguity, ensuring that the modifications remain subtle and technically sound as required by the mutation task.
+
+2. Task-Specific Guidance: With role prompting, the instructions are tailored to the actual task, emphasizing the need for minimal changes in the code. This clarity in expectations drives the model to produce more accurate and practical mutants, as it understands the context and constraints typical of a software engineering setting.
+
+3. Concise, Unambiguous Instructions: Role prompting communicates the task requirements directly and succinctly, leaving little room for interpretation. In contrast, analogical prompting relies on broad analogies that may introduce extraneous context, potentially leading to less precise modifications and a lower-quality mutant output.

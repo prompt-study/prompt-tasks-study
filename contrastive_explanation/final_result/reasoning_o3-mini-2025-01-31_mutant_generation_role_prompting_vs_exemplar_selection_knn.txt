@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: mutant_generation | Best: role_prompting vs Other: exemplar_selection_knn
+
+1. Expert Framing: By assigning an expert persona (e.g., Senior Software Engineer or Quality Assurance Engineer), role_prompting provides the model with a clear context and set of expectations. This focused framing encourages the generation of code mutations that align more closely with professional practices and subtle correctness, eliminating extraneous or off-target modifications.
+
+2. Direct Task Emphasis: Role prompting explicitly instructs the model to "generate a mutant" with small changes and to output only the modified code. This precise directive minimizes ambiguity and keeps the model’s attention on the core modification task, whereas multiple exemplar examples might lead the model to rely too heavily on pattern matching rather than understanding the intent behind mutation.
+
+3. Reduced Contextual Noise: Unlike exemplar_selection_knn, which includes several example mutations that can introduce conflicting signals or overfitting to those specific patterns, role prompting distills the task into a direct, high-level instruction. This reduction in peripheral information allows the model to leverage its broader internal knowledge, resulting in more accurate, nuanced, and high-quality mutants.

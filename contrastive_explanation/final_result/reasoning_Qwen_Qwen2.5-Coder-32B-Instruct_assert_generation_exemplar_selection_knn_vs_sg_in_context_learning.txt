@@ -1,0 +1,7 @@
+🔍 Running test: Qwen/Qwen2.5-Coder-32B-Instruct | Task: assert_generation | Best: exemplar_selection_knn vs Other: sg_in_context_learning
+
+1. **Contextual Relevance**: Exemplar selection KNN provides more contextually relevant examples by selecting the most similar code snippets from a large dataset. This ensures that the assertions generated are closely aligned with the specific patterns and structures present in the provided code, leading to higher quality and more accurate assertions.
+
+2. **Focused Prompting**: The exemplar_selection_knn technique focuses on enriching the prompt with the most relevant examples, which helps the model to understand the specific requirements and expected outcomes of the code. This focused approach minimizes the chances of generating irrelevant or incorrect assertions.
+
+3. **Consistent Quality**: By using a k-nearest neighbor approach, exemplar_selection_knn ensures a consistent quality of responses across different prompts. The model benefits from a diverse yet highly relevant set of examples, which helps in maintaining a high standard of assertion generation without the variability seen in the sg_in_context_learning technique.

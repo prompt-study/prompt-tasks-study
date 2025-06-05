@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: defect_detection | Best: role_prompting vs Other: rephrase_and_respond
+
+1. Role Clarity: By assigning a specific persona (e.g., Senior Software Engineer, Code Reviewer), the model is guided to adopt a mindset tailored to the technical context, reducing ambiguity. This focused role helps the model prioritize its analysis on critical technical aspects, leading to more precise defect detection decisions.
+
+2. Consistent Communication Style: Role prompting encourages a direct and professional tone that minimizes unnecessary elaboration. This precise style ensures the answer strictly adheres to the task requirements—using the exact expected response format (i.e., ###TRUE### or ###FALSE###)—which helps avoid deviations that might introduce errors.
+
+3. Reduced Cognitive Load: With role prompting, the model can concentrate on the core question without having to rephrase or clarify the query. By not spending cognitive resources on restating the prompt, the model's response is leaner and more focused on defect analysis, resulting in improved accuracy and consistency.

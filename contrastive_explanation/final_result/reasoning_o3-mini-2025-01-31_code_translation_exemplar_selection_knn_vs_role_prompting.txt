@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_translation | Best: exemplar_selection_knn vs Other: role_prompting
+
+1. Context-Enriched Guidance: Exemplar_selection_knn provides highly relevant examples that illustrate how specific Java constructs map to their C# counterparts. This enriched context helps the model generate translations that correctly replace APIs, method signatures, and naming conventions using proven patterns instead of relying solely on generic rules.
+
+2. Consistent Structural Mapping: By including similar examples, the knn technique reinforces consistent structural transformations such as method declarations, virtual modifiers, and options invocation styles. This consistency leads to higher-quality outputs since the model can mimic the precise formatting and structural patterns required in C#.
+
+3. Reduced Ambiguity in Translation: The example-based approach minimizes ambiguity by explicitly showing how to convert various code elements. In contrast, role_prompting only provides a persona and vague instructions, which can lead to literal translations that disregard the specific nuances of translating between languages.

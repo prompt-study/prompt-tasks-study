@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: defect_detection | Best: role_prompting vs Other: style_prompting
+
+1. Domain Expertise Alignment: Role prompting assigns a specific technical role (such as DevOps Engineer or Security Engineer), which primes the model to leverage domain-specific expertise when analyzing code. This leads to a more focused and accurate evaluation of defect detection since the model actively considers the nuances and potential pitfalls relevant to that particular domain.
+
+2. Clear Task Context: By establishing a clear persona, role prompting reduces ambiguity and aligns the model’s reasoning directly with the task requirements. This clarity ensures that the model’s analysis is tailored to detecting defects rather than getting sidetracked by stylistic or tone-based considerations, improving the overall quality of the response.
+
+3. Focused Analytical Approach: Role prompting encourages the model to adopt the mindset of a technical reviewer, which naturally filters out unnecessary verbiage and extraneous commentary. With style prompting, the model might adhere more to a prescribed tone that could detract from the key analytical steps needed for defect detection, thereby slightly lowering the effectiveness in delivering a precise answer.

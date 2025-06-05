@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: defect_detection | Best: role_prompting vs Other: few_shot_contrastive_cot
+
+1. Clear Role Definition: By assigning a specific role (e.g., Senior Software Engineer, Technical Lead), the role_prompting technique immediately sets the context and expertise level expected, resulting in more authoritative and focused responses that directly address the defect detection problem without unnecessary side commentary.
+
+2. Reduced Extraneous Reasoning: Role_prompting restricts the answer format (e.g., "###TRUE###" or "###FALSE###" only) which minimizes the occurrence of additional chain-of-thought reasoning. This streamlined approach leads to concise outputs that precisely follow the task instructions and avoid diluting the answer quality with irrelevant details.
+
+3. Consistent Response Style: With role_prompting, the model is guided to adopt a consistent communication style geared toward a professional setting, which improves reliability across similar queries. This consistency ensures that only the necessary contextual information is included, leading to high-quality, predictable responses compared to the more variable outputs seen with few_shot_contrastive_cot.

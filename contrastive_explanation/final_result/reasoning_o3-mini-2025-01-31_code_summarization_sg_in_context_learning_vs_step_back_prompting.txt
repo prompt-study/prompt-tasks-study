@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_summarization | Best: sg_in_context_learning vs Other: step_back_prompting
+
+1. Clear Template Guidance: The sg_in_context_learning technique provides explicit code-summary example pairs that directly guide the model on the expected output format and style. This clarity helps the model mimic the format accurately and generate summaries that are both concise and syntactically aligned with the provided examples.
+
+2. Direct Pattern Imitation: By offering in-context examples, the sg_in_context_learning approach effectively demonstrates the desired transformation from code to summary. This direct pattern imitation reduces ambiguity and minimizes extraneous details, ensuring that the model focuses on the primary functionality and critical aspects of the code without over-elaboration.
+
+3. Concise Response Framing: The in-context examples set clear boundaries for what constitutes an acceptable summary, naturally leading to more succinct responses. This conformance to a known good example prevents the model from adding unnecessary meta-explanations that sometimes occur with the step_back_prompting approach, thereby enhancing the overall quality and clarity of the final summary.

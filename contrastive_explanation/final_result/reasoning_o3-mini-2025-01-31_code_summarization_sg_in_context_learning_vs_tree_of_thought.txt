@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_summarization | Best: sg_in_context_learning vs Other: tree_of_thought
+
+1. Concise Example Guidance: The sg_in_context_learning technique leverages targeted examples that model the exact structure and brevity required, resulting in a response that directly mirrors the desired one-sentence summarization. This focused approach minimizes unnecessary details compared with the extended chains of thought in tree_of_thought.
+
+2. Streamlined Processing: By avoiding multiple iterative reasoning phases, sg_in_context_learning produces a clear and direct output without intermediate drafts or extraneous detail. This efficiency reduces cognitive overhead and prevents the inclusion of superfluous thought steps that can dilute clarity.
+
+3. Example-Driven Consistency: With sg_in_context_learning, the auto-generated in-context examples provide consistent formatting and stylistic cues, ensuring that the summarization aligns perfectly with established patterns. In contrast, tree_of_thought’s branching reasoning can lead to variations and extra explanations that stray from the concise summary format essential for code summarization.

@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_summarization | Best: sg_in_context_learning vs Other: thread_of_thought
+
+1. Concise Template Alignment: sg_in_context_learning leverages pre-generated example pairs that directly model the desired one-sentence summary format. This focused guidance minimizes extraneous details, ensuring responses are succinct, on-target, and aligned with the task requirements, unlike thread_of_thought which tends to elaborate too much.
+
+2. Reduced Cognitive Overhead: By providing clear in-context examples, sg_in_context_learning reduces the need for step-by-step reasoning. This streamlined approach allows the model to quickly identify and mirror the structure of high-quality responses without engaging in the deeper, more verbose thought processes encouraged by thread_of_thought.
+
+3. Emphasis on Output Style: The sg_in_context_learning technique inherently focuses the model on generating outputs consistent with the provided examples. With explicit examples of both code and summary paired and tagged, the model is more likely to produce responses that are brief, precise, and directly relevant, whereas thread_of_thought often dilutes the output with unnecessary segmentation and analysis.

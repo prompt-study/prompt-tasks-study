@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_translation | Best: exemplar_selection_knn vs Other: analogical_prompting
+
+1. Relevant Code Context: Exemplar selection knn provides highly contextual examples drawn from similar code snippets. This direct context ensures that the model mirrors the correct coding patterns and API usage, leading to translations that adhere closely to the target language’s idioms.
+
+2. Structural Consistency: The technique leverages real, concrete examples that embody the exact transformation needed. This helps maintain consistent method signatures, object constructions, and invocation patterns, which is crucial for code translation tasks where structural correctness is paramount.
+
+3. Reduced Ambiguity: By focusing on similar, well-defined examples, exemplar_selection_knn minimizes the risk of introducing extraneous or misleading information. In contrast, analogical prompting can lead to irrelevant analogies and unnecessary explanation that distract from the precise syntactic transformation required for accurate translation.

@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: mutant_generation | Best: role_prompting vs Other: emotional_prompting
+
+1. Clear Technical Focus: Role_prompting assigns a specific persona (e.g., Code Reviewer, Senior Software Engineer) which directly aligns the model’s response with technical requirements. This clarity ensures that the model focuses solely on the syntactic transformation of the code rather than getting sidetracked by extraneous emotional language.
+
+2. Domain Expertise Emphasis: By using role-based instructions, the model taps into the implicit domain knowledge associated with the designated persona. This leads to more precise and contextually relevant mutations, as the model is primed to think like an expert in the software engineering domain rather than balancing technical accuracy with affective cues.
+
+3. Reduction of Distraction: Emotional_prompting often invites creative or flowery language that might dilute the technical message. The straightforward, factual tone of role_prompting minimizes ambiguity, ensuring the response remains concise and accurately targeted towards the task of generating subtle code mutations.

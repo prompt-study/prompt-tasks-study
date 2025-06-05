@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_translation | Best: exemplar_selection_knn vs Other: style_prompting
+
+1. Contextual Examples: Exemplar selection knn enriches the prompt with concrete, closely related examples that demonstrate the desired code translation, ensuring the model understands the transformation from one language's idioms to the other’s. With these examples, the model can better emulate the target format and architecture, leading to outputs that align closely with expert human responses.
+
+2. Task-Specific Guidance: By providing several targeted examples that detail both the input Java code and the corresponding output C# code, the exemplar selection approach offers explicit, task-specific guidance. This minimizes ambiguity, ensuring that the translated code adheres to language-specific conventions and implementation details, something that style_prompting—which focuses more on tone—does not provide.
+
+3. Consistency and Accuracy: The use of multiple similar examples helps the model learn a consistent translation pattern and reinforces accurate mappings between language constructs. This consistency is crucial for preserving semantics during translation, resulting in a reliably accurate output compared to the broader, less focused style_prompting method.

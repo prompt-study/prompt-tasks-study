@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: defect_detection | Best: role_prompting vs Other: exemplar_selection_knn
+
+1. Expert Persona Guidance: Role prompting assigns a specific expertise (e.g., Security Engineer, Quality Assurance Engineer, Technical Lead) that primes the model to think like an expert in that domain, leading to more informed and accurate assessments of code defects. This focused perspective helps the model draw on domain-specific reasoning rather than relying solely on heuristic examples.
+
+2. Clear and Consistent Instruction: With role prompting, the task instructions are unambiguous and tailored, guiding the model to produce concise, binary answers (###TRUE### or ###FALSE###) without distraction. This clarity minimizes potential confusion from multiple examples and consistently aligns the model’s responses with the intended evaluation criteria.
+
+3. Reduced Exemplar Noise: Exemplar selection via kNN injects diverse examples that might cover edge cases or include noise, potentially distracting from the core evaluation. In contrast, role prompting maintains focus on the defect detection task by leveraging a consistent persona, thereby avoiding the variability and mismatch issues inherent in dynamically selected exemplars.

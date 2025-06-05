@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: exception_type | Best: rephrase_and_respond vs Other: role_prompting
+
+1. Improved Comprehension: When the prompt is rephrased, it encourages the model to deeply engage with and clarify the task requirements. This process naturally leads to a better internalization of the problem context and more accurate, detailed responses.
+
+2. Enhanced Explanation Quality: Rephrasing the inquiry prompts the model to elaborate on the logical reasoning behind the answer. As a result, the response typically includes clear, step-by-step explanations that mirror how human experts approach problem-solving.
+
+3. Focus on Key Elements: The rephrase_and_respond technique directs attention to the most critical parts of the task by asking the model to restate the problem. This emphasis helps minimize misinterpretation and ensures that the final answer directly addresses the nuanced requirements of the exception type prediction task.

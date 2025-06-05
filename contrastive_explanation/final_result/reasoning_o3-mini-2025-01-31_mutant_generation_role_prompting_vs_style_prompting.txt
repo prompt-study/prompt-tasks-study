@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: mutant_generation | Best: role_prompting vs Other: style_prompting
+
+1. Domain Expertise: Role prompting assigns a specific professional persona (e.g., Senior Software Engineer or Quality Assurance Engineer) that inherently carries nuanced domain knowledge. This leads the model to apply expert reasoning and make subtle, meaningful modifications in the code, unlike style prompting which mostly affects tone without invoking technical depth.
+
+2. Task-Specific Focus: By framing the prompt in a role context, the model is more likely to concentrate clearly on the mutation task at hand using precise criteria. The role provides context that emphasizes understanding of code mutation principles and test suite robustness, whereas style prompting shifts attention toward general tone and formatting rather than functional changes.
+
+3. Clear Mutation Intent: Role-based prompts implicitly guide the model to perform surgical, semantically significant alterations by hinting at professional responsibilities and quality benchmarks. This focused instruction helps the model appreciate the intent behind creating mutants—small, controlled changes to assess test suite effectiveness—ensuring higher-quality outcomes compared to the less directed approach of style prompting.

@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: mutant_generation | Best: role_prompting vs Other: thread_of_thought
+
+1. Focused Task Orientation: Role_prompting directly assigns a specific persona and outlines the expected outcome (i.e., providing only the mutated code), which keeps the model's efforts narrowly concentrated on the mutation aspect. This streamlined directive minimizes deviations or unnecessary elaboration, making the response more targeted and precise for the task.
+
+2. Clarity and Brevity: By instructing the model to output only the mutated code rather than a detailed breakdown or step-by-step reasoning, role_prompting encourages succinct responses. This brevity reduces the chance of incorporating irrelevant details, ensuring that the final code mutation is both clear and efficiently communicated.
+
+3. Reduced Cognitive Overhead: The thread_of_thought technique elicits a detailed reasoning process that can introduce extraneous commentary or formatting changes, which may inadvertently alter the intended mutation. Role_prompting, with its direct and simple directive, minimizes the model’s cognitive load and risk of “overthinking,” leading to higher quality, consistent output that adheres directly to the task requirements.

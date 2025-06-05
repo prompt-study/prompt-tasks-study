@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_summarization | Best: sg_in_context_learning vs Other: self_refine
+
+1. Explicit Example Guidance: The sg_in_context_learning technique supplies clear in-context examples that directly model the desired output, which helps the model generate precise and consistent summaries. By seeing well-crafted examples beforehand, the model internalizes the structure and tone required, reducing ambiguity and ensuring a higher quality response.
+
+2. Targeted Output Structure: With predefined tagging (like ###summary###) and formatting instructions in the examples, sg_in_context_learning narrows the response scope, leading to outputs that match the expected format exactly. In contrast, self_refine's iterative refinement can introduce variations or unnecessary details that deviate from the concise one-sentence structure ideal for code summarization.
+
+3. Reduced Iterative Noise: sg_in_context_learning minimizes the risk of generating extraneous or redundant information by avoiding the iterative self-evaluation process seen in self_refine. This direct approach eliminates potential errors from multiple revision cycles, resulting in a clearer, more focused summary that directly addresses the core aspects of the provided code.

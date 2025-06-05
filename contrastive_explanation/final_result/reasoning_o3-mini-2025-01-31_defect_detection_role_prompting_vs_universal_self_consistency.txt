@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: defect_detection | Best: role_prompting vs Other: universal_self_consistency
+
+1. Persona Focus: Role prompting leverages a designated persona (like Code Reviewer or Technical Lead) that inherently understands the domain and context, leading to cleaner, more focused reasoning. This targeted approach reduces ambiguity and aligns the model's analysis precisely with defect detection requirements.
+
+2. Clear and Direct Instructions: With role prompting, the prompt explicitly instructs the model to answer in a binary format (###TRUE### or ###FALSE###) and to act from a specific perspective. This minimizes room for over-analysis or misinterpretation, ensuring the response is both concise and reliable.
+
+3. Reduced Decision Complexity: Role prompting avoids the need to aggregate multiple reasoning outputs, which can introduce conflicting signals as seen in universal self consistency. By directly guiding the model with a single clear directive, it streamlines the decision-making process and enhances the answer's correctness and coherence.

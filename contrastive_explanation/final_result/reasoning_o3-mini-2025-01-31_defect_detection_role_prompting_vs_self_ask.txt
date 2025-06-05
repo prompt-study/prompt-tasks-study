@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: defect_detection | Best: role_prompting vs Other: self_ask
+
+1. Clear Domain Context: Role prompting explicitly assigns a persona (e.g., Data Scientist or Software Developer) that naturally emphasizes the code analysis context, ensuring that the model approaches the task with a focused, domain-specific mindset. This helps avoid ambiguity in identifying defects because the instructions are tightly aligned with the expectations of the role.
+
+2. Precise Answer Formatting: With role prompting, the instructions firmly demand a specific answer format (e.g., “###TRUE###” or “###FALSE###”), eliminating extra verbiage and reducing the cognitive overhead of determining answer presentation. In contrast, self_ask may lead to additional internal questioning that can distract from delivering the straightforward, required output.
+
+3. Inherent Task Focus: Role prompting directly embeds the task objective within the assigned role, ensuring the model’s attention remains on the defect detection aspect without diverging into broader exploratory questions. Self_ask, while useful in some contexts, may unnecessarily prompt clarifying sub-questions that complicate the final response rather than streamline a direct answer.

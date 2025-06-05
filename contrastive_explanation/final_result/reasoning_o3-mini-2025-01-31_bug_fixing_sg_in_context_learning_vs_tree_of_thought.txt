@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: bug_fixing | Best: sg_in_context_learning vs Other: tree_of_thought
+
+1. Clear Format Matching: The sg_in_context_learning technique provides explicit examples that mirror the desired output format (with labels such as ###bug### and ###fix###), ensuring that the model’s responses closely align with the expected structure. This direct guidance helps the model produce consistent and accurate results, while tree_of_thought may stray into excess iterative reasoning.
+
+2. Focused Contextual Guidance: With sg_in_context_learning, the model receives concise, task-specific examples that limit extraneous reasoning, leading to responses that directly address the bug fixing task. In contrast, tree_of_thought’s multiple reasoning steps can introduce unnecessary complexity and potential deviations from the succinct final answer required.
+
+3. Reduced Cognitive Overhead: The sg_in_context_learning approach leverages pre-constructed examples that encapsulate key patterns and best practices, allowing the model to bypass extensive intermediate steps. This streamlined process minimizes the chance of errors and focuses on producing high-quality corrective code, whereas the iterative process in tree_of_thought can complicate the final output.

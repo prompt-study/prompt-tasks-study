@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_question_answering | Best: role_prompting vs Other: rephrase_and_respond
+
+1. Focused Persona: Assigning a specific role (e.g., Technical Lead or Quality Assurance Engineer) guides the model to adopt expert-level language and targeted evaluation criteria, ensuring responses directly address the software engineering context without unnecessary elaboration. This clarity helps maintain a sharp focus on the code's correctness and completeness relative to the question at hand.
+
+2. Conciseness in Communication: Role prompting instructs the model to provide succinct responses (e.g., a simple "###TRUE###" or "###FALSE###") without extraneous commentary, improving efficiency. This streamlined communication aids in quick, clear decision-making which is ideal for code evaluation tasks.
+
+3. Clear Evaluation Criteria: By assigning a role, the prompt inherently sets clear expectations regarding the review's depth and technical accuracy, which reduces ambiguity. In contrast, rephrase_and_respond might lead to additional narrative that can dilute the precise judgment needed for technical correctness, affecting response quality.

@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: assert_generation | Best: exemplar_selection_knn vs Other: few_shot_contrastive_cot
+
+1. Relevant Context Extraction: Exemplar_selection_knn retrieves the most similar code examples from a database, ensuring that the context provided is highly relevant and closely aligned with the current task. This relevance helps the model to better understand the coding pattern and generate assertions that are precise and contextually appropriate.
+
+2. Reduced Ambiguity: By leveraging only closely matched examples, the exemplar_selection_knn technique minimizes the noise that may arise from contrasting correct and incorrect reasoning paths used in few_shot_contrastive_cot. This streamlined context allows the model to focus on established patterns rather than reconciling varied chains of thought, leading to more consistent and accurate assertions.
+
+3. Pattern Reinforcement: The technique reinforces the use of proven assertion patterns by providing high-quality exemplar assertions that directly mirror the target code's structure. As a result, the model is guided by concrete examples that illustrate effective validation practices, reducing the room for error in formulating new and meaningful assertions.

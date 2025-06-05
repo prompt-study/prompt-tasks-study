@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_question_answering | Best: role_prompting vs Other: self_ask
+
+1. Clear Persona Definition: Role_prompting assigns a specific expert role (e.g., Security Engineer, DevOps Engineer) to the model, which helps orient the response with domain-specific knowledge and evaluation criteria. This clear definition ensures the answer is tailored precisely to the expectations of the task without ambiguity.
+
+2. Direct Focus on Task Requirements: By instructing the model to behave in a particular role, role_prompting eliminates extraneous self-decomposition steps (like asking clarifying questions) that might dilute the focus on the immediate code evaluation. This leads to a more efficient analysis that directly weighs the code against the provided question criteria.
+
+3. Consistency and Predictability: Role_prompting enforces a consistent style and response structure, which is critical for tasks like code evaluation where precise criteria (outputting only "###TRUE###" or "###FALSE###") must be met. This approach minimizes variations in quality and ensures that answers remain directly aligned with the specified requirements.

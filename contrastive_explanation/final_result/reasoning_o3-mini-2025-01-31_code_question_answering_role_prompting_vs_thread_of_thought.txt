@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_question_answering | Best: role_prompting vs Other: thread_of_thought
+
+1. Focused Expertise: Role prompting assigns a specific role such as "Code Reviewer" or "Software Architect" that naturally emphasizes verifying code correctness. This direct alignment with the task leads to clear, concise answers without unnecessary elaboration.
+
+2. Precision in Output: With role prompting, the instructions emphasize providing a straightforward outcome (e.g., "###TRUE###" or "###FALSE###") that aligns with the evaluation criteria. This precision helps avoid the extra narrative found in thread_of_thought prompts, ensuring the answer is both succinct and on target.
+
+3. Reduced Cognitive Overhead: Role prompting limits the response to the essential assessment required for the task, bypassing the internal chain-of-thought reasoning. This results in a cleaner output, diminishing the risk of digressions or inconsistent reasoning while directly addressing the code question.

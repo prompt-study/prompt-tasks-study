@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_generation | Best: universal_self_consistency vs Other: few_shot_contrastive_cot
+
+1. Aggregated Consensus: Universal self consistency gathers multiple reasoning outputs and selects the most coherent solution, which helps avoid isolated errors. This aggregation of diverse perspectives leads to a more robust and reliable code output compared to relying on a single example as in few-shot contrastive CoT.
+
+2. Reduced Noise Interference: By using a meta-prompt to evaluate various generated outputs, the universal_self_consistency technique minimizes the impact of any individual low-quality or inconsistent reasoning. This focuses the final answer on the majority consensus, resulting in clearer and more effective code.
+
+3. Enhanced Coherence and Structure: The universal_self_consistency method enforces a consistent logical flow by synthesizing multiple iterations. This cohesive structure is particularly beneficial for complex code generation tasks, as it aligns closely with the expected syntactical and logical requirements, unlike the contrastive approach which may introduce conflicting cues.

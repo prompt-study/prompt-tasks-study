@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: clone_detection | Best: emotional_prompting vs Other: analogical_prompting
+
+1. Commanding Clarity: Emotional_prompting uses direct, impactful language that emphasizes the criticality of the task, which leads the model to produce concise and exact answers. This clear, no-nonsense direction helps avoid ambiguity, ensuring the clone detection decision is precise.
+
+2. Focused Context: The emotionally charged cues in the prompt instill a sense of urgency and importance that keeps the model strictly aligned with the technical criteria of the task. This helps prevent digressions or overcomplicated explanations that can arise from less direct analogies, resulting in a more focused technical analysis.
+
+3. Reduced Cognitive Overhead: By omitting extended metaphors and analogies, emotional_prompting minimizes cognitive load on the response generation process. This means the model can allocate more resources to examining the technical details and structural patterns of the code snippets, leading to higher-quality, task-specific outputs.

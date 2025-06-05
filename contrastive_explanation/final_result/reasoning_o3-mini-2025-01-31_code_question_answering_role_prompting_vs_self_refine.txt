@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_question_answering | Best: role_prompting vs Other: self_refine
+
+1. Clear Task Focus: Role prompting directly assigns a specific role (e.g., Code Reviewer or Software Developer), which steers the model to concentrate solely on evaluating code in relation to the query. This clear focus helps avoid extraneous interpretation and ensures that responses directly address the code question.
+
+2. Concise and Deterministic Responses: With role prompting, the instructions are succinct, often requiring a simple binary answer (like ###TRUE### or ###FALSE###), which minimizes ambiguity. The straightforward nature of the task leads to consistent, rapid responses without the need for iterative self-refinement that may introduce inconsistencies.
+
+3. Reduced Iterative Complexity: Role prompting removes the iterative self-correction process inherent in self_refine techniques. This simplicity avoids potential pitfalls such as conflicting self-feedback or overcomplication, leading to more reliable and robust performance in code question answering tasks.

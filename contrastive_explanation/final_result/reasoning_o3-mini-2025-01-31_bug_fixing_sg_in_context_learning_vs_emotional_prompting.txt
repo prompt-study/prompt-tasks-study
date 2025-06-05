@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: bug_fixing | Best: sg_in_context_learning vs Other: emotional_prompting
+
+1. Structured Guidance: sg_in_context_learning provides explicit in-context examples that precisely show the expected input and output formats, which ensures the model understands the defect-correction task clearly. The detailed examples help the model mimic the structure and formatting (like using ###bug### and ###fix###), reducing ambiguity and leading to higher-quality responses.
+
+2. Focused Code Correction: The technique centers on practical, code-related corrections rather than incorporating extraneous language. This focus on the technical aspects of bug fixing means the model is less likely to get sidetracked by emotional or motivational language, resulting in more accurate and concise code fixes.
+
+3. Reduced Distraction: sg_in_context_learning minimizes affective or personality-driven prompts that can detract from logical reasoning. By focusing solely on contextual examples and precise instructions, the model maintains clarity and prioritizes functionality, leading to responses that align better with software engineering standards.

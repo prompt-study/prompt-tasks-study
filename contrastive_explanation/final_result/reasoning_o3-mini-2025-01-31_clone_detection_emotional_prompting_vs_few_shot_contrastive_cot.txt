@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: clone_detection | Best: emotional_prompting vs Other: few_shot_contrastive_cot
+
+1. Direct Answer Focus: Emotional_prompting encourages responses that are succinct and focused on delivering a clear, unambiguous answer. This is especially useful for tasks like clone detection where the objective is simply to return TRUE or FALSE without extraneous reasoning that could confuse the final output.
+
+2. Minimal Distraction: By avoiding extensive internal chain-of-thought explanations, the emotional_prompting technique provides a straightforward answer without revealing the internal reasoning process. This results in outputs that align more closely with user expectations for a concise response, reducing cognitive overload for the end-user.
+
+3. Confidence and Clarity: Incorporating assertive and affective language helps the model convey confidence in its decision. This approach creates a perception of clarity and decisiveness, which is valuable in tasks requiring binary responses, ensuring that developers and users quickly understand the result without sifting through detailed intermediate analysis.

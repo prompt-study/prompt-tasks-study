@@ -1,0 +1,7 @@
+🔍 Running test: meta-llama/Llama-3.3-70B-Instruct-Turbo | Task: mutant_generation | Best: exemplar_selection_knn vs Other: self_refine
+
+1. **Contextual Understanding**: The exemplar_selection_knn technique performs better because it selects the most similar code examples to enrich the prompt context, allowing the model to better understand the task and generate more accurate responses. This contextual understanding enables the model to produce high-quality mutated code versions. By leveraging similar code examples, the model can learn from existing patterns and relationships.
+
+2. **Focused Generation**: The exemplar_selection_knn technique outperforms self_refine because it focuses on generating a specific mutated code version based on the provided examples, rather than iteratively refining an initial response. This focused approach enables the model to produce more relevant and accurate results, as it is guided by the context and examples provided. As a result, the generated code is more likely to meet the task requirements.
+
+3. **Reduced Overthinking**: The exemplar_selection_knn technique is more effective than self_refine because it avoids the potential pitfalls of overthinking and unnecessary complexity introduced by the self-refine process. By relying on similar code examples, the model can generate mutated code versions without overanalyzing or introducing unnecessary changes, resulting in more straightforward and accurate responses. This reduced overthinking enables the model to produce higher-quality results with less effort.

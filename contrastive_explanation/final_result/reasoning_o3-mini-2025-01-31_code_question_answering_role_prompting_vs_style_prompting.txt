@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_question_answering | Best: role_prompting vs Other: style_prompting
+
+1. Expertise Alignment: By assigning a specific role like "Software Architect" or "Code Reviewer," role_prompting taps into a persona well-versed in technical nuances. This encourages the model to apply a deeper level of specialized domain knowledge that's more aligned with the task requirements.
+
+2. Focused Evaluation Criteria: Role_prompting clearly instructs the model on what aspects to evaluate, reducing ambiguity in interpretation. It directs the model to provide concise answers (e.g., returning only ###TRUE### or ###FALSE###) based on rigorous criteria, ensuring a more accurate assessment of code quality.
+
+3. Contextual Consistency: When the model takes on a defined role, it inherently contextualizes its responses based on the expectations and responsibilities of that role. This focus improves the depth and precision of the evaluation, making sure that all technical details relevant to the query are comprehensively addressed.

@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: bug_fixing | Best: sg_in_context_learning vs Other: step_back_prompting
+
+1. Explicit Example Guidance: The sg_in_context_learning approach provides clear, concrete examples of both buggy and fixed code, which helps the model align its response with the desired transformation. This direct demonstration limits ambiguity and allows the model to mimic a proven pattern without overinterpreting the task.
+
+2. Focused Contextual Cues: By generating in-context examples automatically, sg_in_context_learning supplies focused cues that localize attention on the specific issue and its resolution. This focus prevents the dilution of effort seen in step back prompting, where broad conceptual instructions can lead to less precise fixes.
+
+3. Reduced Cognitive Overhead: sg_in_context_learning minimizes the need for the model to elaborate high-level reasoning processes and step-by-step plans. Instead, it leverages pattern recognition from the examples, resulting in more accurate and targeted code corrections compared to the extra layers of abstraction required by step back prompting.

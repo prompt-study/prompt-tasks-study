@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: clone_detection | Best: emotional_prompting vs Other: self_ask
+
+1. Direct Clarity: Emotional prompting gives very explicit instructions about the expected output, ensuring that the model immediately focuses on the specific format and outcome required (e.g., a precise "###TRUE###" or "###FALSE###"). This helps avoid unnecessary intermediate steps that may occur in self-ask prompting and keeps the answer direct and concise.
+
+2. Motivational Framing: The affective language in emotional prompting adds a sense of importance and urgency to the task, which can help the model prioritize relevant elements needed for clone detection. By invoking an emotional context, the prompt subtly guides the model toward a confident and focused answer, reducing ambiguity during decision-making.
+
+3. Less Cognitive Overhead: Emotional prompting avoids the extra step of generating clarifying questions, which may introduce unnecessary complexity in the reasoning process. In contrast, self-ask involves decomposing the problem into sub-questions, potentially diluting focus from the main task of code clone detection and sometimes leading to less optimal final outputs.

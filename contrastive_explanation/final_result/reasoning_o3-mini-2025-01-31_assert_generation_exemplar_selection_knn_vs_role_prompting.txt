@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: assert_generation | Best: exemplar_selection_knn vs Other: role_prompting
+
+1. Relevant Context Provision: Exemplar_selection_knn delivers concrete examples that are highly similar to the target code, giving the model precise contextual cues for generating an appropriate assertion. This tailored context helps ensure that the produced assertion statement aligns closely with common patterns observed in the examples.
+
+2. Pattern Matching Precision: By retrieving near-identical examples from a curated set, the exemplar_selection_knn method enables the model to recognize and mimic the correct style and structure of assertion statements. This leads to more reliable outputs compared to role_prompting, where generalized persona instructions may lack the nuance required for this specific task.
+
+3. Reduced Ambiguity: Exemplar_selection_knn minimizes ambiguity by using specific, task-relevant examples that guide the model towards the expected answer format. In contrast, role_prompting, which focuses on behavior and tone, may inadvertently introduce extraneous details or commentary that distracts from generating the precise assertion code needed.

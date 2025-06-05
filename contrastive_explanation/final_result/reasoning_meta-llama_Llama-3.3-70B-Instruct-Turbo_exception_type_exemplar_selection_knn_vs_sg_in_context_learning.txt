@@ -1,0 +1,7 @@
+🔍 Running test: meta-llama/Llama-3.3-70B-Instruct-Turbo | Task: exception_type | Best: exemplar_selection_knn vs Other: sg_in_context_learning
+
+1. **Contextual Relevance**: The exemplar_selection_knn technique performs better because it selects the most similar code examples to enrich the prompt context, making the provided examples more relevant to the task at hand. This relevance helps the model understand the specific exception types and their usage in similar code snippets. As a result, the model can make more accurate predictions about the correct exception type.
+
+2. **Knowledge Retention**: The exemplar_selection_knn technique retains knowledge from the selected examples, allowing the model to learn from the patterns and relationships between code snippets and exception types. This retained knowledge enables the model to generalize better and make more accurate predictions for new, unseen code snippets. In contrast, sg_in_context_learning may not retain this knowledge as effectively.
+
+3. **Specialized Example Selection**: The exemplar_selection_knn technique uses a k-nearest neighbor approach to select examples, which allows it to focus on the most relevant and specialized examples for the task. This specialized example selection helps the model to learn the nuances of exception type prediction and adapt to the specific requirements of the task, resulting in more accurate predictions and better performance compared to sg_in_context_learning.

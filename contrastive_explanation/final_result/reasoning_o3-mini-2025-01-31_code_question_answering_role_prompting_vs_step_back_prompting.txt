@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_question_answering | Best: role_prompting vs Other: step_back_prompting
+
+1. Domain Expertise: Role prompting assigns a specific professional identity (like Software Architect or Developer), leading the model to adopt that domain-specific knowledge and focus on nuances relevant to code evaluation tasks. This clear professional framing yields more informed and context-aware responses that are directly aligned to the technical requirements.
+
+2. Targeted Communication: By defining a specific role, role prompting tailors the response style and technical language to suit the expected standards of that profession. This results in a more precise and actionable answer that directly addresses the query without unnecessary exploratory commentary.
+
+3. Reduced Ambiguity: Role prompting minimizes the risk of vague or overly general responses by anchoring the model's perspective in a well-defined context. This clear framing helps the model concentrate on the code evaluation criteria, ensuring the response is concise and fully meets the task’s requirements.

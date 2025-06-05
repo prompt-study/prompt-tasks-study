@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: bug_fixing | Best: sg_in_context_learning vs Other: few_shot_contrastive_cot
+
+1. Focused Example Structure: sg_in_context_learning guides the model by providing explicit pairs of buggy and fixed code labeled with clear markers. This direct structure reduces ambiguity and sets a concrete format, which helps the model align its response with what is expected for bug-fixing tasks.
+
+2. Consistency in Output Style: The sg_in_context_learning technique emphasizes a consistent presentation using the "bug" and "fix" labels. This controlled format minimizes extraneous details and achieves uniformity in the answers, which is particularly beneficial when the goal is to communicate a precise correction without additional commentary.
+
+3. Reduced Distraction from Meta-Reasoning: Unlike few_shot_contrastive_cot, which encourages the model to outline its thought process and compare ineffective versus effective strategies, sg_in_context_learning focuses directly on the code modifications. By not including the chain-of-thought, the model avoids adding unnecessary information and stays tuned to producing a clear, concise, and high-quality bug fix.

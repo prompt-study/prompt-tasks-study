@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: bug_fixing | Best: sg_in_context_learning vs Other: role_prompting
+
+1. Explicit Exemplification: The sg_in_context_learning technique provides concrete, annotated examples that clearly demonstrate both the erroneous and fixed code. This explicit guidance helps the model understand and replicate the precise output style and structure expected in the task, leading to higher quality fixes.
+
+2. Structured Output Format: With clear labels like "###bug###" and "###fix###", the in-context examples enforce a consistent output format. This structure minimizes ambiguity about what constitutes the original versus the corrected code, ensuring that all improvements are clearly delineated and easier to evaluate.
+
+3. Direct Pattern Learning: By offering multiple instances of code corrections through in-context examples, the sg_in_context_learning method allows the model to learn specific transformation patterns. This targeted learning enables the model to apply similar detailed corrections to unseen buggy code, whereas role_prompting relies only on role instructions without concrete transformation guidance.

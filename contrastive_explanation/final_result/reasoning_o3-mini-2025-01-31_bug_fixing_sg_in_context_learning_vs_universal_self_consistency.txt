@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: bug_fixing | Best: sg_in_context_learning vs Other: universal_self_consistency
+
+1. Explicit Example Guidance: The sg_in_context_learning technique leverages clear, specific examples that directly illustrate the desired output format (e.g., labeling code sections with ###bug### and ###fix###). This direct modeling helps the model understand exactly what structure and style to produce, which is particularly useful for tasks like bug fixing where format clarity is essential.
+
+2. Reduced Ambiguity in Requirements: In-context examples provide concrete cues about both the expected corrections and coding conventions. By embedding working examples into the prompt, sg_in_context_learning minimizes ambiguity, ensuring that the model aligns closely with the intended changes, rather than guessing multiple possible corrections as in universal_self_consistency.
+
+3. Consistent Structural Output: The approach of simulating few-shot learning with curated examples gives the model a consistent structure to follow throughout its response. This consistency contrasts with the universal_self_consistency technique, where aggregating multiple outputs might introduce variability and less precise adherence to specific formatting instructions.

@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: bug_fixing | Best: sg_in_context_learning vs Other: style_prompting
+
+1. Clear Structural Guidance: The sg_in_context_learning technique presents explicit examples labeled with both "bug" and "fix" sections. This dual presentation makes it easier for the model to understand the transformation required, ensuring that both the issue and its resolution are clearly delineated.
+
+2. Reduced Ambiguity Through Examples: By automatically generating in-context examples, this method provides concrete patterns of what constitutes erroneous and corrected code. The direct side-by-side comparison minimizes confusion about the expected output, leading to a higher-quality and more accurate bug-fixing response.
+
+3. Consistent Output Formatting: The provided examples enforce a uniform structure and style, which guides the model toward consistent code formatting and stylistic corrections. This consistency improves the overall clarity of the response, making it more likely for the model to address all errors comprehensively compared to the less structured instructions in style_prompting.

@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_summarization | Best: sg_in_context_learning vs Other: analogical_prompting
+
+1. Clear Structural Guidance: The sg_in_context_learning technique provides explicit in-context examples that illustrate the required structure and format, which helps the model directly mimic high-quality human examples. This reduces ambiguity in the task and ensures that the generated summaries consistently follow a concise, one-sentence format that aligns with the ideal output.
+
+2. Direct Task Alignment: By auto-generating in-context examples tailored to code summarization, sg_in_context_learning maintains a strong focus on the specifics of the task. This approach minimizes the risk of the model deviating into broader, less-relevant analogies that can occur with analogical_prompting, resulting in more precise and task-relevant summaries.
+
+3. Reduced Cognitive Load: The in-context learning method effectively “shows” rather than “tells” what a good summary looks like, allowing the model to leverage predefined examples as templates. In contrast, analogical_prompting requires the model to create an analogy that may introduce extraneous conceptual layers, thereby increasing the cognitive load and potentially detracting from the clarity and conciseness needed for code summarization.

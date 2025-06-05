@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: clone_detection | Best: emotional_prompting vs Other: self_refine
+
+1. Direct Decisiveness: Emotional prompting uses confident and assertive language, which guides the model to produce a straightforward and unambiguous answer. This clear directive helps ensure that the response strictly follows the required format without unnecessary elaboration.
+
+2. Engagement-Driven Precision: By incorporating empathetic and motivational cues, emotional prompting encourages the model to focus intently on the core task. This heightened engagement leads to responses that are both crisp and precise, making it easier to detect clones without overcomplicating the answer.
+
+3. Minimal Iterative Distraction: Emotional prompting avoids the iterative refinement process inherent in self_refine techniques, which can introduce extraneous commentary or deviations. This streamlined approach minimizes distractions and ensures the final output adheres strictly to the prescribed format, enhancing overall quality for the clone detection task.

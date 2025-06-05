@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: clone_detection | Best: emotional_prompting vs Other: role_prompting
+
+1. Direct Output Format: Emotional prompting instructs the model to respond exclusively with a specific format (e.g., "###TRUE###" or "###FALSE###"), which minimizes ambiguity and ensures precise, task-focused outputs. This clarity helps avoid extraneous explanations or deviations from the required answer, unlike role prompting that may allow additional commentary.
+
+2. Enhanced Focus and Motivation: The emotional tone in the prompts instills a sense of responsibility and careful consideration ("You'd better be sure" or "your decision matters"), which motivates the model to pay closer attention to details. This focused engagement is particularly beneficial for technical tasks like clone detection where precision is critical.
+
+3. Streamlined Task Relevance: Emotional prompting keeps the language concise and centered on the technical requirement, reducing the likelihood of off-topic discussions. In contrast, role prompting introduces a persona (e.g., Security Engineer or Technical Lead) that can sometimes lead the model to include extra contextual or subjective details, which may detract from the core task answer.

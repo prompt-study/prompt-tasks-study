@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: bug_fixing | Best: sg_in_context_learning vs Other: rephrase_and_respond
+
+1. Structured Guidance: The sg_in_context_learning technique provides clear, structured examples with labeled sections (e.g., ###bug### and ###fix###) that explicitly demonstrate the expected input-output format. This structure helps the model focus on producing a response that closely mimics high-quality human examples without deviating into unnecessary elaboration.
+
+2. Direct Focus on Task: Unlike rephrase_and_respond, which encourages additional commentary and restatement, sg_in_context_learning locks in on the core bug-fixing task. This focus minimizes extraneous explanations and leads to a more concise, targeted response that directly addresses the problem.
+
+3. Example-Driven Learning: By auto-generating relevant in-context examples, sg_in_context_learning effectively simulates few-shot learning and reinforces best practices. This demonstration-based approach provides implicit training cues that guide the model to generate code changes that align more closely with industry standards and the provided human examples.

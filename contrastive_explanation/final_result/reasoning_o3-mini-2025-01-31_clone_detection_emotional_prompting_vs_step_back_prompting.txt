@@ -1,0 +1,5 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: clone_detection | Best: emotional_prompting vs Other: step_back_prompting
+
+1. Concise Instructions: Emotional_prompting uses succinct, directive language that guides the model to focus exclusively on the required output. This minimizes the risk of deviating into unnecessary analysis and ensures that the answer is delivered in the exact, mandated format.
+2. Format Commitment: The tone in emotional_prompting emphasizes the criticality of adhering to the specified output format. This leads the model to prioritize the final answer structure (e.g., “###TRUE###” or “###FALSE###”), reducing potential errors or over-explanations that may arise in a more reflective, step-back process.
+3. Enhanced Focus: By applying an enthusiastic and urgent tone, emotional_prompting helps sharpen the model’s attention on task-specific details. This focus limits extraneous context or digressive commentary, thereby boosting overall precision in detecting clones in the provided code snippets.

@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: clone_detection | Best: emotional_prompting vs Other: sg_in_context_learning
+
+1. Engagement Boost: Emotional prompting uses affective language that creates a more engaging and enthusiastic tone, which can captivate users and maintain their interest throughout complex tasks. This heightened engagement often leads to clearer and more intuitive explanations compared to the more mechanical style of sg_in_context_learning.
+
+2. User Empathy: By incorporating empathetic language, emotional prompting resonates more with human users, making the responses feel more personalized and supportive. This user-centered approach can alleviate frustrations and foster better understanding when dealing with intricate software tasks like clone detection.
+
+3. Simplified Clarity: Emotional prompting tends to simplify explanations by emphasizing relatable language and avoiding overly technical jargon, which can sometimes obscure understanding in sg_in_context_learning. This clarity helps users quickly grasp the underlying concepts of clone detection, making the interaction more efficient and accessible.

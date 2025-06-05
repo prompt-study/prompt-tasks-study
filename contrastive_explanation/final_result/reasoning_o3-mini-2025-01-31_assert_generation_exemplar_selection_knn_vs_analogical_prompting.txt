@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: assert_generation | Best: exemplar_selection_knn vs Other: analogical_prompting
+
+1. High Relevance Context: Exemplar_selection_knn surfaces code examples that are highly similar to the target snippet, ensuring that the provided assertions are contextually relevant and syntactically aligned with the specific code constructs. This minimizes misunderstanding and directly guides the model to reproduce patterns observed in real-world instances.
+
+2. Specificity in Examples: By relying on concrete examples, this technique offers precise and domain-specific patterns that the model can mimic, leading to more accurate assertion syntax and logic. The direct exposure to relevant assertions enhances the model’s ability to generate statements that exactly match the expected outcomes.
+
+3. Reduced Ambiguity: Exemplar_selection_knn limits the need for interpretation of abstract analogies by presenting clear, analogous instances, which reduces ambiguity in understanding the task requirements. In contrast to broad metaphorical cues in analogical_prompting, the exemplars provide unambiguous guidance, leading to more consistent and high-quality assertion generation.

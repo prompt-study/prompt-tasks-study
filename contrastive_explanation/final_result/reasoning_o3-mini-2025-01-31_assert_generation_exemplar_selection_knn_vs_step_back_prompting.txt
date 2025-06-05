@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: assert_generation | Best: exemplar_selection_knn vs Other: step_back_prompting
+
+1. Targeted Contextual Matching: Exemplar_selection_knn provides the model with highly similar code examples that are directly related to assertion generation. This targeted context helps the model identify precise patterns and valid assertion structures, leading to more accurate results.
+
+2. Established Pattern Imitation: With exemplar_selection_knn, the model can mimic proven assertion patterns from previous examples, reducing the uncertainty present when solely relying on high-level reasoning. By seeing concrete examples, the model is guided to replicate successful constructs without overgeneralizing.
+
+3. Reduced Cognitive Load: Exemplar_selection_knn narrows the focus to specific examples, allowing the model to work within a well-defined framework rather than generating assertions through abstract step-by-step planning. This minimizes potential errors and ambiguity compared to step_back_prompting, which requires the model to mentally reconstruct rules from general criteria.

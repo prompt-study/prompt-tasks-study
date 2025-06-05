@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: assert_generation | Best: exemplar_selection_knn vs Other: self_ask
+
+1. Contextual Richness: Exemplar_selection_knn draws from highly similar code examples, providing concrete context that aligns closely with the task. This rich contextual background helps the model to mimic successful patterns from past examples, leading to more precise and accurate assertion generation.
+
+2. Reduced Ambiguity: By supplying directly relevant examples, this technique minimizes uncertainty that can arise from vague or general prompts. The clear demonstration of how assertions should be structured guides the model more effectively, whereas self_ask may introduce unnecessary clarifications that distract from the core task.
+
+3. Efficiency and Focus: The exemplar-based approach compiles proven patterns and examples, allowing the model to quickly identify and apply the correct assertion style. In contrast, self_ask often diverts attention to generating sub-questions, which can slow down the process and dilute the focus from producing a concise and correct final assertion.

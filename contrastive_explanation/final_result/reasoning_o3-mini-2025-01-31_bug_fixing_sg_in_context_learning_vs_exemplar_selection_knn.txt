@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: bug_fixing | Best: sg_in_context_learning vs Other: exemplar_selection_knn
+
+1. Dynamic Example Generation: sg_in_context_learning dynamically generates in-context examples tailored to the specific bug scenario, which creates a highly relevant learning environment. This dynamic tailoring ensures that the examples directly address the nuances of the code issue, leading to more precise and effective bug fixes.
+
+2. Holistic Contextual Understanding: By synthesizing multiple aspects of the bug and the intended fix within a single consistent narrative, sg_in_context_learning offers comprehensive context. This integrated approach helps the model better understand the overall structure and intended behavior of the code, resulting in fixes that maintain both functionality and style.
+
+3. Enhanced Explanatory Clarity: The technique provides paired examples with clear annotations (e.g., ###bug### and ###fix###), which not only guide the debugging process but also clarify the rationale behind each change. This explicit demonstration of reasoning aids the model in faithfully reproducing high-quality, human-like bug fix solutions.

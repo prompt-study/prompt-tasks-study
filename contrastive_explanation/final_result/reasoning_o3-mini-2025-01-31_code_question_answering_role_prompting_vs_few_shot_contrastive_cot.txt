@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_question_answering | Best: role_prompting vs Other: few_shot_contrastive_cot
+
+1. Focused Persona Guidance: Role prompting assigns a clear persona (e.g., Software Developer or Technical Lead), ensuring that the model consistently adopts the appropriate professional tone and perspective, which is directly tailored to the task at hand. This focused approach helps the model prioritize the core evaluation criteria without getting sidetracked by secondary details.
+
+2. Concise and Direct Responses: With role prompting, the instructions emphasize a brief and straightforward answer (only returning ###TRUE### or ###FALSE###), which reduces the risk of over-elaboration. This contrasts with few_shot_contrastive_cot, where the extra chain-of-thought reasoning can lead to verbose explanations that might obscure the final, correct evaluation.
+
+3. Reduced Cognitive Noise: Role prompting minimizes internal reasoning disclosure by avoiding the presentation of the model's internal thought process. Without the need to articulate chain-of-thought steps, the model focuses entirely on delivering the final answer, reducing potential confusion and maintaining clarity in the response.

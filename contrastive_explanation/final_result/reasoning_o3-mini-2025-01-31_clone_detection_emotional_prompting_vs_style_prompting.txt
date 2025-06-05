@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: clone_detection | Best: emotional_prompting vs Other: style_prompting
+
+1. Increased Engagement: Emotional prompting uses affective language that captures focus and enthusiasm, nudging the model toward a more thoughtful and in-depth analysis. This heightened engagement encourages the model to scrutinize every detail carefully, which is especially beneficial in tasks like clone detection where precision is paramount.
+
+2. Heightened Accountability: By including emotionally charged phrases (e.g., “this is very important to my career”), emotional prompting instills a sense of responsibility. This makes the model more inclined to double-check its reasoning and output, ensuring that the answer is both accurate and reliable.
+
+3. Personalized Precision: Emotional prompts create a more personalized interaction that can lead to tailored, attentive responses. This direct and sincere appeal fosters an environment in which the model prioritizes careful inspection and detailed verification, better aligning with the meticulous nature of clone detection tasks.

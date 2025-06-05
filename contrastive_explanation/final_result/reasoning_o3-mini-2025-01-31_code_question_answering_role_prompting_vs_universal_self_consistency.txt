@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_question_answering | Best: role_prompting vs Other: universal_self_consistency
+
+1. Focused Expertise: Role prompting assigns a specific persona—such as a Software Developer or Architect—which helps the model concentrate on the nuances and technicalities of the task. This clear framing enables it to provide responses that directly align with the expectations of the query, leading to more precise and context-aware answers.
+
+2. Consistent Communication Style: By adopting a defined role, the model’s output exhibits a consistent tone and terminology that resonate with the target audience. This consistency reduces ambiguity and enhances the clarity of the explanation, ensuring that the response is both understandable and relevant to the code evaluation task.
+
+3. Reduced Aggregation Noise: Role prompting asks the model to provide a single, tailored response rather than aggregating multiple outputs like in universal self-consistency. This direct approach minimizes the risk of divergent reasoning or diluted focus that can occur when merging several intermediate outputs, resulting in a higher quality answer.

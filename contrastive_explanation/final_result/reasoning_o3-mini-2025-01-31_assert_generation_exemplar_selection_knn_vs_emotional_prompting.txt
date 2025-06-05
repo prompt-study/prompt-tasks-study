@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: assert_generation | Best: exemplar_selection_knn vs Other: emotional_prompting
+
+1. Contextual Relevance: Exemplar_selection_knn provides the model with similar, concrete code examples that directly relate to the task at hand. This focused context helps the model understand the specific patterns expected in assertion generation, reducing misinterpretation compared to the abstract cues from emotional prompting.
+
+2. Structural Guidance: By feeding in actual code examples, the exemplar_selection_knn technique offers clear structural and syntactic guidance. This minimizes the risk of generating assertions with format or logic errors, whereas emotional prompting may lead to responses that deviate from the strict technical requirements.
+
+3. Reduced Ambiguity: Exemplar-based prompts narrow the solution space by illustrating correct implementations, which helps limit ambiguity in the expected output. In contrast, emotional prompting, with its affective language, can introduce unnecessary subjectivity and distract from the precise, technical nature of the task.

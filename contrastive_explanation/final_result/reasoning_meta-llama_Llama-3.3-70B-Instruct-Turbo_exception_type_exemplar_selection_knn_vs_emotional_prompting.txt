@@ -1,0 +1,7 @@
+🔍 Running test: meta-llama/Llama-3.3-70B-Instruct-Turbo | Task: exception_type | Best: exemplar_selection_knn vs Other: emotional_prompting
+
+1. **Contextual Relevance**: The exemplar_selection_knn technique performs better because it selects the most similar code examples to enrich the prompt context, making the model more likely to understand the specific requirements of the task. This relevance helps the model to generate more accurate responses. By leveraging similar code examples, the technique provides a stronger foundation for the model to learn from.
+
+2. **Technical Accuracy**: The exemplar_selection_knn technique focuses on technical aspects of the code, allowing the model to learn from the structure and syntax of the examples. This technical accuracy enables the model to better understand the relationships between different code elements and generate more precise responses. In contrast, emotional_prompting may introduce unnecessary emotional language that can distract from the technical aspects of the task.
+
+3. **Task-Specific Guidance**: The exemplar_selection_knn technique provides task-specific guidance by selecting relevant code examples that are closely related to the exception type prediction task. This guidance helps the model to focus on the key aspects of the task, such as identifying the correct exception type, and generates more accurate responses. By providing this targeted guidance, the exemplar_selection_knn technique outperforms the emotional_prompting technique, which may not offer the same level of task-specific support.

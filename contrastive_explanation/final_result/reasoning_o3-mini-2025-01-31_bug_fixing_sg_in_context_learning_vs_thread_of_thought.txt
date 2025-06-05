@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: bug_fixing | Best: sg_in_context_learning vs Other: thread_of_thought
+
+1. Focus on Examples: The sg_in_context_learning technique provides clear, explicit examples of buggy versus fixed code. This direct demonstration allows the model to mirror the correct structure and formatting without getting sidetracked by unnecessary justifications.
+
+2. Reduced Cognitive Overhead: By not requiring a detailed step-by-step reasoning process, this technique minimizes extraneous information. This keeps the response focused on producing the final, correct output rather than detailing the debugging thought process, leading to a cleaner and more effective solution.
+
+3. Consistency in Output Format: The sg_in_context_learning method emphasizes maintaining a consistent format (e.g., labeled examples with ###bug### and ###fix###). This consistency helps in generating predictable, high-quality responses that align closely with human expectations for the bug fixing task.

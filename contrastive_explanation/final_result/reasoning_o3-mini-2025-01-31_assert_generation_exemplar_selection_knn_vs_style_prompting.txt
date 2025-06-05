@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: assert_generation | Best: exemplar_selection_knn vs Other: style_prompting
+
+1. Contextual Relevance: Exemplar_selection_knn provides highly relevant code examples that mirror the nuances and patterns of the target code. This contextual grounding helps the model understand the typical structure and usage of assertions in similar scenarios, leading to more precise and accurate responses.
+
+2. Concrete Demonstrations: With exemplar_selection_knn, the model receives specific examples of assertion statements embedded within real code. These concrete demonstrations guide the model towards producing an assertion that fits the problem context, whereas style_prompting only instructs on tone and format without providing technical substance.
+
+3. Reduced Ambiguity: By offering k-nearest neighbor examples that accurately reflect the task, the exemplar_selection_knn technique minimizes uncertainty in what the assertion should verify. This focused, example-driven approach limits room for misinterpretation compared to style_prompting, which may lead to less technically precise assertions.

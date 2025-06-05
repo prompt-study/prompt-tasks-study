@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_question_answering | Best: role_prompting vs Other: exemplar_selection_knn
+
+1. Focused Expertise: Role prompting assigns a clear persona (like a Software Developer or Code Reviewer), ensuring that the model taps into a specific domain expertise. This focused approach helps in generating responses that are more aligned with the precise requirements and technical nuances of the software engineering task.
+
+2. Clear Instruction Hierarchy: With role prompting, the model receives a well-defined set of instructions, narrowing its output to the exact evaluation or answer style needed. This clarity in instruction minimizes ambiguity and reduces the chances of deviating from the core task compared to the broader context provided by several exemplars.
+
+3. Reduced Contextual Noise: Role prompting concentrates on a single, defined role and objective, avoiding the potential distraction and inconsistency that can come from multiple exemplar examples. This streamlined approach helps the model provide more accurate, relevant, and directly task-related responses by removing extraneous context.

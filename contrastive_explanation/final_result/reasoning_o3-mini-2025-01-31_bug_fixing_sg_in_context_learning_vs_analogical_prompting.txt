@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: bug_fixing | Best: sg_in_context_learning vs Other: analogical_prompting
+
+1. Clear Structured Examples: The sg_in_context_learning technique offers concrete in-context examples that explicitly demonstrate both the erroneous and the corrected code. This direct illustration of the expected output gives the model a clear template to follow, reducing ambiguity and ensuring higher-quality responses.
+
+2. Precise Task Alignment: By simulating few-shot learning with specific code correction examples, this technique closely aligns with the bug-fixing task requirements. The explicit labels (e.g., ###bug### and ###fix###) and demonstrated changes help the model focus on relevant modifications, leading to more accurate and useful corrections.
+
+3. Reduced Cognitive Overload: In-context examples provide sufficient context without forcing the model to interpret abstract analogies. This minimizes the risk of misinterpreting coding concepts, leading to cleaner, more direct code modifications compared to analogical_prompting, which can introduce unnecessary complexity and distract from the core objective.

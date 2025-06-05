@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: clone_detection | Best: emotional_prompting vs Other: rephrase_and_respond
+
+1. Clear and Direct Focus: Emotional_prompting emphasizes precision by instructing the model to concentrate solely on the task (i.e., determining clone status) without extraneous explanations. This focused language minimizes ambiguity and potential detours, ensuring that the response meets the specific output format requirements.
+
+2. Encouragement of Detail Orientation: By using affective language that praises attention to detail, emotional_prompting motivates the model to thoroughly analyze the code snippets. This extra push to "let your attention to detail shine" often results in more careful verification, reducing the risk of misinterpretation.
+
+3. Reduced Cognitive Overhead: Emotional_prompting avoids the need to rephrase and contextualize the prompt, which can introduce unnecessary complexity. This streamlined approach helps maintain simplicity in processing, ensuring that the result is a straightforward, high-quality answer that adheres strictly to the required response format.

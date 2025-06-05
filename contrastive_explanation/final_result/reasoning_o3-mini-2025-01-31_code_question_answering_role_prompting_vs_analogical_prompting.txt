@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_question_answering | Best: role_prompting vs Other: analogical_prompting
+
+1. Clear Role Assignment: By specifying a role (e.g., Software Developer or Quality Assurance Engineer), the model is guided to adopt relevant expertise and focus on specific evaluation criteria. This clear assignment helps reduce ambiguity in interpretation and ensures that the response aligns precisely with the technical demands of the task.
+
+2. Targeted Evaluation Focus: Role_prompting directs the model's attention strictly to the aspects critical to code evaluation, such as correctness and completeness. In contrast, analogical_prompting requires the model to recall and relate to previous analogous scenarios, which can sometimes divert focus from the immediate task requirements.
+
+3. Consistent Communication Style: The role_prompting technique standardizes the response format and style, ensuring clarity and precision that is methodically tailored for code questions. Analogical_prompting, while useful for broad conceptual understanding, may introduce richer narrative elements that can detract from the succinct, fact-focused answers essential for technical evaluation.

@@ -1,0 +1,7 @@
+🔍 Running test: meta-llama/Llama-3.3-70B-Instruct-Turbo | Task: mutant_generation | Best: exemplar_selection_knn vs Other: thread_of_thought
+
+1. **Contextual Relevance**: The exemplar_selection_knn technique performs better because it selects the most similar code examples to enrich the prompt context, making the model more likely to generate relevant and accurate mutated code. This relevance is crucial for the task of mutant generation, where small changes can significantly impact the code's behavior. By providing contextually relevant examples, the model can better understand the nuances of the code.
+
+2. **Focused Mutation**: The exemplar_selection_knn technique allows for more focused mutation by providing examples that are closely related to the input code, enabling the model to make targeted and minimal changes. This focused approach leads to higher-quality mutated code that meets the task's requirements. In contrast, the thread_of_thought technique may introduce unnecessary complexity or modifications.
+
+3. **Efficient Knowledge Retrieval**: The exemplar_selection_knn technique facilitates efficient knowledge retrieval by leveraging the k-nearest neighbor approach to identify the most relevant code examples. This efficient retrieval enables the model to quickly access and apply the necessary knowledge to generate high-quality mutated code, resulting in better performance compared to the thread_of_thought technique, which may require more extensive and sequential reasoning.

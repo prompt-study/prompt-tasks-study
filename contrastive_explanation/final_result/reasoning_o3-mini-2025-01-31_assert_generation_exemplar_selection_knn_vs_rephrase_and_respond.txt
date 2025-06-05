@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: assert_generation | Best: exemplar_selection_knn vs Other: rephrase_and_respond
+
+1. Contextual Examples: The exemplar_selection_knn technique integrates similar, high-quality examples directly into the prompt, giving the model concrete references to follow. This context-rich environment helps the model accurately map the provided code to the appropriate assertion, leading to more reliable and precise outputs.
+
+2. Focused Guidance: By selecting relevant examples, the exemplar_selection_knn approach narrows the task scope and minimizes ambiguity. This focused guidance boosts the model's ability to generate the correct assertion without being sidetracked by unnecessary elaboration seen in rephrase_and_respond prompts.
+
+3. Pattern Matching Efficiency: The exemplar_selection_knn method leverages similarity-based retrieval, allowing the model to detect and replicate successful patterns from past examples. This results in a more consistent performance for structured tasks like assertion generation, where matching established patterns is crucial for accuracy.

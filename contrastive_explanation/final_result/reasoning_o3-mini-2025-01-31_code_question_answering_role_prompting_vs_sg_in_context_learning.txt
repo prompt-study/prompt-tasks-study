@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_question_answering | Best: role_prompting vs Other: sg_in_context_learning
+
+1. Clear Persona Definition: Role_prompting explicitly assigns a specific role (such as a Security Engineer or DevOps Engineer) that aligns with the task. This guides the model to adopt the appropriate tone, technical depth, and focus on relevant details, leading to responses that are on target and contextually enriched.
+
+2. Focused Task Context: By prescribing a particular role, the response is inherently tuned to the nuances of the task. This minimizes ambiguity and encourages the model to concentrate solely on evaluating code correctness according to the designated expertise, unlike sg_in_context_learning which may dilute focus with auto-generated examples that might not cover all task-specific nuances.
+
+3. Consistency in Response Style: Role_prompting directs the model to adhere to a consistent style and evaluation criteria, ensuring that responses are uniform and directly address the question. In contrast, sg_in_context_learning may introduce variability through diverse in-context examples, sometimes leading to discrepancies in interpretation and quality of the final answer.

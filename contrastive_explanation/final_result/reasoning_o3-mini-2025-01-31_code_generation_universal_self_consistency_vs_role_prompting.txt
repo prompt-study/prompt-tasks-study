@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_generation | Best: universal_self_consistency vs Other: role_prompting
+
+1. Aggregated Decision-Making: Universal self-consistency gathers multiple candidate responses and then selects the one with the strongest consensus. This layering helps detect and filter out errors in reasoning, ensuring the final response is robust, accurate, and aligned with task requirements.
+
+2. Enhanced Error Correction: By comparing various iterations of its reasoning outputs, the universal self-consistency approach can recognize inconsistent or incomplete logic. This built-in cross-verification improves the reliability of the generated code, reducing the likelihood of subtle mistakes that might be missed with single-pass prompting.
+
+3. Improved Task Alignment: The self-consistency technique inherently focuses on deriving consensus among different reasoning paths, increasing the chance that the final output covers all specified requirements. This leads to more comprehensive and carefully structured code, as it naturally incorporates multiple perspectives on the task instead of relying solely on a fixed role-based response.

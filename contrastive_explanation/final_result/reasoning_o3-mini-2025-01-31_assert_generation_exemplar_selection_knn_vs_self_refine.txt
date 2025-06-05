@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: assert_generation | Best: exemplar_selection_knn vs Other: self_refine
+
+1. Contextual Relevance: Exemplar selection knn leverages similar, high-quality examples to provide contextually accurate assertions, ensuring that the output closely matches the desired pattern. Using neighbors from real examples grounds the response in actual use cases, thereby reducing abstract or generic assertions.
+
+2. Reduced Ambiguity: By retrieving specific examples matching the task, the exemplar approach minimizes ambiguity in what constitutes a valid assertion. This clear guidance helps the model generate precise assertions that align with established coding and testing conventions.
+
+3. Consistency in Pattern Matching: Exemplar selection knn benefits from a direct pattern matching process where similar code structures lead to similar assertions. This consistency allows the model to maintain a high degree of correctness, as it mimics the successful assertion examples directly rather than iteratively refining potentially flawed initial outputs.

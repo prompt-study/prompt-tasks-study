@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: assert_generation | Best: exemplar_selection_knn vs Other: thread_of_thought
+
+1. Context-Rich Guidance: Exemplar_selection_knn leverages similar, high-quality examples that directly demonstrate the expected output. This provides the model with tangible reference points, reducing ambiguity and ensuring that generated assertions follow a proven pattern.
+
+2. Focused Output Generation: By presenting closely related instances of prior code and assertions, the exemplar technique narrows the context to what is specifically needed. This targeted focus helps the model produce responses that are succinct and aligned with the task’s requirements, unlike thread_of_thought which may wander through unnecessary reasoning details.
+
+3. Reduced Cognitive Overhead: The exemplar method minimizes complex reasoning by directly incorporating proven examples into the prompt. In contrast, thread_of_thought forces the model to internally develop a reasoning process, which can introduce extraneous information and lower the precision of the final assertion.

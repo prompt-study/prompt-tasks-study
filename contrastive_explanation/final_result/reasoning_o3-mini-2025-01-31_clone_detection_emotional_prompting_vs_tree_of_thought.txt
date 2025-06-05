@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: clone_detection | Best: emotional_prompting vs Other: tree_of_thought
+
+1. Concise Directives: Emotional prompting provides clear and succinct instructions that directly target the required answer format. This helps the model avoid unnecessary detours, ensuring that the response focuses solely on delivering a clone detection result (i.e. “###TRUE###” or “###FALSE###”) without additional, possibly distracting, reasoning.
+
+2. Minimal Cognitive Overhead: By avoiding the detailed iterative breakdown required in tree_of_thought, emotional prompting reduces cognitive load and the risk of errors or divergence. The straightforward approach leads to less complexity, making the model’s response faster and more aligned with straightforward tasks like clone detection.
+
+3. Increased Clarity and Focus: Emotional prompting employs language that is engaging yet precise, instilling a sense of urgency and confidence in the answer. This contrasts with tree_of_thought’s branching reasoning, which can inadvertently introduce ambiguity or superfluous details, diminishing the overall clarity of the final answer.

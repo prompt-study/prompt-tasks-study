@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: bug_fixing | Best: sg_in_context_learning vs Other: self_refine
+
+1. Direct Example Guidance: The sg_in_context_learning technique directly provides examples with explicit buggy versus corrected code, which offers the model clear patterns to emulate. This explicit demonstration helps the model quickly understand the expected transformation, leading to more accurate fixes.
+
+2. Reduced Iterative Noise: Unlike self_refine, which relies on iterative self-evaluation and may introduce cumulative errors, sg_in_context_learning uses pre-defined examples that eliminate the risk of iterative missteps. This results in a streamlined and more reliable bug-fixing process without the extra noise from multiple revision cycles.
+
+3. Consistent Structural Context: By auto-generating in-context examples, sg_in_context_learning consistently frames the problem and solution in a structured manner (using defined labels like ###bug### and ###fix###). This structural clarity helps the model maintain focus on the specific task of bug correction, leading to higher-quality responses that closely match human expectations.

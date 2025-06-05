@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: assert_generation | Best: exemplar_selection_knn vs Other: universal_self_consistency
+
+1. Contextual Relevance: The exemplar_selection_knn method provides highly relevant examples drawn from similar code contexts, ensuring that the generated assertion is aligned with the specific structure and purpose of the input snippet. By selecting nearest neighbors, the prompt context is enriched with real-use cases that guide the model towards accurate and context-specific assertions.
+
+2. Focused Guidance: With exemplar_selection_knn, the provided exemplars serve as clear templates that narrow the potential variations in reasoning. This focused guidance minimizes off-target responses and reduces ambiguity, making it easier for the model to generate the expected assertion statements.
+
+3. Reduced Noise and Ambiguity: Exemplar_selection_knn delivers examples that are closely matched to the task at hand, filtering out irrelevant or overly diverse outputs. This targeted approach reduces the cognitive load for the model and avoids the risk of mixing multiple reasoning paths, which can happen with universal_self_consistency that aggregates across more varied outputs.

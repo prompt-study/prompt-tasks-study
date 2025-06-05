@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: clone_detection | Best: emotional_prompting vs Other: exemplar_selection_knn
+
+1. Enhanced Engagement: Emotional_prompting uses affective and motivational language that naturally draws the model’s attention to the task's importance. This heightened engagement leads the model to focus on the critical details needed for clone detection without getting sidetracked by extraneous context or examples.
+
+2. Clearer Response Expectations: The emotional tone in the prompt emphasizes precision, format, and urgency, guiding the model toward producing concise and exact answers. By stressing the importance of a correct, formatted output (e.g., ###TRUE### or ###FALSE###), the instructions reduce ambiguity and improve overall answer quality.
+
+3. Reduced Cognitive Overload: Unlike exemplar_selection_knn which introduces multiple code examples that may burden the model with excessive context, emotional_prompting simplifies the task. This streamlined approach minimizes confusion by concentrating on the essential decision criteria for the clone detection task, resulting in sharper and more consistent responses.

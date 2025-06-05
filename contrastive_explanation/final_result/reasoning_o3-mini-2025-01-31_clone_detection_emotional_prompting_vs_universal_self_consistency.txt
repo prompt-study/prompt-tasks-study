@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: clone_detection | Best: emotional_prompting vs Other: universal_self_consistency
+
+1. Direct Engagement for Precision: Emotional prompting uses affective and direct language (e.g., “This is very important to my career”) that captures the user's urgency and forces the model to focus on precision and clarity. This engagement often leads to a narrowly focused output that aligns strictly with the desired format, reducing ambiguity in the response.
+
+2. Increased Motivational Focus: By incorporating emotional cues, the emotional_prompting technique creates a sense of accountability and care in the response generation process. This heightened motivational state encourages the model to process the requirements more attentively, thus often yielding higher-quality answers that are better tailored to the task.
+
+3. Enhanced User Relevance and Clarity: The affective language in emotional prompts makes the instructions feel more personalized and contextually relevant, which can help the model better internalize the task's specifics. As a result, responses are typically more coherent and directly address the query, whereas aggregating multiple outputs (as in universal self consistency) can sometimes dilute the focus on key requirements.

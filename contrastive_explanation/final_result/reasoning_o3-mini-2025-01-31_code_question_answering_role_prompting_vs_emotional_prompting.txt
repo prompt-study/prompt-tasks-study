@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: code_question_answering | Best: role_prompting vs Other: emotional_prompting
+
+1. Clear Expert Identity: Role_prompting explicitly assigns a clear persona, such as "Data Scientist" or "Software Developer." This directs the model to adopt a technical and knowledgeable tone, ensuring that responses remain focused on detailed code analysis and accuracy without unnecessary distractions.
+
+2. Task-Specific Focus: With role_prompting, the instructions concentrate solely on evaluating code quality and functionality, guiding the model to pay attention to minute technical details. This focus minimizes ambiguities and promotes precision, whereas emotional_prompting can dilute the technical emphasis with affective language.
+
+3. Consistent Communication Style: Role_prompting fosters a consistent, professional tone that aligns well with the expectations in software engineering tasks. It steers the model towards a direct and task-oriented evaluation, while emotional_prompting might introduce stylistic elements that do not contribute to the rigorous analysis required for code question answering.

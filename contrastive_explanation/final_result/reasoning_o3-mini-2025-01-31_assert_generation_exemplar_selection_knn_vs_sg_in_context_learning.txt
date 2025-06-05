@@ -1,0 +1,7 @@
+🔍 Running test: o3-mini-2025-01-31 | Task: assert_generation | Best: exemplar_selection_knn vs Other: sg_in_context_learning
+
+1. Relevant Context Retrieval: Exemplar_selection_knn retrieves examples that are closely matched to the specific code snippet, ensuring that the provided assertions are directly applicable. This relevance helps the model align its output better with the task requirements, reducing ambiguity and increasing accuracy.
+
+2. Domain-Specific Guidance: By selecting similar, high-quality code examples from a large corpus, the technique ensures that the assertions follow the conventions and patterns prevalent in the domain. This targeted guidance enables the model to produce more idiomatic and correct assertions compared to auto-generated in-context examples.
+
+3. Noise Reduction and Consistency: Exemplar_selection_knn minimizes the inclusion of irrelevant or misleading context by focusing solely on the most similar examples. This results in a cleaner prompt with less noise, leading to more consistent and precise assertion generation as opposed to the scattered and potentially off-target examples from sg_in_context_learning.

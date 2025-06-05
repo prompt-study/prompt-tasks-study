@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: exception_type | Best: exemplar_selection_knn vs Other: analogical_prompting
+
+1. **Contextual Similarity**: The exemplar_selection_knn technique selects code examples that are most similar to the target code snippet using a k-nearest neighbor approach. This ensures that the model is provided with highly relevant context, making it easier to identify the correct exception type based on patterns in similar code. Analogical_prompting, on the other hand, relies on abstract analogies, which may not capture the specific nuances of the code context as effectively.
+
+2. **Precision in Exception Matching**: By leveraging concrete examples of exception handling in similar code snippets, exemplar_selection_knn allows the model to directly compare and match exception types. This precision is lost in analogical_prompting, where the focus on abstract concepts can lead to less accurate or overly generalized responses. The direct comparison to similar code snippets reduces ambiguity.
+
+3. **Consistency with Human Judgment**: The exemplar_selection_knn technique aligns more closely with how humans approach exception type prediction—by referencing past examples and patterns. This method mirrors the human tendency to rely on empirical evidence (e.g., similar code raising specific exceptions), whereas analogical_prompting may introduce unnecessary abstraction, leading to deviations from human-like reasoning.

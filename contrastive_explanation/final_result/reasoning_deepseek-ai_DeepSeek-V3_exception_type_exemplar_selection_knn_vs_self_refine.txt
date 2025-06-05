@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: exception_type | Best: exemplar_selection_knn vs Other: self_refine
+
+1. **Contextual Similarity**: The exemplar_selection_knn technique leverages similar code examples to provide contextually relevant hints for exception prediction. By selecting the most similar code snippets, it ensures that the model has direct, relevant examples to draw from, which improves accuracy. In contrast, self_refine relies on iterative self-correction without additional context, which may not always lead to the correct exception type.
+
+2. **Consistency in Patterns**: The knn approach identifies consistent exception patterns across similar code segments, making it more reliable for predicting exceptions. Since exception types often follow predictable patterns in specific contexts, this method capitalizes on those patterns. Self_refine, while iterative, may not always recognize these broader patterns without explicit examples.
+
+3. **Reduced Ambiguity**: By providing concrete examples, exemplar_selection_knn reduces ambiguity in the model's decision-making process. The model can directly compare the target code to similar examples with known exceptions, minimizing guesswork. Self_refine, on the other hand, may introduce variability as it iteratively refines its response without grounding in similar cases.

@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_translation | Best: exemplar_selection_knn vs Other: style_prompting
+
+1. **Contextual Relevance**: The exemplar_selection_knn technique provides concrete, language-specific examples that directly illustrate the translation task, making it easier for the model to understand and replicate the correct syntax and semantics. In contrast, style_prompting focuses on tone and format, which doesn't inherently improve the model's ability to perform accurate code translation.
+
+2. **Pattern Recognition**: By showing multiple similar examples, exemplar_selection_knn helps the model recognize recurring patterns and conventions (e.g., method naming, parameter handling) between the source and target languages. Style_prompting lacks this explicit guidance, leading to less consistent or accurate translations.
+
+3. **Task-Specific Guidance**: Exemplar_selection_knn tailors the prompt to the specific task of code translation by including relevant examples, which reduces ambiguity and increases precision. Style_prompting, while useful for stylistic consistency, doesn't address the technical nuances required for accurate code translation, resulting in lower-quality outputs.

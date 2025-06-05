@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: mutant_generation | Best: exemplar_selection_knn vs Other: rephrase_and_respond
+
+1. **Contextual Similarity**: The exemplar_selection_knn technique leverages similar code examples to guide the mutation process, ensuring that the generated mutants are contextually appropriate and follow patterns seen in real-world code. This leads to more meaningful and syntactically correct mutants compared to the rephrase_and_respond technique, which lacks this contextual grounding and may produce less relevant changes.
+
+2. **Precision in Mutation**: By providing concrete examples of how to mutate code, the exemplar_selection_knn technique allows the model to focus on precise, minimal changes that align with the task's requirements. In contrast, the rephrase_and_respond technique often results in superficial or overly broad modifications (e.g., formatting changes) that do not effectively test the robustness of the code.
+
+3. **Task-Specific Guidance**: The exemplar_selection_knn technique explicitly directs the model to produce mutants by showing it how similar tasks were solved, reducing ambiguity and improving consistency. The rephrase_and_respond technique, while useful for general comprehension, does not provide the same level of task-specific guidance, leading to less effective or off-target mutations.

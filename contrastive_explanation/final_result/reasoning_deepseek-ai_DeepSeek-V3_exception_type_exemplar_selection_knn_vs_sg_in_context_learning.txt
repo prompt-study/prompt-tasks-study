@@ -1,0 +1,9 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: exception_type | Best: exemplar_selection_knn vs Other: sg_in_context_learning
+
+Here are three reasons why the **exemplar_selection_knn** technique performs better than **sg_in_context_learning** for the exception type prediction task:
+
+1. **Contextual Similarity**: The exemplar_selection_knn technique selects the most similar code examples using k-nearest neighbors, ensuring that the provided context is highly relevant to the target code snippet. This leads to more accurate exception predictions because the model can draw from structurally and semantically similar cases. In contrast, sg_in_context_learning generates synthetic examples, which may not capture the nuanced context of the actual code.
+
+2. **Precision in Examples**: By leveraging real, similar code examples, exemplar_selection_knn provides precise and concrete instances of exception handling. This reduces ambiguity and helps the model generalize better to the target task. The sg_in_context_learning technique, while simulating few-shot learning, might introduce noise or less representative examples, leading to lower-quality predictions.
+
+3. **Consistency with Human Judgment**: The exemplar_selection_knn technique aligns more closely with human-provided examples, as it relies on actual code patterns rather than artificially generated ones. This consistency ensures that the model's responses are more likely to match the expected outcomes, whereas sg_in_context_learning's auto-generated examples may deviate from real-world usage patterns.

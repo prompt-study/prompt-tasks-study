@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: mutant_generation | Best: exemplar_selection_knn vs Other: step_back_prompting
+
+1. **Contextual Precision**: The exemplar_selection_knn technique provides highly relevant examples that closely match the input code, ensuring the model understands the exact type of mutations needed. In contrast, step_back_prompting focuses on high-level reflection, which can lead to overly broad or less precise mutations. The direct examples in exemplar_selection_knn guide the model to make specific, targeted changes, resulting in higher-quality mutants.
+
+2. **Task-Specific Guidance**: Exemplar_selection_knn explicitly shows the model how to perform the task by presenting concrete examples of code mutations, reducing ambiguity. Step_back_prompting, while useful for planning, lacks the immediate, task-specific context, causing the model to generate less relevant or overly verbose responses. The direct examples in exemplar_selection_knn streamline the mutation process.
+
+3. **Consistency in Output**: The exemplar_selection_knn technique ensures consistency by limiting the model's output to the exact format of the provided examples (e.g., returning only the mutated code). Step_back_prompting often produces additional explanations or multiple variants, which deviates from the task's requirement for minimal, focused changes. This consistency is critical for automated evaluation and practical application in mutation testing.

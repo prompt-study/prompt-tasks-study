@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_question_answering | Best: universal_self_consistency vs Other: analogical_prompting
+
+1. **Robust Majority Consensus**: The universal_self_consistency technique aggregates multiple reasoning outputs and selects the most coherent solution, which reduces the risk of outliers or incorrect interpretations. This ensures the final response is more reliable and aligned with the majority view, whereas analogical_prompting relies on a single reasoning path that may be less accurate or contextually appropriate.
+
+2. **Explicit Error Identification**: Universal_self_consistency explicitly highlights discrepancies or missing elements in the code (e.g., missing imports, incorrect defaults) by comparing multiple responses. Analogical_prompting, while useful for conceptual clarity, may overlook specific technical flaws because it focuses more on abstract comparisons rather than detailed code validation.
+
+3. **Structured Evaluation Criteria**: The universal_self_consistency technique enforces a structured evaluation process (e.g., checking for completeness, correctness, and adherence to requirements) by leveraging multiple perspectives. Analogical_prompting, though helpful for understanding, may lack this rigor because it prioritizes analogy-based reasoning over systematic code analysis.

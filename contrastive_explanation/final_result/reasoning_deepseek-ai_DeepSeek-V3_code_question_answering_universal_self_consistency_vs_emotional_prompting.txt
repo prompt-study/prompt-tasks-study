@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_question_answering | Best: universal_self_consistency vs Other: emotional_prompting
+
+1. **Robustness in Analysis**: The universal_self_consistency technique aggregates multiple reasoning outputs and selects the most coherent solution, which ensures a thorough and accurate evaluation of the code snippet. This method reduces the likelihood of overlooking critical details, such as missing imports or incomplete functionality, which are common pitfalls in code analysis.
+
+2. **Consistency in Evaluation**: By leveraging a meta-prompt to choose the majority view, universal_self_consistency provides a more consistent and objective assessment of the code's adequacy. This contrasts with emotional_prompting, which may prioritize engaging language over technical precision, leading to less reliable evaluations.
+
+3. **Comprehensive Feedback**: The universal_self_consistency technique often includes detailed explanations and improvements, offering actionable insights beyond a simple true/false response. This is particularly valuable for code question answering, where understanding why a solution falls short is as important as the verdict itself. Emotional_prompting, while engaging, may lack this depth.

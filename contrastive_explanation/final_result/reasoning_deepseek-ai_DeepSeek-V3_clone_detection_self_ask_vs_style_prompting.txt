@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: clone_detection | Best: self_ask vs Other: style_prompting
+
+1. **Problem Decomposition**: The **self_ask** technique encourages the model to break down the task into smaller, more manageable sub-questions before providing a final answer. This is particularly useful for clone detection, where understanding the structural and functional nuances of the code is critical. By decomposing the problem, the model can more accurately assess whether the code snippets are clones, leading to higher-quality responses.
+
+2. **Contextual Clarity**: **Self_ask** prompts the model to seek additional clarity if needed, ensuring it fully understands the task before responding. In clone detection, subtle differences in code logic or structure can be easily overlooked without thorough analysis. This technique reduces the risk of superficial comparisons by ensuring the model has all necessary context to make an informed decision.
+
+3. **Reduced Ambiguity**: By explicitly asking the model to consider whether it needs more information, **self_ask** minimizes ambiguity in the task. Clone detection often involves complex code with varying levels of similarity, and a prompt that forces the model to clarify its understanding upfront leads to more precise and reliable answers. This contrasts with **style_prompting**, which focuses on tone rather than depth of analysis.

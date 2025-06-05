@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: exception_type | Best: exemplar_selection_knn vs Other: self_ask
+
+1. **Contextual Similarity**: The exemplar_selection_knn technique leverages similar code examples to provide context, which helps the model better understand the specific exception type needed for the given code snippet. This is particularly effective for exception prediction because the correct exception often depends on the surrounding code patterns, which are highlighted by the nearest neighbors.
+
+2. **Direct Guidance**: By providing explicit examples of correct exception types in similar contexts, exemplar_selection_knn gives the model direct guidance, reducing ambiguity. In contrast, self_ask requires the model to generate and answer its own sub-questions, which can introduce noise or misdirection, especially when the task is straightforward like exception type prediction.
+
+3. **Task-Specific Optimization**: Exception type prediction is a task where past examples are highly informative. The exemplar_selection_knn technique is optimized for such tasks by focusing on retrieving and presenting relevant examples, whereas self_ask is more generic and better suited for tasks requiring decomposition or multi-step reasoning, which is unnecessary here.

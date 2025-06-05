@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: clone_detection | Best: self_ask vs Other: self_refine
+
+1. **Problem Decomposition Clarity**: The self_ask technique prompts the model to break down the task by asking clarifying questions before answering. This ensures the model fully understands the context and requirements of clone detection, leading to more accurate assessments. In contrast, self_refine focuses on iteratively improving an initial response, which may not address fundamental misunderstandings from the start.
+
+2. **Initial Accuracy Focus**: Self_ask emphasizes getting the initial answer right by resolving ambiguities upfront, which is critical for binary tasks like clone detection (TRUE/FALSE). Self_refine, while iterative, may start with a flawed initial response that requires multiple corrections, increasing the chance of residual errors even after refinement.
+
+3. **Reduced Cognitive Load**: Self_ask simplifies the task by addressing potential confusions early, allowing the model to focus solely on the final decision. Self_refine, however, forces the model to juggle both initial judgment and subsequent corrections, which can introduce complexity and reduce consistency in responses.

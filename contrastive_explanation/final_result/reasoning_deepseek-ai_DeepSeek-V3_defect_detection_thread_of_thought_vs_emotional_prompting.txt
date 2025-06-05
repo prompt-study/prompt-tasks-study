@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: defect_detection | Best: thread_of_thought vs Other: emotional_prompting
+
+1. **Structured Analysis**: The **thread_of_thought** technique breaks down the code into sequential segments, providing a systematic and detailed analysis. This structured approach ensures that each part of the code is thoroughly examined, reducing the likelihood of overlooking defects. In contrast, **emotional_prompting** focuses on affective language, which lacks the precision needed for technical code review.
+
+2. **Clear Defect Identification**: By summarizing and evaluating each segment, **thread_of_thought** explicitly highlights potential issues (e.g., division by zero, incorrect condition checks) and justifies its conclusions. This clarity is absent in **emotional_prompting**, which often provides vague or overly simplistic responses without detailed reasoning.
+
+3. **Contextual Understanding**: **thread_of_thought** maintains a continuous flow of reasoning, ensuring that the analysis is contextually grounded in the code's logic. This technique adapts to the complexity of the task, whereas **emotional_prompting** prioritizes engagement over technical accuracy, leading to less reliable defect detection.

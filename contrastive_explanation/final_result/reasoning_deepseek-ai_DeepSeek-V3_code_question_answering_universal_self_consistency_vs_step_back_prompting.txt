@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_question_answering | Best: universal_self_consistency vs Other: step_back_prompting
+
+1. **Consensus-Based Accuracy**: The universal_self_consistency technique aggregates multiple reasoning outputs and selects the most coherent solution based on majority consensus. This reduces the likelihood of outliers or incorrect interpretations, leading to more accurate and reliable responses compared to step_back_prompting, which relies on a single reflection step.
+
+2. **Detailed Error Identification**: Universal_self_consistency provides more detailed explanations for why a code snippet fails to meet the requirements, often including corrected code or additional context. In contrast, step_back_prompting tends to offer more generic critiques without as much actionable feedback, making the former more useful for practical problem-solving.
+
+3. **Structured Evaluation Criteria**: The universal_self_consistency technique explicitly uses structured evaluation criteria (e.g., majority consensus) to judge responses, ensuring consistency and objectivity. Step_back_prompting, while reflective, lacks this structured approach, which can lead to less consistent or subjective evaluations of the code snippets.

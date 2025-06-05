@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_question_answering | Best: universal_self_consistency vs Other: exemplar_selection_knn
+
+1. **Robust Error Detection**: The universal_self_consistency technique aggregates multiple reasoning outputs and selects the most coherent solution, which helps in identifying subtle errors or incomplete answers more effectively. For example, in the "python xlib get mouse coordinates" task, it correctly flagged missing imports and undefined variables, whereas exemplar_selection_knn missed these issues.
+
+2. **Contextual Understanding**: This technique evaluates responses against a broader context of the question, ensuring the answer fully meets the requirements. In the "compute manhattan heuristic in python" task, it recognized that the provided code was for histograms, not grid-based pathfinding, while exemplar_selection_knn incorrectly approved it.
+
+3. **Higher Precision in Evaluation**: By using a meta-prompt to choose the most consistent solution, universal_self_consistency avoids false positives. For instance, in the "python fft to give phase" task, both techniques correctly identified the code as incomplete, but the former provided a more detailed explanation, showcasing its precision.

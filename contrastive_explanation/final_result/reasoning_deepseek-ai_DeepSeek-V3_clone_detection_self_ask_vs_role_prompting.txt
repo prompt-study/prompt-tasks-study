@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: clone_detection | Best: self_ask vs Other: role_prompting
+
+1. **Enhanced Problem Decomposition**: The self_ask technique prompts the model to break down the task into smaller, clarifying questions before answering. This ensures a more thorough analysis of the code snippets, leading to a more accurate determination of whether they are clones. Role_prompting, while useful for context, doesn't inherently encourage this level of detailed scrutiny.
+
+2. **Reduced Contextual Bias**: Role_prompting assigns a specific persona (e.g., DevOps Engineer, Code Reviewer), which might inadvertently bias the model's response based on the assumed role's priorities. Self_ask, by focusing on clarifying questions, avoids this bias and ensures the response is purely based on the code's structural and functional analysis.
+
+3. **Consistency in Response Quality**: Self_ask's structured approach of asking and resolving sub-questions before answering leads to more consistent and reliable responses. Role_prompting, while tailored, can vary in effectiveness depending on how well the assigned role aligns with the task, potentially leading to less consistent results.

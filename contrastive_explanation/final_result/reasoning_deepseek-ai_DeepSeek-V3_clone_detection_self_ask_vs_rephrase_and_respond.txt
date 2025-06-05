@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: clone_detection | Best: self_ask vs Other: rephrase_and_respond
+
+1. **Structured Problem Decomposition**: The self_ask technique encourages the model to break down the task into smaller, more manageable sub-questions (e.g., analyzing purpose, structure, and functionality). This systematic approach ensures a thorough comparison of the code snippets, leading to more accurate clone detection. In contrast, rephrase_and_respond focuses on restating the question without deepening the analysis, which can miss critical details.
+
+2. **Contextual Clarity**: By prompting the model to ask and answer clarifying questions, self_ask ensures that the model fully understands the nuances of the task before responding. This reduces ambiguity and improves the relevance of the final answer. Rephrase_and_respond, while useful for restating the query, does not inherently resolve ambiguities, potentially leading to less precise responses.
+
+3. **Detailed Justification**: Self_ask often results in responses that include explicit reasoning (e.g., "The two code snippets serve different purposes..."), which aligns with the need for explainability in clone detection. Rephrase_and_respond tends to produce shorter, less detailed answers, which may lack the depth needed to confidently assess clone status. The added justification in self_ask responses enhances their reliability.

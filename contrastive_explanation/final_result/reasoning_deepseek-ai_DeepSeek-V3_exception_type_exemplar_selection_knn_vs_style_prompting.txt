@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: exception_type | Best: exemplar_selection_knn vs Other: style_prompting
+
+1. **Contextual Relevance**: The exemplar_selection_knn technique selects the most similar code examples using a k-nearest neighbor approach, which ensures that the prompt context is highly relevant to the task. This relevance helps the model better understand the specific exception type needed, as it can draw from analogous code snippets. In contrast, style_prompting focuses on tone and format, which doesn't provide the same level of contextual precision for exception prediction.
+
+2. **Task-Specific Guidance**: Exemplar_selection_knn provides concrete examples of exception types in similar code contexts, offering direct task-specific guidance. This method leverages past examples to infer the correct exception, making it more accurate. Style_prompting, however, prioritizes stylistic consistency over technical accuracy, which can lead to less precise or even incorrect exception type predictions.
+
+3. **Error Pattern Recognition**: By using k-nearest neighbors, the exemplar_selection_knn technique effectively identifies patterns in how exceptions are used across similar codebases. This pattern recognition is crucial for predicting the correct exception type. Style_prompting lacks this ability, as it doesn't analyze or leverage historical code patterns, resulting in less reliable predictions.

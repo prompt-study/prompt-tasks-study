@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_translation | Best: exemplar_selection_knn vs Other: emotional_prompting
+
+1. **Contextual Precision**: The exemplar_selection_knn technique provides concrete examples of similar code translations, which helps the model understand the exact syntactic and semantic transformations required. Emotional prompting, while engaging, lacks this technical specificity, leading to less accurate translations.
+
+2. **Consistency in Output**: By leveraging similar past examples, exemplar_selection_knn ensures the translated code follows consistent patterns and conventions (e.g., method naming, syntax rules). Emotional prompting, focused on motivational language, does not enforce such consistency, resulting in deviations from expected outputs.
+
+3. **Task-Specific Focus**: Exemplar_selection_knn directly addresses the technical nature of code translation by prioritizing relevant examples, minimizing distractions. Emotional prompting introduces non-technical elements (e.g., motivational phrases), which can dilute the model's focus on the precise translation task.

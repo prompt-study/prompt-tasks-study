@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: clone_detection | Best: self_ask vs Other: sg_in_context_learning
+
+1. **Enhanced Problem Decomposition**: The self_ask technique forces the model to break down the clone detection task into smaller, more manageable sub-questions. This step-by-step reasoning helps the model better understand the structural and functional similarities between the code pieces, leading to more accurate and nuanced responses compared to sg_in_context_learning, which may rely on less precise in-context examples.
+
+2. **Reduced Ambiguity in Context**: Self_ask prompts the model to clarify ambiguities by generating sub-questions, ensuring that the final answer is based on a clearer understanding of the task. In contrast, sg_in_context_learning might introduce noise or irrelevant examples, as the auto-generated in-context examples may not perfectly align with the specific nuances of the clone detection problem.
+
+3. **Better Handling of Edge Cases**: By decomposing the problem, self_ask allows the model to explicitly consider edge cases or subtle differences in code logic that might be overlooked in a more generalized in-context learning approach. This leads to higher-quality responses, especially in complex or ambiguous clone detection scenarios where sg_in_context_learning might miss critical details.

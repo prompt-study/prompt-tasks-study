@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_summarization | Best: sg_in_context_learning vs Other: self_ask
+
+1. **Conciseness Focus**: The **sg_in_context_learning** technique explicitly encourages a one-sentence summary by providing examples that are concise and to the point. This aligns perfectly with the task of code summarization, where brevity and clarity are key. In contrast, **self_ask** tends to generate verbose explanations, which, while detailed, deviate from the goal of succinct summarization.
+
+2. **Example-Driven Clarity**: **sg_in_context_learning** leverages in-context examples to guide the model, ensuring the response adheres to the format and style of the provided samples. This reduces ambiguity and keeps the output focused. **self_ask**, however, introduces unnecessary sub-questions and breakdowns, which can dilute the summary with extraneous details.
+
+3. **Task-Specific Alignment**: The **sg_in_context_learning** technique is tailored for software engineering tasks like code summarization, where mimicking example structures is effective. **self_ask**, designed for problem decomposition, overcomplicates the task by forcing the model to generate and answer sub-questions, which is less efficient for straightforward summarization.

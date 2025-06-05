@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: mutant_generation | Best: exemplar_selection_knn vs Other: emotional_prompting
+
+1. **Task-Specific Context**: The exemplar_selection_knn technique provides concrete, task-relevant examples that guide the model to make precise, small modifications to the code. Emotional prompting, on the other hand, focuses on affective language, which is less relevant for a technical task like mutant generation and can lead to unnecessary or overly complex changes.
+
+2. **Consistency in Mutations**: The exemplar_selection_knn technique ensures consistency by showing the model how to apply minor, syntactically correct changes (e.g., removing a line or parameter). Emotional prompting encourages creativity and confidence, which can result in larger, semantically significant alterations that deviate from the goal of subtle mutations.
+
+3. **Focus on Output Format**: Exemplar_selection_knn explicitly instructs the model to return only the mutated code, aligning with the task's requirements. Emotional prompting, with its emphasis on engagement and reflection, often leads to verbose explanations or additional logic, which are not needed for this task and reduce the response's quality.

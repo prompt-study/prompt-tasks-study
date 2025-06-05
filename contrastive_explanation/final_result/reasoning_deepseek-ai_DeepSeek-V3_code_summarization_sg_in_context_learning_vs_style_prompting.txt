@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_summarization | Best: sg_in_context_learning vs Other: style_prompting
+
+1. **Conciseness Focus**: The **sg_in_context_learning** technique explicitly directs the model to generate a one-sentence summary, which aligns perfectly with the task of code summarization. In contrast, **style_prompting** often produces verbose, detailed explanations that deviate from the goal of brevity. The former's focus on conciseness ensures the response is both clear and to the point.
+
+2. **Task-Specific Examples**: **sg_in_context_learning** provides example pairs (code and summary) that guide the model to mimic the desired output format. This contextual priming helps the model understand the exact expectation, whereas **style_prompting** lacks such direct examples, leading to less precise or overly analytical responses. The examples act as a scaffold for generating high-quality summaries.
+
+3. **Simplified Instruction Clarity**: The prompts in **sg_in_context_learning** are straightforward and unambiguous, asking for a "brief summary in one sentence." **style_prompting**, however, uses more abstract instructions like "convey a succinct and analytical synopsis," which can confuse the model into producing overly detailed or off-target responses. Clearer instructions yield better task alignment.

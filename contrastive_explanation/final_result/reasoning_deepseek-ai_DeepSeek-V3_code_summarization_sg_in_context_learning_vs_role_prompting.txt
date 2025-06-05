@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_summarization | Best: sg_in_context_learning vs Other: role_prompting
+
+1. **Contextual Guidance**: The `sg_in_context_learning` technique provides explicit examples of code-summary pairs, which serve as clear templates for the model to follow. This reduces ambiguity and ensures the response adheres to the desired format and level of detail, whereas `role_prompting` lacks such direct guidance, leading to more verbose or inconsistent outputs.
+
+2. **Task-Specific Focus**: By framing the prompt with in-context examples, `sg_in_context_learning` directs the model's attention to the specific task of summarization, encouraging brevity and precision. In contrast, `role_prompting` introduces a persona (e.g., "Data Scientist") that may distract the model with irrelevant stylistic or domain-specific nuances, diluting the summary's quality.
+
+3. **Consistency in Output**: The structured format of `sg_in_context_learning` (e.g., demarcating examples with `###summary###`) enforces uniformity in responses, making them easier to evaluate and more predictable. `role_prompting`, however, relies on the assigned role's implied behavior, which can vary widely and produce less standardized summaries.

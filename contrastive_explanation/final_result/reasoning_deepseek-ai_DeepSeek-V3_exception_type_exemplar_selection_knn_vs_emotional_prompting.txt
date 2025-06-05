@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: exception_type | Best: exemplar_selection_knn vs Other: emotional_prompting
+
+1. **Contextual Relevance**: The exemplar_selection_knn technique selects the most similar code examples using a k-nearest neighbor approach, which ensures that the prompt context is highly relevant to the task. This method leverages existing code patterns and exception handling scenarios, leading to more accurate predictions. In contrast, emotional_prompting focuses on affective language, which does not provide the necessary technical context for exception type prediction.
+
+2. **Technical Precision**: Exemplar_selection_knn directly addresses the technical nature of the task by providing concrete examples of exception handling in code. This precision helps the model understand the specific conditions under which different exceptions are raised. Emotional_prompting, while useful for documentation or user-facing messages, lacks the technical depth required for accurate exception type prediction.
+
+3. **Consistency in Formatting**: The exemplar_selection_knn technique maintains a consistent format (###ExceptionType###) across examples, which helps the model generate responses in the expected format. Emotional_prompting, by introducing varied and engaging language, can distract from the task's strict formatting requirements, leading to less consistent or incorrect responses.

@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_generation | Best: universal_self_consistency vs Other: exemplar_selection_knn
+
+1. **Consensus-Driven Quality**: The universal_self_consistency technique aggregates multiple reasoning outputs and selects the most coherent solution, ensuring higher quality by leveraging consensus. This reduces the risk of errors or oversights that might occur with a single, potentially less reliable exemplar from the exemplar_selection_knn approach.
+
+2. **Contextual Understanding**: Universal_self_consistency provides a broader context by considering multiple perspectives, which helps in generating more comprehensive and accurate code solutions. In contrast, exemplar_selection_knn relies on a limited set of similar examples, which may not fully capture the nuances of the task.
+
+3. **Robustness to Variability**: The self-consistency method is more robust to variations in input prompts or task descriptions because it evaluates multiple responses. This adaptability ensures better performance across diverse scenarios, whereas exemplar_selection_knn might struggle if the selected exemplars are not perfectly aligned with the task requirements.

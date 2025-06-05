@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_translation | Best: exemplar_selection_knn vs Other: step_back_prompting
+
+1. **Direct Code Context**: The exemplar_selection_knn technique provides direct, concrete examples of code translations, which helps the model understand the specific syntax and patterns needed for the task. In contrast, step_back_prompting focuses on high-level guidelines, which are too abstract for precise code translation.  
+
+2. **Pattern Matching Efficiency**: By showing multiple similar examples, exemplar_selection_knn enables the model to quickly identify and replicate the translation patterns (e.g., method naming conventions, property assignments). Step_back_prompting lacks this immediate context, forcing the model to infer rules from general principles, leading to less accurate outputs.  
+
+3. **Task-Specific Focus**: Exemplar_selection_knn narrows the prompt to the exact task (code translation) with minimal distractions, while step_back_prompting introduces unnecessary meta-discussion about guidelines before addressing the task. This divergence reduces the model's ability to focus on generating correct translations efficiently.

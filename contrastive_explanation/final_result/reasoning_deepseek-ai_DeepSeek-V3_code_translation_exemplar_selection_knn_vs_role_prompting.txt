@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_translation | Best: exemplar_selection_knn vs Other: role_prompting
+
+1. **Contextual Similarity**: The exemplar_selection_knn technique provides similar code examples that closely match the input code, which helps the model understand the specific patterns and conventions needed for accurate translation. In contrast, role_prompting lacks this contextual grounding, leading to less precise translations.
+
+2. **Consistency in Output Format**: By showing multiple examples of translated code, exemplar_selection_knn ensures the model adheres to a consistent output format (e.g., method naming conventions, syntax rules). Role_prompting, while assigning a persona, does not enforce such consistency, resulting in deviations from the expected output style.
+
+3. **Task-Specific Guidance**: Exemplar_selection_knn directly addresses the task of code translation by providing concrete examples, making it easier for the model to generalize the translation rules. Role_prompting, on the other hand, focuses more on the persona's communication style rather than the technical specifics of the task, leading to less accurate translations.

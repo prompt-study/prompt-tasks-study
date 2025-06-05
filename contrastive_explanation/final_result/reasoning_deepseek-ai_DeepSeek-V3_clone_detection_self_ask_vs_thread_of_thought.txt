@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: clone_detection | Best: self_ask vs Other: thread_of_thought
+
+1. **Clarity in Task Decomposition**: The **self_ask** technique explicitly prompts the model to break down the task by asking clarifying questions before answering. This ensures the model focuses on the core requirement (clone detection) without unnecessary elaboration, leading to more concise and accurate responses. In contrast, **thread_of_thought** encourages detailed step-by-step analysis, which can introduce noise and distract from the binary decision (###TRUE### or ###FALSE###).
+
+2. **Precision in Response Format**: **Self_ask** enforces a strict response format (###TRUE### or ###FALSE###), which aligns perfectly with the task's requirement for a binary answer. This reduces ambiguity and ensures the model adheres to the task's constraints. **Thread_of_thought**, however, generates verbose analyses, which, while informative, are unnecessary for a simple clone detection verdict.
+
+3. **Efficiency in Problem-Solving**: **Self_ask** directly addresses the task by first resolving any ambiguities (if needed) and then providing a straightforward answer. This streamlined approach avoids the overhead of exhaustive comparisons, making it faster and more efficient. **Thread_of_thought**, with its emphasis on detailed reasoning, often over-analyzes, leading to longer responses without improving accuracy for this specific task.

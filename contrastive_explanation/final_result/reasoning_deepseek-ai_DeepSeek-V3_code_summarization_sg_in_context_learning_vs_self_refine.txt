@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_summarization | Best: sg_in_context_learning vs Other: self_refine
+
+1. **Focused Guidance**: The `sg_in_context_learning` technique provides explicit examples of the desired output format (e.g., `###summary###` tags and one-sentence summaries), which helps the model generate concise and structured responses. In contrast, `self_refine` lacks this initial guidance, leading to verbose or overly detailed explanations that deviate from the task's brevity requirement.
+
+2. **Task Alignment**: By simulating few-shot learning with clear examples, `sg_in_context_learning` ensures the model understands the task's goal (e.g., summarizing code in one sentence). The `self_refine` technique, however, starts with a broader interpretation and iteratively refines it, which often results in explanations that are more detailed than necessary for a summary task.
+
+3. **Efficiency in Output**: The `sg_in_context_learning` technique directly produces a high-quality summary without iterative steps, saving time and avoiding over-complication. The `self_refine` approach, while useful for debugging or in-depth analysis, introduces unnecessary complexity for a simple summarization task, leading to lower evaluation scores due to excessive detail.

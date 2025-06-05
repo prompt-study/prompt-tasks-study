@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: mutant_generation | Best: exemplar_selection_knn vs Other: role_prompting
+
+1. **Contextual Relevance**: The exemplar_selection_knn technique provides concrete examples of similar code mutations, which helps the model understand the specific patterns and types of changes required for the task. In contrast, role_prompting only assigns a generic persona (e.g., "Quality Assurance Engineer") without supplying task-specific context, leading to less precise mutations.
+
+2. **Consistency in Mutations**: By leveraging k-nearest neighbors to select similar code examples, the model is guided to produce mutations that align with established patterns (e.g., removing parameters, altering conditions). Role_prompting, however, lacks this guidance, resulting in inconsistent or overly creative mutations that deviate from the task's requirements.
+
+3. **Task-Specific Focus**: The exemplar_selection_knn technique explicitly directs the model to focus on minor, syntactically correct changes by showing prior examples of such mutations. Role_prompting, while useful for broader tasks, fails to narrow the model's focus to the precise goal of mutant generation, often leading to irrelevant or overly complex modifications.

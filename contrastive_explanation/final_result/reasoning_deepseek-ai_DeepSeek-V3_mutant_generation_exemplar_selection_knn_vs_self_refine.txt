@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: mutant_generation | Best: exemplar_selection_knn vs Other: self_refine
+
+1. **Contextual Relevance**: The exemplar_selection_knn technique provides highly relevant examples that closely match the input code, ensuring the generated mutants are syntactically and semantically appropriate. This direct alignment with similar code snippets leads to more accurate and meaningful mutations, whereas self_refine may overcomplicate or deviate from the task's simplicity by introducing unnecessary refinements.
+
+2. **Consistency in Mutations**: By leveraging pre-selected examples, exemplar_selection_knn maintains a consistent pattern of mutations (e.g., parameter removal, type changes) that align with the task's goal of minimal, syntactically correct changes. In contrast, self_refine often introduces larger or less relevant modifications (e.g., adding print statements or conditional logic), which deviate from the expected mutant generation criteria.
+
+3. **Efficiency in Generation**: Exemplar_selection_knn directly maps the input to similar examples, enabling quick and precise mutant generation without iterative refinement. Self_refine, however, requires multiple feedback loops and revisions, which can lead to over-engineering or less optimal mutants, as seen in the examples where the final output was less aligned with the task's requirements.

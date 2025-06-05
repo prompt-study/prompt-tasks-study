@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: mutant_generation | Best: exemplar_selection_knn vs Other: analogical_prompting
+
+1. **Contextual Relevance**: The exemplar_selection_knn technique selects the most similar code examples using a k-nearest neighbor approach, ensuring that the provided context is highly relevant to the task. This relevance helps the model generate mutants that are syntactically correct and semantically meaningful, as seen in the high-quality responses. In contrast, analogical_prompting relies on abstract analogies, which may not directly translate to precise code modifications.
+
+2. **Precision in Mutation**: Exemplar_selection_knn provides concrete examples of how to mutate code, which guides the model to make precise, minimal changes that align with the task's requirements. The analogical_prompting technique, however, often introduces more significant or less relevant changes (e.g., altering return values or adding method bodies), which deviate from the goal of subtle semantic alterations.
+
+3. **Consistency with Task Goals**: The exemplar_selection_knn technique consistently produces mutants that remove or modify specific parts of the code (e.g., removing null checks or changing format strings), which aligns well with the task of assessing test suite robustness. Analogical_prompting, on the other hand, sometimes introduces unrelated changes (e.g., converting strings to uppercase) that do not directly serve the task's purpose.

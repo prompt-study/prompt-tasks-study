@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: exception_type | Best: exemplar_selection_knn vs Other: rephrase_and_respond
+
+1. **Contextual Similarity**: The exemplar_selection_knn technique leverages similar code examples to provide context, which helps the model identify patterns and common exception types more accurately. This is particularly effective for exception prediction because the model can draw parallels between the given code and the examples, leading to more precise responses.
+
+2. **Task-Specific Guidance**: By providing specific examples of code and their corresponding exception types, the exemplar_selection_knn technique directly guides the model toward the correct answer. This reduces ambiguity and ensures the model focuses on the relevant aspects of the task, unlike the rephrase_and_respond technique, which may introduce unnecessary elaboration.
+
+3. **Consistency in Formatting**: The exemplar_selection_knn technique enforces a consistent response format (e.g., ###ExceptionType###), which simplifies the task for the model and reduces variability in responses. The rephrase_and_respond technique, while useful for broader tasks, may lead to less structured or verbose answers, which can be less efficient for this specific task.

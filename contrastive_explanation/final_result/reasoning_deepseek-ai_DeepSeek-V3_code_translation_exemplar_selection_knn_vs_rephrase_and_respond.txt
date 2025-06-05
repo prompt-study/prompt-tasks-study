@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_translation | Best: exemplar_selection_knn vs Other: rephrase_and_respond
+
+1. **Contextual Similarity**: The exemplar_selection_knn technique leverages similar code examples to provide context, which helps the model understand the specific patterns and conventions required for accurate translation. This is particularly effective for code translation tasks where syntax and semantics vary between languages but follow predictable patterns. In contrast, rephrase_and_respond focuses on rephrasing the query, which may not provide the necessary contextual clues for precise translation.
+
+2. **Conciseness and Directness**: Exemplar_selection_knn prompts the model to output only the translated code without additional explanations, which aligns with the task's requirement for brevity and accuracy. Rephrase_and_respond, however, often includes verbose explanations and reformatted instructions, which can distract from the core task and introduce unnecessary noise, leading to lower-quality translations.
+
+3. **Pattern Recognition**: By providing multiple examples of similar code translations, exemplar_selection_knn enables the model to recognize and replicate common translation patterns (e.g., method naming conventions, keyword substitutions). Rephrase_and_respond lacks this structured guidance, relying instead on the model's general knowledge, which may not always capture language-specific nuances as effectively.

@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_summarization | Best: sg_in_context_learning vs Other: emotional_prompting
+
+1. **Task-Specific Guidance**: The **sg_in_context_learning** technique provides clear, task-specific examples (e.g., "code" and "summary" pairs) that guide the model to generate concise and accurate summaries. In contrast, **emotional_prompting** focuses on affective language, which distracts from the technical precision required for code summarization. The former's structured examples align better with the goal of summarizing code succinctly.
+
+2. **Precision Over Verbosity**: **sg_in_context_learning** encourages brevity and relevance by explicitly asking for one-sentence summaries, mirroring the provided examples. **Emotional_prompting**, however, often leads to overly detailed or verbose responses (e.g., breaking down method signatures or logic steps), which deviates from the task's need for concise explanations. The latter's emphasis on "in-depth" analysis is counterproductive for this task.
+
+3. **Consistency with Examples**: The in-context examples in **sg_in_context_learning** set a consistent format (e.g., `###summary###` tags) and style, ensuring the model adheres to the desired output. **Emotional_prompting** lacks such scaffolding, resulting in inconsistent responses that may include unnecessary motivational language or tangential details. The former's reliance on clear templates ensures higher-quality, standardized outputs.

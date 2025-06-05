@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_summarization | Best: sg_in_context_learning vs Other: few_shot_contrastive_cot
+
+1. **Conciseness Focus**: The **sg_in_context_learning** technique emphasizes generating concise, one-sentence summaries, which aligns well with the task of code summarization. In contrast, **few_shot_contrastive_cot** often produces verbose explanations, including reasoning steps and detailed breakdowns, which are less suitable for a task requiring brevity. The evaluation scores reflect that shorter, direct summaries are preferred.
+
+2. **Task Alignment**: **sg_in_context_learning** directly provides example pairs (code and summary), which helps the model mimic the desired output format. On the other hand, **few_shot_contrastive_cot** focuses on reasoning processes and contrasts, which, while useful for debugging or logic tasks, detracts from the simplicity needed for summarization. The former's approach is more tailored to the summarization task.
+
+3. **Reduced Overhead**: **sg_in_context_learning** avoids unnecessary cognitive load by not requiring the model to outline reasoning steps or contrast examples. This streamlined approach allows the model to focus solely on generating the summary, whereas **few_shot_contrastive_cot** introduces additional complexity that can dilute the quality of the final summary. The higher scores for the former indicate that simplicity yields better results.

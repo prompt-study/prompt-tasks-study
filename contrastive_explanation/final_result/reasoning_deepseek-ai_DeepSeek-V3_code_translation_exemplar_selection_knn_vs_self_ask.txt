@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_translation | Best: exemplar_selection_knn vs Other: self_ask
+
+1. **Contextual Similarity**: The exemplar_selection_knn technique leverages similar code examples to provide context, which helps the model understand the translation patterns between languages more effectively. In contrast, self_ask introduces unnecessary overhead by asking clarifying questions, which is redundant for straightforward tasks like code translation where the input and output formats are well-defined.
+
+2. **Pattern Recognition**: By showing multiple examples of code translations, exemplar_selection_knn allows the model to recognize and replicate common syntactic and semantic patterns (e.g., method naming conventions, parameter handling). Self_ask, however, disrupts this flow by breaking the task into sub-questions, which can lead to less accurate or overly verbose outputs.
+
+3. **Task Specificity**: Code translation is a deterministic task where the goal is clear—convert syntax from one language to another. Exemplar_selection_knn directly addresses this by providing concrete examples, while self_ask’s focus on problem decomposition is better suited for ambiguous or complex tasks, not for straightforward syntactic transformations.

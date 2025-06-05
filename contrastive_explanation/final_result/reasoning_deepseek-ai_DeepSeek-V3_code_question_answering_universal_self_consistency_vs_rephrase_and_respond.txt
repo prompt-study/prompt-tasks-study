@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_question_answering | Best: universal_self_consistency vs Other: rephrase_and_respond
+
+1. **Consensus-Based Decision Making**: The universal_self_consistency technique aggregates multiple reasoning outputs and selects the most coherent solution based on majority consensus. This reduces the likelihood of errors or biases in individual responses, leading to more reliable and accurate evaluations. In contrast, rephrase_and_respond relies on a single interpretation, which may not always capture the full context or nuances of the question.
+
+2. **Robust Error Handling**: Universal_self_consistency explicitly checks for missing imports, edge cases, and incomplete functionality by comparing multiple responses. This ensures that the evaluation is thorough and identifies potential issues that might be overlooked in a single-pass analysis. Rephrase_and_respond, while useful for clarifying questions, may not always catch these technical deficiencies.
+
+3. **Clearer Evaluation Criteria**: The universal_self_consistency technique provides a structured framework for evaluating code snippets against specific criteria (e.g., completeness, correctness). This structured approach ensures that the response is aligned with the task requirements. Rephrase_and_respond, on the other hand, may focus more on rephrasing the question rather than rigorously evaluating the code against the original requirements.

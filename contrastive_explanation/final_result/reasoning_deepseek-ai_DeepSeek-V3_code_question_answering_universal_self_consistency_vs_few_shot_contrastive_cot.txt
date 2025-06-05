@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_question_answering | Best: universal_self_consistency vs Other: few_shot_contrastive_cot
+
+1. **Robust Consensus Building**: The universal_self_consistency technique aggregates multiple reasoning outputs and selects the most coherent solution, which reduces the likelihood of errors or biases from a single response. This ensures a more reliable and accurate evaluation of the code snippet's completeness, as seen in the examples where it consistently identified missing components or ambiguities.
+
+2. **Contextual Depth**: By leveraging multiple responses, universal_self_consistency provides a broader analysis of the code snippet, addressing not just surface-level issues but also deeper contextual gaps (e.g., undefined functions or missing imports). This contrasts with few_shot_contrastive_cot, which may focus narrowly on predefined correct/incorrect examples without exploring the full context.
+
+3. **Adaptability to Ambiguity**: The technique handles ambiguous questions (e.g., "python string with no quotes") more effectively by considering multiple interpretations and aligning with the majority consensus. Few_shot_contrastive_cot, while useful for clear-cut examples, struggles with ambiguity due to its reliance on fixed contrastive examples, leading to less nuanced conclusions.

@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: clone_detection | Best: self_ask vs Other: step_back_prompting
+
+1. **Immediate Problem Decomposition**: The **self_ask** technique prompts the model to break down the task into smaller, clarifying questions before answering. This ensures the model focuses on specific details (e.g., functionality, structure) of the code snippets, leading to a more precise evaluation of whether they are clones. In contrast, **step_back_prompting** starts with a high-level reflection, which may overlook granular differences in the code.
+
+2. **Task-Specific Focus**: **Self_ask** directs the model to verify if additional questions are needed to understand the task, ensuring the response is tailored to the exact requirements (e.g., strict ###TRUE### or ###FALSE### output). **Step_back_prompting** begins with abstract principles, which can introduce unnecessary generality and delay the direct comparison of code snippets.
+
+3. **Reduced Ambiguity**: By asking clarifying questions upfront, **self_ask** minimizes ambiguity in the task definition, such as what constitutes a "clone" (functional vs. structural similarity). **Step_back_prompting** relies on the model to infer these criteria from high-level principles, which may lead to inconsistent or less accurate judgments.

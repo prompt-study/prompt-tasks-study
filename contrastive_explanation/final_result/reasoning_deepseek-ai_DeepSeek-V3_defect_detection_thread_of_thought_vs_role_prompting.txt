@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: defect_detection | Best: thread_of_thought vs Other: role_prompting
+
+1. **Structured Analysis**: The thread_of_thought technique breaks down the code into logical segments, providing step-by-step analysis and summaries. This structured approach ensures a thorough examination of each part of the code, making it easier to spot subtle defects that might be overlooked in a high-level review. Role_prompting, on the other hand, often relies on a single judgment call without detailed reasoning, which can miss nuanced issues.
+
+2. **Contextual Understanding**: By walking through the code incrementally, thread_of_thought builds a deeper contextual understanding of the code's purpose and logic. This allows the model to identify inconsistencies or errors that are only apparent when considering the code's full flow. Role_prompting lacks this incremental reasoning, leading to superficial evaluations that may not catch defects tied to the code's overall structure.
+
+3. **Explicit Reasoning**: Thread_of_thought explicitly documents the reasoning process, including assumptions and intermediate conclusions. This transparency makes it easier to validate the model's analysis and identify potential flaws in its logic. Role_prompting, by contrast, provides a binary output (###TRUE### or ###FALSE###) without justification, making it harder to trust or debug the response.

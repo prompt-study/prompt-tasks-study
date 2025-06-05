@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_question_answering | Best: universal_self_consistency vs Other: role_prompting
+
+1. **Robust Error Detection**: The universal_self_consistency technique aggregates multiple reasoning outputs, which helps in identifying and correcting subtle errors more effectively. For example, in the "splitting an array" task, it caught the `_range` typo by cross-validating responses, whereas role_prompting only flagged the error without the same level of consensus-driven confidence.
+
+2. **Comprehensive Solution Evaluation**: This technique evaluates the code against a broader set of criteria by considering multiple perspectives, ensuring the response fully addresses the question. In the "flatten string list" task, it not only identified the flaw but also provided a corrected version, demonstrating a deeper understanding of the requirement compared to role_prompting's simpler rejection.
+
+3. **Contextual Clarity**: Universal_self_consistency provides clearer explanations and corrections, making it more informative. For instance, in the "hide API key" task, it explicitly noted the lack of secure storage practices, while role_prompting only stated the code didn’t address the question without elaborating on why or how to improve it.

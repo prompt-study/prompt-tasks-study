@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_summarization | Best: sg_in_context_learning vs Other: universal_self_consistency
+
+1. **Contextual Alignment**: The `sg_in_context_learning` technique provides explicit examples of code-summary pairs, which helps the model align its response format and content to the task. This alignment ensures the summary is concise and directly relevant to the code, whereas `universal_self_consistency` lacks such guidance, leading to verbose or overly detailed responses.  
+
+2. **Task-Specific Focus**: By simulating few-shot learning with in-context examples, `sg_in_context_learning` directs the model to prioritize the core functionality of the code in summaries. In contrast, `universal_self_consistency` aggregates multiple reasoning paths, which can introduce noise or tangential details, diluting the summary's clarity and brevity.  
+
+3. **Efficiency in Output**: The `sg_in_context_learning` technique encourages the model to generate a single, succinct summary by leveraging the provided examples, while `universal_self_consistency` requires synthesizing multiple responses, often resulting in redundant or overly complex explanations. This makes the former more efficient for producing high-quality, one-sentence summaries.

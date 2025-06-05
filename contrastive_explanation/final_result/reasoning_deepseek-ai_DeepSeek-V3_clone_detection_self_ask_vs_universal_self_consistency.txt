@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: clone_detection | Best: self_ask vs Other: universal_self_consistency
+
+1. **Focused Problem Decomposition**: The **self_ask** technique encourages the model to break down the task into smaller, clarifying questions before answering. This ensures a deeper understanding of the code snippets' functionality and structure, leading to more accurate clone detection. In contrast, **universal_self_consistency** aggregates multiple outputs without this initial decomposition, potentially missing nuanced differences.
+
+2. **Reduced Ambiguity**: By prompting the model to ask and answer sub-questions, **self_ask** reduces ambiguity in the task. This step-by-step approach ensures the model thoroughly analyzes the code's purpose, logic, and implementation before concluding. **Universal_self_consistency**, while robust, may overlook subtle distinctions if the initial outputs are not carefully scrutinized.
+
+3. **Precision in Binary Tasks**: For binary tasks like clone detection (where the answer is strictly ###TRUE### or ###FALSE###), **self_ask**'s methodical approach minimizes errors by forcing the model to justify its reasoning internally. **Universal_self_consistency**, which relies on consensus, might propagate minor inaccuracies if the majority of initial outputs are misaligned with the ground truth.

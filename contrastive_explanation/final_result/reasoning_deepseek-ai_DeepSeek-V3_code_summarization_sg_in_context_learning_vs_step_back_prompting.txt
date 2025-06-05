@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_summarization | Best: sg_in_context_learning vs Other: step_back_prompting
+
+1. **Contextual Alignment**: The **sg_in_context_learning** technique provides explicit examples of code-summary pairs, which helps the model align its response format and content to the task. This direct guidance ensures the summary is concise and focused, whereas **step_back_prompting** relies on abstract reflections, leading to verbose or less precise summaries.
+
+2. **Task-Specific Focus**: By simulating few-shot learning, **sg_in_context_learning** narrows the model's attention to the specific task of summarization, avoiding tangential details. In contrast, **step_back_prompting** encourages broader problem-solving reflections, which can dilute the summary with unnecessary technicalities or explanations.
+
+3. **Consistency in Output**: The structured examples in **sg_in_context_learning** enforce a consistent style (e.g., one-sentence summaries), making responses more uniform and easier to evaluate. **step_back_prompting**, by emphasizing high-level planning, often produces variable-length summaries that may include redundant or off-topic information.

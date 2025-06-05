@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: mutant_generation | Best: exemplar_selection_knn vs Other: self_ask
+
+1. **Contextual Similarity**: The exemplar_selection_knn technique leverages similar code examples to guide the mutation process, ensuring that the modifications are syntactically correct and semantically meaningful. In contrast, self_ask lacks this contextual grounding, leading to less relevant or overly complex changes that deviate from the task's requirements.
+
+2. **Task-Specific Guidance**: By providing concrete examples of how to mutate code, exemplar_selection_knn directly aligns with the task's goal of minor, syntactically correct tweaks. Self_ask, however, introduces unnecessary sub-questions and overcomplicates the process, often resulting in additions or changes that don't fit the subtle mutation criteria.
+
+3. **Consistency in Output**: The exemplar_selection_knn technique produces consistent and predictable mutations by following patterns from the provided examples. Self_ask, on the other hand, tends to introduce variability and creativity (e.g., adding new methods or altering logic), which can lead to lower-quality responses that don't match the expected mutation style.

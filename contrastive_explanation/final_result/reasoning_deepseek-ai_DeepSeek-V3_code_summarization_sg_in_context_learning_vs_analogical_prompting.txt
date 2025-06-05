@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_summarization | Best: sg_in_context_learning vs Other: analogical_prompting
+
+1. **Structured Example Guidance**: The sg_in_context_learning technique provides clear, structured examples of code and summary pairs, which helps the model understand the expected format and level of detail. This direct demonstration of the task reduces ambiguity and ensures the response aligns closely with the desired output. In contrast, analogical_prompting relies on abstract analogies, which may not translate as effectively to concrete code summarization.
+
+2. **Task-Specific Focus**: sg_in_context_learning explicitly tailors the prompt to the code summarization task by presenting relevant examples and asking for a summary in the same style. This specificity ensures the model stays on topic and produces concise, accurate summaries. Analogical_prompting, while useful for abstract concepts, may divert attention to unrelated analogies, leading to less precise or overly verbose responses.
+
+3. **Consistency in Output Quality**: By using in-context examples, sg_in_context_learning sets a consistent standard for the quality and brevity of summaries, which the model can replicate. This technique minimizes variability in responses, as the model has a clear template to follow. Analogical_prompting, however, may introduce variability because the model must interpret the analogy, potentially leading to inconsistent or less optimal summaries.

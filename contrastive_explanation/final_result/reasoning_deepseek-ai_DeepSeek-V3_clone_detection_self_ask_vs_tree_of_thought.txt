@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: clone_detection | Best: self_ask vs Other: tree_of_thought
+
+1. **Clarity in Problem Decomposition**: The self_ask technique explicitly prompts the model to break down the task into clarifying sub-questions before answering. This ensures the model thoroughly understands the differences in functionality, structure, and purpose between the code snippets, leading to more accurate clone detection. In contrast, tree_of_thought may overcomplicate the reasoning process by exploring multiple paths without clear focus.
+
+2. **Direct Comparison Focus**: Self_ask encourages the model to directly compare the two code snippets by asking targeted questions about their similarities and differences. This focused approach avoids the potential distraction of exploring irrelevant reasoning branches, which can happen with tree_of_thought, where the model might diverge into less relevant analysis.
+
+3. **Efficiency in Decision-Making**: Self_ask streamlines the decision-making process by resolving ambiguities upfront through clarifying questions. This reduces the risk of the model getting stuck in iterative loops or redundant reasoning, a pitfall of tree_of_thought, which may prolong the process without adding value to the final answer. The result is a quicker and more precise conclusion.

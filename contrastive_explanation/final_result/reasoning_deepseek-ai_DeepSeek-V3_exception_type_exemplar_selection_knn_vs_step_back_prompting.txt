@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: exception_type | Best: exemplar_selection_knn vs Other: step_back_prompting
+
+1. **Contextual Similarity**: The exemplar_selection_knn technique leverages similar code examples to provide context, which helps the model accurately predict the exception type by recognizing patterns in analogous situations. This is more effective than step_back_prompting, which relies on abstract principles and may miss nuanced context.
+
+2. **Precision in Exception Matching**: By using nearest-neighbor exemplars, the model can directly compare the current code snippet with past examples where the correct exception type was identified. This reduces ambiguity and ensures higher precision compared to step_back_prompting, which may generate overly generic or theoretical responses.
+
+3. **Task-Specific Optimization**: The exemplar_selection_knn technique is tailored for software engineering tasks like exception prediction, where concrete examples are more valuable than high-level reasoning. Step_back_prompting, while useful for broader problem-solving, lacks the specificity needed for this task, leading to less accurate results.

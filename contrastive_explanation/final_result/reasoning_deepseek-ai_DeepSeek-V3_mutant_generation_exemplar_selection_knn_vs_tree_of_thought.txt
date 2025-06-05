@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: mutant_generation | Best: exemplar_selection_knn vs Other: tree_of_thought
+
+1. **Contextual Similarity**: The exemplar_selection_knn technique leverages similar code examples to guide the mutation process, ensuring that the modifications are syntactically correct and semantically meaningful. This approach directly aligns with the task of mutant generation, where subtle, context-aware changes are required. In contrast, tree_of_thought explores diverse reasoning paths, which may not always yield the precise, minimal modifications needed for effective mutants.
+
+2. **Task-Specific Guidance**: By providing concrete examples of mutated code, exemplar_selection_knn offers clear, task-specific guidance that helps the model understand the expected output format and mutation patterns. This reduces ambiguity and ensures high-quality responses. The tree_of_thought technique, while useful for complex problem-solving, lacks this direct guidance, leading to less optimal or overly complex solutions for a straightforward task like mutant generation.
+
+3. **Efficiency in Mutation**: Exemplar_selection_knn focuses on applying small, proven modifications from similar examples, which is efficient and effective for generating mutants. The tree_of_thought technique, with its iterative and exploratory nature, may overcomplicate the process, resulting in unnecessary changes or incomplete mutations, as seen in the lower evaluation scores for its responses.

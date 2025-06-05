@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: exception_type | Best: exemplar_selection_knn vs Other: role_prompting
+
+1. **Contextual Similarity**: The exemplar_selection_knn technique selects the most similar code examples using a k-nearest neighbor approach, which provides the model with highly relevant context for the task. This ensures the model can draw from analogous cases to make accurate predictions, whereas role_prompting lacks this contextual grounding and relies more on generic persona-based guidance.
+
+2. **Task-Specific Precision**: By leveraging similar code snippets, exemplar_selection_knn directly addresses the specific nuances of exception type prediction, such as common error patterns and language-specific behaviors. Role_prompting, while useful for stylistic or high-level guidance, does not offer the same level of granularity for technical tasks like exception handling.
+
+3. **Consistency in Output**: The exemplar_selection_knn technique produces more consistent results because it is anchored to concrete examples, reducing variability in responses. Role_prompting, on the other hand, can introduce ambiguity or overgeneralization due to its reliance on abstract personas rather than direct code-based references.

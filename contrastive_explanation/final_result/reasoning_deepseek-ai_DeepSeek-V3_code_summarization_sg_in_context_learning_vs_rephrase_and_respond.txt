@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: code_summarization | Best: sg_in_context_learning vs Other: rephrase_and_respond
+
+1. **Conciseness Focus**: The **sg_in_context_learning** technique explicitly asks for a one-sentence summary, aligning with the task's goal of brevity. In contrast, **rephrase_and_respond** encourages broader analysis, leading to verbose responses that deviate from the concise summary requirement. This makes the former more suitable for code summarization, where clarity and brevity are prioritized.
+
+2. **Task Alignment**: **sg_in_context_learning** provides in-context examples (code-summary pairs) that guide the model to mimic the desired output format. This direct alignment with the task structure ensures higher-quality summaries. **rephrase_and_respond**, however, lacks such examples, resulting in unstructured or overly detailed responses that don't match the task's expectations.
+
+3. **Reduced Noise**: By focusing on generating summaries based on provided examples, **sg_in_context_learning** minimizes irrelevant details or tangential analysis. **rephrase_and_respond**, with its emphasis on restating and broadening the query, often introduces unnecessary explanations or commentary, diluting the summary's quality and relevance.

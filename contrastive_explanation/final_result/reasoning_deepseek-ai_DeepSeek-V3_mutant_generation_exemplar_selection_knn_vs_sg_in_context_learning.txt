@@ -1,0 +1,7 @@
+🔍 Running test: deepseek-ai/DeepSeek-V3 | Task: mutant_generation | Best: exemplar_selection_knn vs Other: sg_in_context_learning
+
+1. **Contextual Relevance**: The exemplar_selection_knn technique selects the most similar code examples using a k-nearest neighbor approach, ensuring that the provided examples are highly relevant to the target code. This relevance helps the model understand the specific patterns and mutations needed, leading to more accurate and contextually appropriate mutants. In contrast, sg_in_context_learning generates examples automatically, which may not always align closely with the target code's structure or semantics.
+
+2. **Consistency in Mutations**: By leveraging similar code examples, exemplar_selection_knn ensures that the mutations applied are consistent with the patterns observed in the provided examples. This consistency results in mutants that are syntactically correct and semantically meaningful. On the other hand, sg_in_context_learning might introduce variations that deviate from the expected mutation patterns, leading to less reliable or less useful mutants.
+
+3. **Precision in Instructions**: The exemplar_selection_knn technique often pairs the examples with clear, task-specific instructions (e.g., "Output solely the mutated code"), which guides the model to produce focused and precise responses. In contrast, sg_in_context_learning may use more generic or verbose instructions (e.g., marking code as 'Original' and 'Mutant'), which can dilute the model's focus and result in less precise or overly verbose outputs.
